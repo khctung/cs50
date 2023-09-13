@@ -9,7 +9,7 @@ int main(void)
     {
         change = get_int("Change owed: ");
     }
-    while (height <= 0);
+    while (change <= 0);
 
     // counting the minimum # of coins
     int coins = 0;
@@ -40,5 +40,5 @@ int main(void)
 
     // adding remaining change as pennies
     coins += change;
-    printf("%i", coins)
+    printf("%i\n", coins);
 }
