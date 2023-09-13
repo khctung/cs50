@@ -3,6 +3,6 @@
 
 int main(void)
 {
-    int temp = 18%25;
-    printf("%d", temp);
+    int temp = 25%25;
+    printf("%d\n", temp);
 }
