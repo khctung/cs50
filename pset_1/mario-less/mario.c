@@ -11,7 +11,7 @@ int main(void)
     }
     while (height < 1);
 
-    // repeat for each row
+    // repeat space and hash printing for each row
     for (int i = 1; i <= height; i++)
     {
         // print spaces
