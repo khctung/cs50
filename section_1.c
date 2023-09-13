@@ -3,8 +3,6 @@
 
 int main(void)
 {
-    rename("exercise.c", "section_1");
-
     string name = get_string("What is your name? ");
     int age = get_int("What is your age? ");
     // could store as string and float
