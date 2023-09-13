@@ -9,7 +9,7 @@ int main(void)
     {
         change = get_int("Change owed: ");
     }
-    while (change <= 0);
+    while (change < 0);
 
     // counting the minimum # of coins
     int coins = 0;
