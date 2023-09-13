@@ -3,6 +3,9 @@
 
 int main(void)
 {
+
+    int rename(const char *old_filename, const char *new_filename);
+
     string name = get_string("What is your name? ");
     int age = get_int("What is your age? ");
     // could store as string and float
