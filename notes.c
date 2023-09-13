@@ -3,7 +3,6 @@ fff
 */
 
 #include <cs50.h>
-#include <cs50.h>
 #include <stdio.h>
 
 rename("old_name", "new_name"); // rename a file
