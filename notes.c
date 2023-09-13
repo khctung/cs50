@@ -5,4 +5,10 @@ fff
 #include <cs50.h>
 #include <stdio.h>
 
-rename("exercise.c", "section_1"); // rename a file
+rename("old_name", "new_name"); // rename a file
+
+
+for ()
+// good for when you know # times repeating
+// while loop is good for continuous operations when condition is true
+// do-while is good for continuous operations that need to be run at least once
