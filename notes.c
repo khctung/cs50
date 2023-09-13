@@ -8,7 +8,8 @@ fff
 rename("old_name", "new_name"); // rename a file
 
 
-for ()
-// good for when you know # times repeating
+for (int 
+
+// for loop is good for when you know # times repeating
 // while loop is good for continuous operations when condition is true
 // do-while is good for continuous operations that need to be run at least once
