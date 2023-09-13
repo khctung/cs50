@@ -21,7 +21,7 @@ int main(void)
         }
 
         // print hashes
-        for (int hashes = 0; hashes <= i; hashes++)
+        for (int hashes = 1; hashes <= i; hashes++)
         {
             printf("#");
         }
