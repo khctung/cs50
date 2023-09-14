@@ -34,3 +34,5 @@ printf("%.6f", casted) // shows 6 digits after decimal point
 // format code for long is %li = long integer
 // double = more precision bc more #s after decminal point
 // truncation occurs when integer divided by integer
+// floating point imprecision = cannot represent infinite #s in universe
+// integer overflow = not enough memory to store large integers
