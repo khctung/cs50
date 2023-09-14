@@ -30,6 +30,7 @@ void method_name(int parameter)  // creating your own method/function
 5/3 = 1 // c rounds down, floor
 int type_casting = 0;
 float casted = (float) type_casting;
+printf("%.6f", casted) // shows 6 digits after decimal point
 // format code for long is %li = long integer
 // double = more precision bc more #s after decminal point
 // truncation occurs when integer divided by integer
