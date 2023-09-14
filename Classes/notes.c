@@ -10,6 +10,12 @@ code name.c  // creates file
 make name    // compiles file
 ./ name      // runs file
 
+int main(void) // putting main code in
+{
+
+}
+
+void 
 
 for (int
 
