@@ -5,6 +5,8 @@ making a big comment block
 #include <cs50.h>
 #include <stdio.h>
 
+void method_name(int parameter); // need to define function before main
+
 rename("old_name", "new_name"); // rename a file
 code name.c  // creates file
 make name    // compiles file
@@ -15,7 +17,10 @@ int main(void) // putting main code in
 
 }
 
-void 
+void method_name(int parameter)  // creating your own method/function
+{
+
+}
 
 for (int
 
