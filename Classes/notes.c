@@ -14,6 +14,7 @@ make name    // compiles file
 ./ name      // runs file
 
 // format code for long is %li = long integer
+// double = more precision bc more #s after decminal point
 
 int main(void) // putting main code in, returns 0
 {
