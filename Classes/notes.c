@@ -12,7 +12,7 @@ code name.c  // creates file
 make name    // compiles file
 ./ name      // runs file
 
-int main(void) // putting main code in
+int main(void) // putting main code in, returns 0
 {
 
 }
