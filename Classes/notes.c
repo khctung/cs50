@@ -6,6 +6,7 @@ making a big comment block
 #include <stdio.h>
 
 void method_name(int parameter); // need to define function before main
+const int constant = 0;
 
 rename("old_name", "new_name"); // rename a file
 code name.c  // creates file
