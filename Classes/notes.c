@@ -13,6 +13,8 @@ code name.c  // creates file
 make name    // compiles file
 ./ name      // runs file
 
+// format code for long is %li = long integer
+
 int main(void) // putting main code in, returns 0
 {
 
