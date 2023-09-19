@@ -26,7 +26,7 @@ clang -o hello hello.c -lcs50 // l = library you're using, then the name of it
 // 1. pre-processing -> using #include to call prototypes for functions
 // 2. compiling -> converting coded language to assembly language
 // 3. assembling -> converts assmembly language to binary
-// 4. linking -> 
+// 4. linking -> combining hello.c ; cs50.c ; stdio.c from binary, separate files into 1 file
 
 int main(void) // putting main code in, returns 0
 {
