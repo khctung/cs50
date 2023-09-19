@@ -16,7 +16,8 @@ make name    // compiles file
 clang hello.c // computer runs compiler
 ./a.out       // stores file as a and is used to run it
 
-
+clang -o hello hello.c  // cmomputer runs compiler and stores as hello
+./hello                 // runs hello
 
 int main(void) // putting main code in, returns 0
 {
