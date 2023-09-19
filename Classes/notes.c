@@ -2,7 +2,7 @@
 making a big comment block
 */
 
-#include <cs50.h>
+#include <cs50.h> // pre-processor directive
 #include <stdio.h>
 
 void method_name(int parameter); // need to define function before main
