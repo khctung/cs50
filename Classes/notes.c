@@ -13,6 +13,11 @@ code name.c  // creates file
 make name    // compiles file
 ./ name      // runs file
 
+clang hello.c // computer runs compiler
+./a.out       // stores file as a and is used to run it
+
+
+
 int main(void) // putting main code in, returns 0
 {
 
