@@ -6,11 +6,13 @@ making a big comment block
 #include <stdio.h>
 
 void method_name(int parameter); // need to define function before main
+                                 // called prototype
 const int constant = 0;
 
 rename("old_name", "new_name"); // rename a file
 code name.c  // creates file
 make name    // compiles file
+             // is an abstraction itself, so is compiling
 ./ name      // runs file
 
 clang hello.c // computer runs compiler
@@ -18,6 +20,7 @@ clang hello.c // computer runs compiler
 
 clang -o hello hello.c  // cmomputer runs compiler and stores as hello
 ./hello                 // runs hello
+clang -o hello hello.c -lcs50 // l = library you're using, then the name of it
 
 int main(void) // putting main code in, returns 0
 {
