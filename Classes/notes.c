@@ -48,6 +48,7 @@ int main(int argc, string argv[]) // putting main code in, returns 0
     argv[0] = name of the program
     echo $? shows the status code returned
     // cipher = algorithm for encrypting/scrambling messages, uses key
+    // caesar cipher = move by 1, rot13 = move by 13
 }
 
 void method_name(int parameter)  // creating your own method/function
