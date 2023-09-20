@@ -45,6 +45,7 @@ int main(int argc, string argv[]) // putting main code in, returns 0
 {
     argc = argument count = how many words did user type in prompt
     argv = arguent vector = list of command line arguments
+    argv[0] = name of the program
 }
 
 void method_name(int parameter)  // creating your own method/function
