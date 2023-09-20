@@ -60,6 +60,6 @@ char rotate(int num, char character)
             character = (char) (((character - 'A' + num) % 26) + character);
         }
     }
-    printf("%c", character)
+    printf("%c", character);
     return character;
 }
