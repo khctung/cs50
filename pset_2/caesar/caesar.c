@@ -22,6 +22,7 @@ int main(int argc, string argv[])
         for (int i = 0, n = strlen(plain_text); i < n; i++)
         {
             printf("%c", rotate(key, plain_text[i]));
+            printf("ran");
         }
         printf("\n");
         return 0;
