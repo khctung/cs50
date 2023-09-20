@@ -22,7 +22,7 @@ int main(int argc, string argv[])
         for (int i = 0, n = strlen(plain_text); i < n; i++)
         {
             printf("%c", rotate(key, plain_text[i]));
-            printf("ran");
+            printf("ran\n");
         }
         printf("\n");
         return 0;
@@ -61,6 +61,5 @@ char rotate(int num, char character)
             character = (char) (((character - 'A' + num) % 26) + character);
         }
     }
-    printf("%c", character);
     return character;
 }
