@@ -30,6 +30,7 @@ clang -o hello hello.c -lcs50 // l = library you're using, then the name of it
 
 // decompiling -> reverse engineering the compiled code
 debug50 ./buggy  // debugs the code
+string = array (can call [i] per character)
 
 int main(void) // putting main code in, returns 0
 {
