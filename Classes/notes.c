@@ -3,9 +3,9 @@ making a big comment block
 */
 
 #include <cs50.h> // pre-processor directive, includes prototype for functions like get_string
+#include <ctype.h>
 #include <stdio.h>
 #include <string.h>
-#include <ctype.h>
 
 void method_name(int parameter); // need to define function before main
                                  // called prototype
@@ -44,7 +44,7 @@ int main(void) // putting main code in, returns 0
 int main(int argc, string argv[]) // putting main code in, returns 0
 {
     argc = argument count = how many words did user type in prompt
-    argv = arguent vector = list of command line arguments
+    argv = argument vector = list of command line arguments
     argv[0] = name of the program
     echo $? shows the status code returned
     // cipher = algorithm for encrypting/scrambling messages, uses key
