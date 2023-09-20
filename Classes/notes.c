@@ -4,6 +4,8 @@ making a big comment block
 
 #include <cs50.h> // pre-processor directive, includes prototype for functions like get_string
 #include <stdio.h>
+#include <string.h>
+#include <ctype.h>
 
 void method_name(int parameter); // need to define function before main
                                  // called prototype
@@ -32,6 +34,7 @@ clang -o hello hello.c -lcs50 // l = library you're using, then the name of it
 debug50 ./buggy  // debugs the code
 string = array (can call [i] per character)
 // strings have n+1 bytes w/ the +1 as a "\0" byte @ the end (equals to NUL)
+// can initialize multiple variables in for loop
 
 int main(void) // putting main code in, returns 0
 {
