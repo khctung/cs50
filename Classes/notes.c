@@ -47,6 +47,7 @@ int main(int argc, string argv[]) // putting main code in, returns 0
     argv = arguent vector = list of command line arguments
     argv[0] = name of the program
     echo $? shows the status code returned
+    // cipher = algorithm for encrypting/scrambling messages, uses key
 }
 
 void method_name(int parameter)  // creating your own method/function
