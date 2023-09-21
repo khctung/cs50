@@ -2,8 +2,8 @@
 #include <ctype.h>
 #include <math.h>
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
+#include <string.h>
 
 bool only_digits(string input);
 char rotate(int num, char character);
@@ -49,12 +49,15 @@ bool only_digits(string input)
 // function for ciphering the given character
 char rotate(int num, char character)
 {
+    // checking if it's an alphabetical element
     if (isalpha(character))
     {
+        // if lowercase
         if (islower(character))
         {
             character = (char) (((character - 'a' + num) % 26) + 'a');
         }
+        // if uppercase
         else
         {
             character = (char) (((character - 'A' + num) % 26) + 'A');
