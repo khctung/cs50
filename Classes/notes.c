@@ -56,6 +56,8 @@ int main(void) // putting main code in, returns 0
     bubble sort = check and swap accordingly with the element behind
     --> (n-1)(n-1) = n^2
     --> O(n^2), Ω(n)
+    merge sort = using recursion to cut in half and sort
+    --> O(nlogn), Ω(nlogn), Θ(nlogn)
 
     recursion = function that calls itself (w/ smaller and smaller input)
     base case = breaking out of the recursion loop
