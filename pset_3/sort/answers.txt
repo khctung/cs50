@@ -1,12 +1,13 @@
 sort1 uses: Bubble Sort
 
 How do you know?: Slower run time for random files compared to sort2 (so must be either selection or bubble sort),
-                  fastest run time for sorted files (makes sense because max efficiency is Ω(n))
+                  fastest run time for sorted files (makes sense because max efficiency is Ω(n) because it only needs to
+                  run through the file once)
 
 sort2 uses: Merge Sort
 
 How do you know?: Fastest running time for random files and reversed files (which makes sense because it is O(nlogn) + most efficient usually),
-                  but slower in comparison for sorted files because it still has to run through the entire recursion loop without quitting.
+                  but slower in comparison for sorted files because it still has to run through the entire recursion loop without quitting
 
 sort3 uses: Selection Sort
 
