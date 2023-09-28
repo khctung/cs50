@@ -1,5 +1,6 @@
 #include <cs50.h>
 #include <stdio.h>
+#include <string.h>
 
 // Max voters and candidates
 #define MAX_VOTERS 100
@@ -14,8 +15,7 @@ typedef struct
     string name;
     int votes;
     bool eliminated;
-}
-candidate;
+} candidate;
 
 // Array of candidates
 candidate candidates[MAX_CANDIDATES];
@@ -160,7 +160,7 @@ bool print_winner(void)
 {
     for (int i = 0; i < candidate_count; i++)
     {
-        if (candidates[i].votes > (voter_count+1)/2)
+        if (candidates[i].votes > (voter_count + 1) / 2)
         {
             printf("%s\n", candidates[i].name);
             return true;
@@ -199,11 +199,11 @@ bool is_tie(int min)
 // Eliminate the candidate (or candidates) in last place
 void eliminate(int min)
 {
-   for (int i = 0; i < candidate_count; i++)
-   {
+    for (int i = 0; i < candidate_count; i++)
+    {
         if (!candidates[i].eliminated && candidates[i].votes == min)
         {
             candidates[i].eliminated = true;
         }
-   }
+    }
 }
