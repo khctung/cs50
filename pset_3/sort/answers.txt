@@ -1,15 +1,15 @@
-sort1 uses: Selection Sort
+sort1 uses: Bubble Sort
 
 How do you know?: Slower run time for random files compared to sort2 (so must be either selection or bubble sort),
-                  slowest run time for reversed files (which makes sense because it has it is one of the most time-consuming possibilities to run through
-                  for selection sort because it has to reach the end of the file to get to the smallest element)
+                  fastest run time for sorted files (makes sense because max efficiency is Ω(n))
 
 sort2 uses: Merge Sort
 
 How do you know?: Fastest running time for random files and reversed files (which makes sense because it is O(nlogn) + most efficient usually),
                   but slower in comparison for sorted files because it still has to run through the entire recursion loop without quitting.
 
-sort3 uses: Bubble Sort
+sort3 uses: Selection Sort
 
 How do you know?: Slower run time for random files compared to sort2 (so must be either selection or bubble sort),
-                  fastest 
+                  slowest run time for reversed files (which makes sense because it has it is one of the most time-consuming possibilities to run through
+                  for selection sort because it has to reach the end of the file to get to the smallest element)
