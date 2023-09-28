@@ -2,7 +2,7 @@ sort1 uses: TODO
 
 How do you know?: TODO
 
-sort2 uses: TODO
+sort2 uses: Merge Sort
 
 How do you know?: TODO
 
