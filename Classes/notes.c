@@ -36,6 +36,13 @@ string = array (can call [i] per character)
 // strings have n+1 bytes w/ the +1 as a "\0" byte @ the end (equals to NUL)
 // can initialize multiple variables in for loop
 
+typedef struct
+{
+    string name;
+    int age;
+}
+person;
+
 int main(void) // putting main code in, returns 0
 {
     big o = worst case (upper bound) time it takes for algorithm
