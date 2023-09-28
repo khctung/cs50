@@ -57,7 +57,8 @@ int main(void) // putting main code in, returns 0
     --> (n-1)(n-1) = n^2
     --> O(n^2), Ω(n)
 
-    recursion = function that calls itself
+    recursion = function that calls itself (w/ smaller and smaller input)
+    base case = breaking out of the recursion loop
 }
 
 int main(int argc, string argv[]) // putting main code in, returns 0
