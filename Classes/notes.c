@@ -51,8 +51,11 @@ int main(void) // putting main code in, returns 0
     binary search = O(logn), Ω(1)
 
     selection sort = select smallest and compare w/ rest, then swap
+    --> (n-1) + (n-2) + (n-3) + (n-4) = (n)(n-1)/2 = n^2
+    --> O(n^2), Ω(n^2), Θ(n^2)
     bubble sort = check and swap accordingly with the element behind
-    
+
+
 }
 
 int main(int argc, string argv[]) // putting main code in, returns 0
