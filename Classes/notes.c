@@ -40,8 +40,7 @@ typedef struct
 {
     string name;
     int age;
-}
-person;
+} person;
 
 int main(void) // putting main code in, returns 0
 {
