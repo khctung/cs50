@@ -38,7 +38,7 @@ string = array (can call [i] per character)
 
 int main(void) // putting main code in, returns 0
 {
-
+    big o = worst case time it takes for algorithm
 }
 
 int main(int argc, string argv[]) // putting main code in, returns 0
