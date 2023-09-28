@@ -38,9 +38,11 @@ string = array (can call [i] per character)
 
 int main(void) // putting main code in, returns 0
 {
-    big o = worst case time it takes for algorithm
+    big o = worst case (upper bound) time it takes for algorithm
     O(n) = linear search
     O(logn) = binary search
+
+    Ω()
 }
 
 int main(int argc, string argv[]) // putting main code in, returns 0
