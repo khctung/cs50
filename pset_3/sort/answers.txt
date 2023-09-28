@@ -4,7 +4,8 @@ How do you know?: TODO
 
 sort2 uses: Merge Sort
 
-How do you know?: most eff
+How do you know?: Fastest running time for random files and reversed files (which makes sense because it is O(nlogn)),
+but slows down for sorted files.
 
 sort3 uses: TODO
 
