@@ -50,6 +50,9 @@ int main(void) // putting main code in, returns 0
     linear search = O(n), Ω(1)
     binary search = O(logn), Ω(1)
 
+    selection sort = select smallest and compare w/ rest, then swap
+    bubble sort = check and swap accordingly with the element behind
+    
 }
 
 int main(int argc, string argv[]) // putting main code in, returns 0
