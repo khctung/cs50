@@ -143,9 +143,12 @@ void fourth_week(int lazy)  // creating your own method/function
     {
         t[i] = s[i];
     }
+    strcopy(new_string, old_string);
 
     if (t == NULL) // means that no memory is available
     {
         return 1;
     }
+
+    free
 }
