@@ -167,6 +167,8 @@ void fourth_week(int lazy)  // creating your own method/function
 
     FILE *input = fopen("file_name.txt", "r");
     // FILE is type, "r" = read, input stores address of file
+    fread(buffer, 1, 4, input)
+    buffer = used to store information
 }
 
 void swap(int *a, int *b)
