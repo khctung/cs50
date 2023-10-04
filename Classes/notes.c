@@ -114,6 +114,6 @@ void fourth_week(int lazy)  // creating your own method/function
     pointers take up 8 bytes (int takes up 4 bytes)
 
     string is pointer that points to the start of the array of characters
-    strings are technically char *s
+    strings are technically char *s since it's just an address of the first character
 
 }
