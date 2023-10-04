@@ -103,7 +103,7 @@ void fourth_week(int lazy)  // creating your own method/function
     0x## prefaces that there is hexademical after
 
     %p shows address
-    & returns address of variable
+    & returns address (pointer) of variable
     *
 
 }
