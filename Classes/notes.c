@@ -155,5 +155,5 @@ void fourth_week(int lazy)  // creating your own method/function
     sizeof(int);
     int x = malloc(3*sizeof(int)); // basically makes x an array
 
-    
+    valgrind ./filename //
 }
