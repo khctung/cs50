@@ -171,9 +171,9 @@ void fourth_week(int lazy)  // creating your own method/function
     printf("x: %i\n", x);
 
     file I/O = input and output
-    
+
     FILE *input = fopen("file_name.txt", "r");
-    // FILE is type, "r" = read, input stores address of file
+    // FILE is type, "r" = read, "w" = write, "a" = append, input stores address of file
     fread(buffer, 1, 4, input)
     buffer = used to store information
 
