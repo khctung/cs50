@@ -184,7 +184,7 @@ void fourth_week(int lazy)  // creating your own method/function
     fread(buffer, 1, 4, input)
     buffer = used to store information
 
-
+    BMP = bit map to store bytes as a map/grid (for images)
 }
 
 void swap(int *a, int *b)
