@@ -137,4 +137,10 @@ void fourth_week(int lazy)  // creating your own method/function
     what we want to do is create a copy/duplicate string
     string t = malloc(strlen(s) + 1) // add 1 for the null character
     // malloc = memory allocation = how many bytes to allocate
+
+    // copying s into t
+    for (int i = 0, n = strlen(s); u <= n; i++)
+    {
+        t[i] = s[i];
+    }
 }
