@@ -100,6 +100,6 @@ void fourth_week(int lazy)  // creating your own method/function
      #      #     #   #
     16^1  16^0 =  16  1  (FF = 255, multiply 16 and 1 by 15)
     2 hexademicals = 1 byte = 8 bits
+    0x## prefaces that there is hexademical after
 
-    
 }
