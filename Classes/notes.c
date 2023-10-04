@@ -153,4 +153,7 @@ void fourth_week(int lazy)  // creating your own method/function
     free(t); // giving back the memory that was malloc
     NULL = address 0 // wasted byte that the computer shouldn't use
     sizeof(int);
+    int x = malloc(3*sizeof(int)); // basically makes x an array
+
+    
 }
