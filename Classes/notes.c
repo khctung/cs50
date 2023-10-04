@@ -165,10 +165,17 @@ void fourth_week(int lazy)  // creating your own method/function
     heap goes down (when malloc is called), stack goes up (when functions called, ex. recursively)
     heap overflow + stack overflow + buffer overflow (using too much memory)
 
+    int x;
+    printf("x: ");
+    scanf("%i", &x); // reading the text in the terminal and setting to address of x
+    printf("x: %i\n", x);
+
     FILE *input = fopen("file_name.txt", "r");
     // FILE is type, "r" = read, input stores address of file
     fread(buffer, 1, 4, input)
     buffer = used to store information
+
+
 }
 
 void swap(int *a, int *b)
