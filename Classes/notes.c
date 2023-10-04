@@ -170,6 +170,8 @@ void fourth_week(int lazy)  // creating your own method/function
     scanf("%i", &x); // reading the text in the terminal and setting to address of x
     printf("x: %i\n", x);
 
+    file I/O = input and output
+    
     FILE *input = fopen("file_name.txt", "r");
     // FILE is type, "r" = read, input stores address of file
     fread(buffer, 1, 4, input)
