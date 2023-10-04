@@ -91,3 +91,13 @@ printf("%.6f", casted) // shows 6 digits after decimal point
 // truncation occurs when integer divided by integer
 // floating point imprecision = cannot represent infinite #s in universe
 // integer overflow = not enough memory to store large integers
+
+
+void fourth_week(int lazy)  // creating your own method/function
+{
+    RGB values represented via hexadecimal (or base-16)
+    0 1 2 3 4 5 6 7 8 9 A B C D E F (okay if lowercase)
+     #      #     #   #
+    16^1  16^0 =  16  1
+
+}
