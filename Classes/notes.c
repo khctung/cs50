@@ -173,7 +173,7 @@ void fourth_week(int lazy)  // creating your own method/function
     file I/O = input and output
 
     FILE *file = fopen("file_name.txt", "r");
-    // FILE is type, "r" = read, "w" = write, "a" = append, input stores address of file
+    // FILE is type, "r" = read, "rb" = read binary, "w" = write, "wb" = write binary, "a" = append, input stores address of file
     if (file == NULL)
     {
         return 1;
