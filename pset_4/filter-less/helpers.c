@@ -86,15 +86,18 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         for (int j = 0; j < width; j++)
         {
             int num_pixels = 0;
+            int sum_red = 0;
+            int sum_green = 0;
+            int sum_blue = 0;
 
-            if (max(0, i-1) != 0)
-            {
-
-            }
-
-            if (min(height-1, i+1))
+            if (min(0, i-1) >= 0)
             {
                 
+            }
+
+            if (max(height-1, i+1) <= height)
+            {
+
             }
             // Swap pixels
             RGBTRIPLE tmp = image[i][j];
