@@ -162,6 +162,8 @@ void fourth_week(int lazy)  // creating your own method/function
 
     functions are called in a "stack" and are stackframes
     main -> swap -> other function, then is deleted till goes to main only
+    heap goes down (when malloc is called), stack goes up (when functions called, ex. recursively)
+    heap overflow + stack overflow + buffer overflow (using too much memory)
 }
 
 void swap(int *a, int *b)
