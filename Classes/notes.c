@@ -143,4 +143,9 @@ void fourth_week(int lazy)  // creating your own method/function
     {
         t[i] = s[i];
     }
+
+    if (t == NULL) // means that no memory is available
+    {
+        return 1;
+    }
 }
