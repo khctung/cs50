@@ -117,4 +117,7 @@ void fourth_week(int lazy)  // creating your own method/function
     strings are technically char *s since it is just an address of the first character
     double quotes take care of the adddress of variable
 
+    typedef uint8_t BYTE;
+    typedef char *string;
+
 }
