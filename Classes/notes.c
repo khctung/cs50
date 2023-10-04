@@ -129,4 +129,6 @@ void fourth_week(int lazy)  // creating your own method/function
     printf("%c", *s);
     printf("%c", *(s+1));
     printf("%c\n", *(s+2));
+
+    strings have different addresses
 }
