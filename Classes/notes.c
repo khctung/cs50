@@ -150,5 +150,6 @@ void fourth_week(int lazy)  // creating your own method/function
         return 1;
     }
 
-    free
+    free(t); // giving back the memory that was malloc
+    NULL = address 0 // wasted byte that the computer shouldn't use
 }
