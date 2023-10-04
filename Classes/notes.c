@@ -111,4 +111,6 @@ void fourth_week(int lazy)  // creating your own method/function
     printf("%p\n", p);
     printf("%i\n", *p);
 
+    pointers take up 8 bytes (int takes up 4 bytes)
+
 }
