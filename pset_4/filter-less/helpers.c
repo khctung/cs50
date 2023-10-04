@@ -55,11 +55,14 @@ int min(int num_1, int num_2)
 void reflect(int height, int width, RGBTRIPLE image[height][width])
 {
     // Loop over all pixels
-    for (int i = 0; i < height/2; i++)
+    for (int i = 0; i < height; i++)
     {
-        for (int j = 0; j < width; j++)
+        for (int j = 0; j < width/2; j++)
         {
             // Swap pixels
+            RGBTRIPLE tmp = *image[i][j];
+            *image[i][j] = *image[i][width - j - 1];
+            *image[i][width - j - 1] = tmp;
         }
     }
     return;
