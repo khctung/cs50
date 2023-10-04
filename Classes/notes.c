@@ -6,6 +6,7 @@ making a big comment block
 #include <ctype.h>
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 void method_name(int parameter); // need to define function before main
                                  // called prototype
@@ -130,5 +131,10 @@ void fourth_week(int lazy)  // creating your own method/function
     printf("%c", *(s+1));
     printf("%c\n", *(s+2));
 
-    strings have different addresses
+    if i do
+    string t = s; // sets string t to same address as s
+
+    what we want to do is create a copy/duplicate string
+    string t = malloc(strlen(s) + 1) // add 1 for the null character
+    // malloc = memory allocation = how many bytes to allocate
 }
