@@ -156,8 +156,10 @@ void fourth_week(int lazy)  // creating your own method/function
     int x = malloc(3*sizeof(int)); // basically makes x an array
 
     valgrind ./filename // checking memory allocation of code
-
     garbage values = values of variables that we did not proactively set ourselves
-
     passing by value = passing value of variable but not variable/address themselves, getting copies of values
+
+    functions are called in a "stack" and are stackframes
+    main -> swap -> other function, then is deleted till goes to main only
+
 }
