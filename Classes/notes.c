@@ -98,6 +98,8 @@ void fourth_week(int lazy)  // creating your own method/function
     RGB values represented via hexadecimal (or base-16)
     0 1 2 3 4 5 6 7 8 9 A B C D E F (okay if lowercase)
      #      #     #   #
-    16^1  16^0 =  16  1
+    16^1  16^0 =  16  1  (FF = 255, multiply 16 and 1 by 15)
+
+    
 
 }
