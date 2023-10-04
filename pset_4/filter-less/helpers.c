@@ -54,9 +54,15 @@ int min(int num_1, int num_2)
 // Reflect image horizontally
 void reflect(int height, int width, RGBTRIPLE image[height][width])
 {
+    // Loop over all pixels
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            // Swap pixels
+        }
+    }
     return;
-
-    temp needed
 }
 
 // Blur image
