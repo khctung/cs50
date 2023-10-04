@@ -164,6 +164,9 @@ void fourth_week(int lazy)  // creating your own method/function
     main -> swap -> other function, then is deleted till goes to main only
     heap goes down (when malloc is called), stack goes up (when functions called, ex. recursively)
     heap overflow + stack overflow + buffer overflow (using too much memory)
+
+    FILE *input = fopen("file_name.txt", "r");
+    // FILE is type, "r" = read, input stores address of file
 }
 
 void swap(int *a, int *b)
