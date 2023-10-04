@@ -102,7 +102,8 @@ void fourth_week(int lazy)  // creating your own method/function
     2 hexademicals = 1 byte = 8 bits
     0x## prefaces that there is hexademical after
 
+    %p shows address
     & returns address of variable
-    * 
+    *
 
 }
