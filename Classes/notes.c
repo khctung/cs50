@@ -158,4 +158,6 @@ void fourth_week(int lazy)  // creating your own method/function
     valgrind ./filename // checking memory allocation of code
 
     garbage values = values of variables that we did not proactively set ourselves
+
+    passing by value = passing value of variable but not variable/address themselves, getting copies of values
 }
