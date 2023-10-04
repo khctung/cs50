@@ -104,6 +104,11 @@ void fourth_week(int lazy)  // creating your own method/function
 
     %p shows address
     & returns address (pointer) of variable
-    *
+    * going to the address
+
+    int n = 50;
+    int *p = &n; // declaring pointer and setting it to address of n
+    printf("%p\n", p);
+    printf("%i\n", *p);
 
 }
