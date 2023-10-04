@@ -13,8 +13,8 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
 
             // Update pixel values
             image[i][j].rgbtRed = average;
-            image[i][j].rgbtBlue = average;
             image[i][j].rgbtGreen = average;
+            image[i][j].rgbtBlue = average;
         }
     }
     return;
@@ -23,9 +23,32 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
 // Convert image to sepia
 void sepia(int height, int width, RGBTRIPLE image[height][width])
 {
-    return;
+    // Loop over all pixels
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            // find sepia for each RGB
+            int sepiaRed = min(255, round(.393 * image[i][j].rgbtRed + .769 * image[i][j].rgbtGreen + .189 * image[i][j].rgbtBlue))
+            int sepiaGreen = min(255, round(.349 * image[i][j].rgbtRed + .686 * image[i][j].rgbtGreen + .168 * image[i][j].rgbtBlue))
+            int sepiaBlue = min(255, round(.272 * image[i][j].rgbtRed + .534 * image[i][j].rgbtGreen + .131 * image[i][j].rgbtBlue))
 
-    bound sepia
+            // Update pixel values
+            image[i][j].rgbtRed = sepiaRed;
+            image[i][j].rgbtGreen = sepiaGreen;
+            image[i][j].rgbtBlue = sepiaBlue;
+        }
+    }
+    return;
+}
+
+int min(int num_1, int num_2)
+{
+    if (num_1 < num_2)
+    {
+        return num_1;
+    }
+    return num_2;
 }
 
 // Reflect image horizontally
