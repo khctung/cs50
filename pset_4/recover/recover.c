@@ -19,8 +19,6 @@ int main(int argc, char *argv[])
         return 2;
     }
 
-    // CHECK IF OPENED PROPERLY
-
     // Create a buffer for a block of data
     uint8_t buffer[BLOCKSIZE];
 
