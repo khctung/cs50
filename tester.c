@@ -3,6 +3,10 @@
 
 int main(void)
 {
-    int temp = 24/25;
+    int x = 4;
+    int *p1 = &x;
+    int *p2 = p1;
+    *p2 = 3;
+    
     printf("%d\n", temp);
 }
