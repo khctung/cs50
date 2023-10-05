@@ -93,6 +93,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         }
     }
 
+    // sifting through each pixel
     for (int i = 0; i < height; i++)
     {
         for (int j = 0; j < width; j++)
@@ -102,10 +103,12 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             int sum_green = 0;
             int sum_blue = 0;
 
+            // sifting through nearby pixels (touching current pixel)
             for (int k = i - 1; k <= i + 1; k++)
             {
                 for (int l = j - 1; l <= j + 1; l++)
                 {
+                    // checking if valid (in image)
                     if (min(0, k) == 0 && max(k, height - 1) == height - 1 && min(0, l) == 0 && max(l, width - 1) == width - 1)
                     {
                         num_pixels++;
