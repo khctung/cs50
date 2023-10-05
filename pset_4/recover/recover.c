@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
         // Create JPEGs from the data
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && buffer[3] >= 0xe0 && buffer[3] <= 0xef)
         {
-            found_jpeg = true;
+            found_jpg = true;
 
             if (found_jpeg)
             {
@@ -58,5 +58,5 @@ int main(int argc, char *argv[])
         }
     }
     fclose(card);
-    fclose()
+    fclose(outptr);
 }
