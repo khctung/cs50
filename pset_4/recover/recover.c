@@ -27,6 +27,14 @@ int main(int argc, char *argv[])
     // While there's still data left to read from the memory card
     while (fread(buffer, 1, BLOCKSIZE, card) == BLOCKSIZE)
     {
+        // Open output file
+        FILE *outptr = fopen(outfile, "w");
+        if (outptr == NULL)
+        {
+            printf("Could not create %s.\n", outfile);
+            return 1;
+        }
+
         // Create JPEGs from the data
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && buffer[3] >= 0xe0 && buffer[3] <= 0xef)
         {
@@ -40,14 +48,6 @@ int main(int argc, char *argv[])
                 fclose(outptr);
             }
 
-            // Open output file
-            FILE *outptr = fopen(outfile, "w");
-            if (outptr == NULL)
-            {
-                printf("Could not create %s.\n", outfile);
-                return 1;
-            }
-
             fwrite(buffer, sizeof(buffer[0]), BLOCKSIZE, outptr);
             jpeg_count++;
         }
@@ -57,4 +57,5 @@ int main(int argc, char *argv[])
         }
     }
     fclose(card);
+    fclose()
 }
