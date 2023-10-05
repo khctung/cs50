@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
             {
                 fclose(inptr);
                 printf("Could not create %s.\n", outfile);
-                return 5;
+                return 3;
             }
         }
     }
