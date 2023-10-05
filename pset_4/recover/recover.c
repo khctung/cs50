@@ -28,13 +28,13 @@ int main(int argc, char *argv[])
     {
         // Create JPEGs from the data
 
-        // ignore jpeg_count++;
+        jpeg_count++;
 
 
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && buffer[3] >= 0xe0 && buffer[3] <= 0xef)
         {
             // assign jpg filename
-            char *outfile[8];
+            char outfile[8];
             sprintf(outfile, "%03i.jpg", jpeg_count);
 
             // Open output file
@@ -44,6 +44,8 @@ int main(int argc, char *argv[])
                 printf("Could not create %s.\n", outfile);
                 return 3;
             }
+
+            
         }
     }
 
