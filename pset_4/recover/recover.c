@@ -33,6 +33,7 @@ int main(int argc, char *argv[])
         // Create JPEGs from the data
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && buffer[3] >= 0xe0 && buffer[3] <= 0xef)
         {
+            // if we already opened a jpeg file, need to close it before creating a new one
             if (found_jpeg)
             {
                 fclose(outptr);
@@ -51,9 +52,11 @@ int main(int argc, char *argv[])
             }
 
             found_jpeg = true;
+            // writing to new jpeg
             fwrite(buffer, sizeof(buffer[0]), BLOCKSIZE, outptr);
             jpeg_count++;
         }
+        // if no new jpeg found, just continue adding to current one
         else if (found_jpeg)
         {
             fwrite(buffer, sizeof(buffer[0]), BLOCKSIZE, outptr);
