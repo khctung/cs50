@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
             sprintf(outfile, "%03i.jpg", jpeg_count);
 
             // Open output file
-            *outptr = fopen(outfile, "w");
+            outptr = fopen(outfile, "w");
             if (outptr == NULL)
             {
                 printf("Could not create %s.\n", outfile);
@@ -58,5 +58,8 @@ int main(int argc, char *argv[])
         }
     }
     fclose(card);
-    fclose(outptr)
+    if (found_jpeg)
+    {
+        fclose(outptr);
+    }
 }
