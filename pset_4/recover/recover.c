@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
             {
                 fclose(outptr);
             }
-            
+
             // Open output file
             FILE *outptr = fopen(outfile, "w");
             if (outptr == NULL)
@@ -51,6 +51,10 @@ int main(int argc, char *argv[])
             fwrite(buffer, sizeof(buffer[0]), BLOCKSIZE, outptr);
             jpeg_count++;
         }
+        else if (found_jpg)
+        {
+            fwrite(buffer, sizeof(buffer[0]), BLOCKSIZE, outptr);
+        }
     }
-
+    fclose(card);
 }
