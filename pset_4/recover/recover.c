@@ -22,6 +22,7 @@ int main(int argc, char *argv[])
     // Create a buffer for a block of data
     uint8_t buffer[BLOCKSIZE];
     int jpeg_count = 0;
+    bool found_jpeg = false;
 
     // While there's still data left to read from the memory card
     while (fread(buffer, 1, BLOCKSIZE, card) == BLOCKSIZE)
@@ -46,6 +47,10 @@ int main(int argc, char *argv[])
                 return 1;
             }
 
+            if (found_jpeg)
+            {
+                
+            }
             fwrite(buffer, sizeof(buffer[0]), BLOCKSIZE, outptr);
         }
     }
