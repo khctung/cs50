@@ -27,6 +27,10 @@ int main(int argc, char *argv[])
     // While there's still data left to read from the memory card
     while (fread(buffer, 1, BLOCKSIZE, card) == BLOCKSIZE)
     {
+        // assign jpg filename
+        char outfile[8];
+        sprintf(outfile, "%03i.jpg", jpeg_count);
+
         // Open output file
         FILE *outptr = fopen(outfile, "w");
         if (outptr == NULL)
@@ -39,9 +43,6 @@ int main(int argc, char *argv[])
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && buffer[3] >= 0xe0 && buffer[3] <= 0xef)
         {
             found_jpeg = true;
-            // assign jpg filename
-            char outfile[8];
-            sprintf(outfile, "%03i.jpg", jpeg_count);
 
             if (found_jpeg)
             {
