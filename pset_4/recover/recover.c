@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
     if (card == NULL)
     {
         printf("Could not open %s.\n", argv[1]);
-        return 2;
+        return 1;
     }
 
     // Create a buffer for a block of data
@@ -30,6 +30,7 @@ int main(int argc, char *argv[])
 
         jpeg_count++;
 
+        if (buffer[])
 
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && buffer[3] >= 0xe0 && buffer[3] <= 0xef)
         {
@@ -42,7 +43,7 @@ int main(int argc, char *argv[])
             if (outptr == NULL)
             {
                 printf("Could not create %s.\n", outfile);
-                return 3;
+                return 1;
             }
 
             fwrite(buffer, sizeof(buffer[0]), BLOCKSIZE, outptr);
