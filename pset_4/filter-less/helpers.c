@@ -1,5 +1,25 @@
 #include "helpers.h"
 
+// returns minimum function
+int min(int num_1, int num_2)
+{
+    if (num_1 < num_2)
+    {
+        return num_1;
+    }
+    return num_2;
+}
+
+// returns maximum function
+int max(int num_1, int num_2)
+{
+    if (num_1 > num_2)
+    {
+        return num_1;
+    }
+    return num_2;
+}
+
 // Convert image to grayscale
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
 {
@@ -40,15 +60,6 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
         }
     }
     return;
-}
-
-int min(int num_1, int num_2)
-{
-    if (num_1 < num_2)
-    {
-        return num_1;
-    }
-    return num_2;
 }
 
 // Reflect image horizontally
@@ -94,42 +105,19 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             {
                 for (int l = j - 1; l <= j + 1; l++)
                 {
-                    if (min(0, i-1) >= 0 && max(0, i-1) <= 0)
-                }
-            }
-
-            if (min(0, i-1) >= 0)
-            {
-
-            }
-
-            if (max(height-1, i+1) <= height)
-            {
-
-            }
-            // Swap pixels
-            RGBTRIPLE tmp = image[i][j];
-            image[i][j] = image[i][width - j - 1];
-            image[i][width - j - 1] = tmp;
-
-
-            int sum = 0;
-            int count = 0;
-
-            // Apply the kernel to the pixel and its neighbors
-            for (int x = -1; x <= 1; x++) {
-                for (int y = -1; y <= 1; y++) {
-                    int newRow = i + x;
-                    int newCol = j + y;
-
-                    // Check if the neighboring pixel is within bounds
-                    if (newRow >= 0 && newRow < numRows && newCol >= 0 && newCol < numCols) {
-                        sum += image[newRow][newCol];
-                        count++;
+                    if (min(0, k) == 0 && max(k, height - 1) == height - 1 && min(0, l) == 0 && max(l, width - 1) == width - 1)
+                    {
+                        num_pixels++;
+                        sum_red += copy[k][l].rgbtRed;
+                        sum_green += copy[k][l].rgbtGreen;
+                        sum_blue += copy[k][l].rgbtBlue;
                     }
                 }
             }
 
+            image[i][j].rgbtRed = round(sum_red/num_pixels);
+            image[i][j].rgbtGreen = round(sum_green/num_pixels);
+            image[i][j].rgbtBlue = round(sum_blue/num_pixels);
         }
     }
     return;
