@@ -49,7 +49,7 @@ int main(int argc, char *argv[])
 
             if (found_jpeg)
             {
-                
+                fclose(outptr);
             }
             fwrite(buffer, sizeof(buffer[0]), BLOCKSIZE, outptr);
         }
