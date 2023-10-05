@@ -45,7 +45,7 @@ int main(int argc, char *argv[])
                 return 3;
             }
 
-            
+            fwrite(buffer, sizeof(buffer[0]), BLOCKSIZE, outptr);
         }
     }
 
