@@ -21,40 +21,30 @@ int main(int argc, char *argv[])
 
     // Create a buffer for a block of data
     uint8_t buffer[BLOCKSIZE];
-
-    int num_jpegs = 0;
+    int jpeg_count = 0;
 
     // While there's still data left to read from the memory card
     while (fread(buffer, 1, BLOCKSIZE, card) == BLOCKSIZE)
     {
         // Create JPEGs from the data
+
+        jpeg_count++;
+
+
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && buffer[3] >= 0xe0 && buffer[3] <= 0xef)
         {
-            num_jpegs++;
-
             // assign jpg filename
             char *outfile[8];
             sprintf(outfile, "%03i.jpg", jpeg_count);
 
-            
-
-
-    // Open input file
-    FILE *inptr = fopen(infile, "r");
-    if (inptr == NULL)
-    {
-        printf("Could not open %s.\n", infile);
-        return 4;
-    }
-
-    // Open output file
-    FILE *outptr = fopen(outfile, "w");
-    if (outptr == NULL)
-    {
-        fclose(inptr);
-        printf("Could not create %s.\n", outfile);
-        return 5;
-    }
+            // Open output file
+            FILE *outptr = fopen(outfile, "w");
+            if (outptr == NULL)
+            {
+                fclose(inptr);
+                printf("Could not create %s.\n", outfile);
+                return 5;
+            }
         }
     }
 
