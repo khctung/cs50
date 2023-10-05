@@ -28,13 +28,9 @@ int main(int argc, char *argv[])
     while (fread(buffer, 1, BLOCKSIZE, card) == BLOCKSIZE)
     {
         // Create JPEGs from the data
-
-        jpeg_count++;
-
-        if (buffer[])
-
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && buffer[3] >= 0xe0 && buffer[3] <= 0xef)
         {
+            found_jpeg = true;
             // assign jpg filename
             char outfile[8];
             sprintf(outfile, "%03i.jpg", jpeg_count);
@@ -52,6 +48,7 @@ int main(int argc, char *argv[])
                 fclose(outptr);
             }
             fwrite(buffer, sizeof(buffer[0]), BLOCKSIZE, outptr);
+            jpeg_count++;
         }
     }
 
