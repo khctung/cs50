@@ -35,6 +35,11 @@ int main(int argc, char *argv[])
             char outfile[8];
             sprintf(outfile, "%03i.jpg", jpeg_count);
 
+            if (found_jpeg)
+            {
+                fclose(outptr);
+            }
+            
             // Open output file
             FILE *outptr = fopen(outfile, "w");
             if (outptr == NULL)
@@ -43,10 +48,6 @@ int main(int argc, char *argv[])
                 return 1;
             }
 
-            if (found_jpeg)
-            {
-                fclose(outptr);
-            }
             fwrite(buffer, sizeof(buffer[0]), BLOCKSIZE, outptr);
             jpeg_count++;
         }
