@@ -22,14 +22,22 @@ int main(int argc, char *argv[])
     // Create a buffer for a block of data
     uint8_t buffer[BLOCKSIZE];
 
+    int num_jpegs = 0;
+
     // While there's still data left to read from the memory card
     while (fread(buffer, 1, BLOCKSIZE, card) == BLOCKSIZE)
     {
         // Create JPEGs from the data
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && buffer[3] >= 0xe0 && buffer[3] <= 0xef)
         {
-            // Remember filenames
-            char *outfile = argv[optind + 1];
+            num_jpegs++;
+
+            // assign jpg filename
+            char *outfile[8];
+            sprintf(outfile, "%03i.jpg", jpeg_count);
+
+            
+
 
     // Open input file
     FILE *inptr = fopen(infile, "r");
