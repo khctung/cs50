@@ -1,5 +1,8 @@
+#include <stdbool.h>
+#include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
+#define BLOCKSIZE 512
 
 int main(int argc, char *argv[])
 {
@@ -19,7 +22,6 @@ int main(int argc, char *argv[])
     }
 
     // Create a buffer for a block of data
-    #define BLOCKSIZE 512
     uint8_t buffer[BLOCKSIZE];
     int jpeg_count = 0;
     bool found_jpeg = false;
