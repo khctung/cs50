@@ -30,7 +30,7 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
         for (int j = 0; j < width; j++)
         {
             // Take average of red, green, and blue
-            int average = round((image[i][j].rgbtRed + image[i][j].rgbtGreen + image[i][j].rgbtBlue)/3.0);
+            int average = round((image[i][j].rgbtRed + image[i][j].rgbtGreen + image[i][j].rgbtBlue) / 3.0);
 
             // Update pixel values
             image[i][j].rgbtRed = average;
@@ -51,8 +51,10 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
         {
             // Compute sepia values
             int sepiaRed = min(255, round(.393 * image[i][j].rgbtRed + .769 * image[i][j].rgbtGreen + .189 * image[i][j].rgbtBlue));
-            int sepiaGreen = min(255, round(.349 * image[i][j].rgbtRed + .686 * image[i][j].rgbtGreen + .168 * image[i][j].rgbtBlue));
-            int sepiaBlue = min(255, round(.272 * image[i][j].rgbtRed + .534 * image[i][j].rgbtGreen + .131 * image[i][j].rgbtBlue));
+            int sepiaGreen =
+                min(255, round(.349 * image[i][j].rgbtRed + .686 * image[i][j].rgbtGreen + .168 * image[i][j].rgbtBlue));
+            int sepiaBlue =
+                min(255, round(.272 * image[i][j].rgbtRed + .534 * image[i][j].rgbtGreen + .131 * image[i][j].rgbtBlue));
 
             // Update pixel with sepia values
             image[i][j].rgbtRed = sepiaRed;
@@ -69,7 +71,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
     // Loop over all pixels
     for (int i = 0; i < height; i++)
     {
-        for (int j = 0; j < width/2; j++)
+        for (int j = 0; j < width / 2; j++)
         {
             // Swap pixels
             RGBTRIPLE tmp = image[i][j];
@@ -119,9 +121,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 }
             }
 
-            image[i][j].rgbtRed = round(sum_red/num_pixels);
-            image[i][j].rgbtGreen = round(sum_green/num_pixels);
-            image[i][j].rgbtBlue = round(sum_blue/num_pixels);
+            image[i][j].rgbtRed = round(sum_red / num_pixels);
+            image[i][j].rgbtGreen = round(sum_green / num_pixels);
+            image[i][j].rgbtBlue = round(sum_blue / num_pixels);
         }
     }
     return;
