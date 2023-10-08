@@ -25,6 +25,7 @@ int main(int argc, char *argv[])
     uint8_t buffer[BLOCKSIZE];
     int jpeg_count = 0;
     FILE *outptr = NULL;
+    char outfile[8];
 
     // While there's still data left to read from the memory card
     while (fread(buffer, 1, BLOCKSIZE, card) == BLOCKSIZE)
@@ -38,8 +39,6 @@ int main(int argc, char *argv[])
                 fclose(outptr);
             }
 
-            // assign jpg filename
-            char outfile[8];
             sprintf(outfile, "%03i.jpg", jpeg_count);
 
             // Open output file
