@@ -103,9 +103,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             int sum_blue = 0;
 
             // sifting through nearby pixels (touching current pixel)
-            for (int k = i - 1; k <= i + 1; k++)
+            for (int k = max(i - 1, 0); k <= i + 1; k++)
             {
-                for (int l = j - 1; l <= j + 1; l++)
+                for (int l = max(j - 1); l <= j + 1; l++)
                 {
                     // checking if valid (in image)
                     if (min(0, k) == 0 && max(k, height - 1) == height - 1 && min(0, l) == 0 && max(l, width - 1) == width - 1)
