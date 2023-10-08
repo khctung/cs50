@@ -54,7 +54,7 @@ int main(int argc, char *argv[])
         // writing to jpeg
         if (!outptr)
         {
-            fwrite(buffer, sizeof(buffer[0]), BLOCKSIZE, outptr);
+            fwrite(buffer, 1, BLOCKSIZE, outptr);
         }
     }
     fclose(card);
