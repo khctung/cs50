@@ -12,5 +12,5 @@ int main(void)
 
 void square(int *n)
 {
-    *n = &n * &n;
+    *n = (*n) * (*n);
 }
