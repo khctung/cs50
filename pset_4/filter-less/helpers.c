@@ -38,7 +38,6 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
             image[i][j].rgbtBlue = average;
         }
     }
-    return;
 }
 
 // Convert image to sepia
@@ -62,7 +61,6 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
             image[i][j].rgbtBlue = sepiaBlue;
         }
     }
-    return;
 }
 
 // Reflect image horizontally
@@ -79,7 +77,6 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
             image[i][width - j - 1] = tmp;
         }
     }
-    return;
 }
 
 // Blur image
@@ -126,5 +123,4 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             image[i][j].rgbtBlue = round(sum_blue / num_pixels);
         }
     }
-    return;
 }
