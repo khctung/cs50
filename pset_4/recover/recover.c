@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && buffer[3] >= 0xe0 && buffer[3] <= 0xef)
         {
             // checking if file is null or not
-            if (!outptr)
+            if (outptr)
             {
                 fclose(outptr);
             }
@@ -52,13 +52,13 @@ int main(int argc, char *argv[])
             jpeg_count++;
         }
         // writing to jpeg
-        if (!outptr)
+        if (outptr)
         {
             fwrite(buffer, 1, BLOCKSIZE, outptr);
         }
     }
     fclose(card);
-    if (!outptr)
+    if (outptr)
     {
         fclose(outptr);
     }
