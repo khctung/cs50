@@ -24,8 +24,7 @@ int main(int argc, char *argv[])
     // Create a buffer for a block of data
     uint8_t buffer[BLOCKSIZE];
     int jpeg_count = 0;
-    bool found_jpeg = false;
-    FILE *outptr;
+    FILE *outptr = NULL;
 
     // While there's still data left to read from the memory card
     while (fread(buffer, 1, BLOCKSIZE, card) == BLOCKSIZE)
@@ -33,8 +32,8 @@ int main(int argc, char *argv[])
         // Create JPEGs from the data
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && buffer[3] >= 0xe0 && buffer[3] <= 0xef)
         {
-            // if we already opened a jpeg file, need to close it before creating a new one
-            if (found_jpeg)
+            // checking if file is null or not
+            if (!outptr)
             {
                 fclose(outptr);
             }
@@ -51,19 +50,16 @@ int main(int argc, char *argv[])
                 return 1;
             }
 
-            found_jpeg = true;
-            // writing to new jpeg
-            fwrite(buffer, sizeof(buffer[0]), BLOCKSIZE, outptr);
             jpeg_count++;
         }
-        // if no new jpeg found, just continue adding to current one
-        else if (found_jpeg)
+        // writing to jpeg
+        if (!outptr)
         {
             fwrite(buffer, sizeof(buffer[0]), BLOCKSIZE, outptr);
         }
     }
     fclose(card);
-    if (found_jpeg)
+    if (!outptr)
     {
         fclose(outptr);
     }
