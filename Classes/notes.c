@@ -215,5 +215,17 @@ void swap(int *a, int *b)
 void week_5()
 {
     abstract data type = like data structure but w/ certain properties/characteristics up to coder how to implement
-    - queue 
+    - queue: FIFO = first in first out
+        - enqueue = entering the queue
+        - dequeue = exiting the queue
+        - same order
+
+    const int CAPACITY = 50;
+    typedef struct
+    {
+        person people[CAPACITY];
+        int size;
+    } queue;
+
+    - stack: FILO = first in last out
 }
