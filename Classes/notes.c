@@ -227,5 +227,7 @@ void week_5()
         int size;
     } queue;
 
-    - stack: FILO = first in last out
+    - stack: LIFO = last in first out
+        - ex. gmail, where most recent (last) emails show up first
+        
 }
