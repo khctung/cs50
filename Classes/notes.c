@@ -211,3 +211,9 @@ void swap(int *a, int *b)
     *a = *b;
     *b = tmp;
 }
+
+void week_5()
+{
+    abstract data type = like data structure but w/ certain properties/characteristics up to coder how to implement
+    - queue 
+}
