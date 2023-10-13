@@ -229,5 +229,13 @@ void week_5()
 
     - stack: LIFO = last in first out
         - ex. gmail, where most recent (last) emails show up first
+        - push = adding to stack
+        - pop = removing from stack
+        - similar to queues, but need code to pop
         
+    typedef struct
+    {
+        person people[CAPACITY];
+        int size;
+    } stack;
 }
