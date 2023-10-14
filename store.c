@@ -1,5 +1,6 @@
 {% capture email_title %}Your order is ready for pickup{% endcapture %}
 {% capture email_body %}Bring your confirmation email when you come to collect your order.{% endcapture %}
+{% capture email_body2 %}Orders can be picked up for 10 days following this email. At 7 days after order is ready, you will be notified that you will have 3 remaining days to pick up your order. At the 10 day mark, the customer will be refunded for 75% of their purchase. The Harvard Shop will retain 25% of the order value for restocking costs.{% endcapture %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -70,6 +71,7 @@
               <p>{{ pickup_instructions }}</p>
             {% else %}
               <p>{{ email_body }}</p>
+              <p>{{ email_body2 }}</p>
             {% endif %}
 
             <table class="section--margin">
