@@ -232,7 +232,9 @@ void week_5()
         - push = adding to stack
         - pop = removing from stack
         - similar to queues, but need code to pop
-        
+
+    - arrays must remain contiguous
+    - 
     typedef struct
     {
         person people[CAPACITY];
