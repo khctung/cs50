@@ -28,10 +28,25 @@ int num_words = 0;
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
+    // getting hash value for the word
+    int hash_value = hash(word);
+
+    for (int i = 0; i < ; i++)
+    {
+        if (strcasecmp(table[hash_value].word, word) == 0)
+        {
+            return true;
+        }
+        
+    }
     if (strcasecmp(table[hash(word)],word) == 0)
     {
         return true;
     }
+
+    for each node in the linked list at table[index]:
+        if the word in the node is the same as the word we're checking (ignoring case):
+            return true
     return false;
 }
 
