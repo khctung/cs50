@@ -125,7 +125,12 @@ bool unload(void)
         {
             node *tmp = unload_node;
             unload_node = unload_node->next;
-            free(temp);
+
+            if (!tmp)
+            {
+                return false;
+            }
+            free(tmp);
         }
     }
     return true;
