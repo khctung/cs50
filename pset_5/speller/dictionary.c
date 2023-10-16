@@ -31,22 +31,20 @@ bool check(const char *word)
     // getting hash value for the word
     int hash_value = hash(word);
 
-    for (int i = 0; i < ; i++)
+    // start at beginning of the nodes
+    node *check_node = table[hash_value];
+
+    // while not at the end of the list
+    while (check_node != NULL)
     {
-        if (strcasecmp(table[hash_value].word, word) == 0)
+        // check if word is matching node
+        if (strcasecmp(check_node->word, word) == 0)
         {
             return true;
         }
-        
+        // if not, then move on to next node
+        check_node = check_node->next;
     }
-    if (strcasecmp(table[hash(word)],word) == 0)
-    {
-        return true;
-    }
-
-    for each node in the linked list at table[index]:
-        if the word in the node is the same as the word we're checking (ignoring case):
-            return true
     return false;
 }
 
