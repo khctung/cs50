@@ -28,7 +28,10 @@ int num_words = 0;
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
-    // TODO
+    if (strcasecmp(table[hash(word)],word) == 0)
+    {
+        return true;
+    }
     return false;
 }
 
@@ -89,7 +92,12 @@ bool load(const char *dictionary)
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
 unsigned int size(void)
 {
-    if (d)
+    // if dictionary not loaded, then num_words would be 0
+    if (num_words == 0)
+    {
+        return 0;
+    }
+    // if dictionary loaded, then can just return num_words
     return num_words;
 }
 
