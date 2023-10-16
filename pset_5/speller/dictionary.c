@@ -108,12 +108,7 @@ bool load(const char *dictionary)
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
 unsigned int size(void)
 {
-    // if dictionary not loaded, then num_words would be 0
-    if (num_words == 0)
-    {
-        return 0;
-    }
-    // if dictionary loaded, then can just return num_words
+    // if dictionary loaded, then can just return num_words; if unloaded, would just be 0
     return num_words;
 }
 
