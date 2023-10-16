@@ -38,10 +38,9 @@ unsigned int hash(const char *word)
     unsigned long total_chars = 0;
     for (int i = 0; i < str(word); i++)
     {
-        total_chars = toupper(word[i]);
+        total_chars = tolower(word[i]);
     }
-    // TODO: Improve this hash function
-    return toupper(word[0]) - 'A';
+    return total_chars % N;
 }
 
 // Loads dictionary into memory, returning true if successful, else false
@@ -90,8 +89,8 @@ bool load(const char *dictionary)
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
 unsigned int size(void)
 {
-    // TODO
-    return 0;
+    if (d)
+    return num_words;
 }
 
 // Unloads dictionary from memory, returning true if successful, else false
