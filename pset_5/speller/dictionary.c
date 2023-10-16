@@ -73,7 +73,7 @@ bool load(const char *dictionary)
         return false;
     }
 
-    char word[LENGTH + 1];
+    char word[LENGTH + 1]; // can use the tools in the node datatype
 
     // Read each word in the file
     while (fscanf(source, "%s", word) != EOF)
