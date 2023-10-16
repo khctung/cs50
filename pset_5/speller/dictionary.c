@@ -117,6 +117,18 @@ unsigned int size(void)
 // Unloads dictionary from memory, returning true if successful, else false
 bool unload(void)
 {
-    // TODO
+    for (int i = 0; i < N; i++)
+    {
+        // start at beginning of the hash table
+        node *unload_node = table[i];
+        while (unload_node != NULL)
+        {
+            free(unload_node);
+            unload_node = unload_node->next;
+        }
+        
+    }
+
+    }
     return false;
 }
