@@ -2,6 +2,7 @@
 
 #include <ctype.h>
 #include <stdbool.h>
+#include <strings.h>
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -52,7 +53,7 @@ bool check(const char *word)
 unsigned int hash(const char *word)
 {
     unsigned long total_chars = 0;
-    for (int i = 0; i < str(word); i++)
+    for (int i = 0; i < strlen(word); i++)
     {
         total_chars = tolower(word[i]);
     }
@@ -65,7 +66,7 @@ bool load(const char *dictionary)
     // Open the dictionary file
     FILE *source = fopen(dictionary, "r");
 
-    if (file == NULL)
+    if (!source)
     {
         printf("Error opening file.\n");
         return false;
@@ -91,8 +92,8 @@ bool load(const char *dictionary)
         int index = hash(word);
 
         // adding the node to the bin in the hash table
-        new_node->next = table[index]
-        table[index] = new_node
+        new_node->next = table[index];
+        table[index] = new_node;
 
         num_words++;
     }
