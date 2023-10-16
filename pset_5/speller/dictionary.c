@@ -35,7 +35,7 @@ bool check(const char *word)
     node *check_node = table[hash_value];
 
     // while not at the end of the list
-    while (check_node != NULL)
+    while (check_node)
     {
         // check if word is matching node
         if (strcasecmp(check_node->word, word) == 0)
@@ -78,7 +78,7 @@ bool load(const char *dictionary)
     {
         // Add each word to the hash table
         node *new_node = malloc(sizeof(node));
-        if (new_node == NULL)
+        if (!new_node)
         {
             unload();
             return false;
@@ -121,13 +121,12 @@ bool unload(void)
     {
         // start at beginning of the hash table
         node *unload_node = table[i];
-        while (unload_node != NULL)
+        while (unload_node)
         {
             node *tmp = unload_node;
             unload_node = unload_node->next;
             free(temp);
         }
-        unload_node->NULL;
     }
     return true;
 }
