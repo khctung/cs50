@@ -123,12 +123,11 @@ bool unload(void)
         node *unload_node = table[i];
         while (unload_node != NULL)
         {
-            free(unload_node);
+            node *tmp = unload_node;
             unload_node = unload_node->next;
+            free(temp);
         }
-        
+        unload_node->NULL;
     }
-
-    }
-    return false;
+    return true;
 }
