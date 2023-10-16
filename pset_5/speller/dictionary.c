@@ -22,6 +22,9 @@ const unsigned int N = 26;
 // Hash table
 node *table[N];
 
+// number of words in dictionary
+int num_words = 0;
+
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
@@ -70,6 +73,8 @@ bool load(const char *dictionary)
         // adding the node to the bin in the hash table
         new_node->next = table[index]
         table[index] = new_node
+
+        num_words++;
     }
 
     // Close the dictionary file
