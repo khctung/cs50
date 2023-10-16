@@ -124,11 +124,7 @@ bool unload(void)
             // need temp node so won't lose other nodes after
             node *tmp = unload_node;
             unload_node = unload_node->next;
-
-            if (!tmp)
-            {
-                return false;
-            }
+            // don't need to check if false because tmp will never be null (since then while loop won't run)
             free(tmp);
         }
     }
