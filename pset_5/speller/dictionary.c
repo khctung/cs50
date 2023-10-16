@@ -73,11 +73,10 @@ bool load(const char *dictionary)
         return false;
     }
 
-    // Add each word to the hash table
-    node *new_node = malloc(sizeof(node));
+    node *new_node;
 
     // Read each word in the file
-    while (fscanf(source, "%s", new_node->word)) // making the condition in the while loop true, loop forever, use if condition to break
+    while (fscanf(source, "%s", new_node->word) != EOF) // making the condition in the while loop true, loop forever, use if condition to break
     {
         *new_node = malloc(sizeof(node));
         if (!new_node)
