@@ -16,8 +16,8 @@ typedef struct node
     struct node *next;
 } node;
 
-// TODO: Choose number of buckets in hash table
-const unsigned int N = 1500;
+// TODO: Choose number of buckets in hash table (bigger the less overlap!)
+const unsigned int N = 5000;
 
 // Hash table
 node *table[N];
@@ -52,9 +52,11 @@ bool check(const char *word)
 unsigned int hash(const char *word)
 {
     unsigned long total_chars = 0;
+
+    // basically i want the total ascii value of chars in the word % number of bins
     for (int i = 0; i < strlen(word); i++)
     {
-        total_chars = tolower(word[i]);
+        total_chars += toupper(word[i]);
     }
     return total_chars % N;
 }
@@ -94,6 +96,7 @@ bool load(const char *dictionary)
         new_node->next = table[index];
         table[index] = new_node;
 
+        // adding to counter for number of words in dictionary
         num_words++;
     }
 
@@ -123,6 +126,7 @@ bool unload(void)
         node *unload_node = table[i];
         while (unload_node)
         {
+            // need temp node so won't lose other nodes after
             node *tmp = unload_node;
             unload_node = unload_node->next;
 
