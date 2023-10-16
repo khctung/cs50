@@ -76,7 +76,7 @@ bool load(const char *dictionary)
     char word[LENGTH + 1]; // can use the tools in the node datatype
 
     // Read each word in the file
-    while (fscanf(source, "%s", word) != EOF)
+    while (fscanf(source, "%s", word) != EOF) // making the condition in the while loop true, loop forever, use if condition to break
     {
         // Add each word to the hash table
         node *new_node = malloc(sizeof(node));
