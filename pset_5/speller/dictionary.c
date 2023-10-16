@@ -82,7 +82,7 @@ bool load(const char *dictionary)
         node *new_node = malloc(sizeof(node));
         if (!new_node)
         {
-            unload();
+            free(new_node);
             return false;
         }
 
