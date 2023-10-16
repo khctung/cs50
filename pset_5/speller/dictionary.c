@@ -36,8 +36,16 @@ unsigned int hash(const char *word)
 // Loads dictionary into memory, returning true if successful, else false
 bool load(const char *dictionary)
 {
-    // TODO
-    return false;
+    // Open the dictionary file
+    FILE *source = fopen(dictionary, "r");
+
+    // Read each word in the file
+
+        // Add each word to the hash table
+
+    // Close the dictionary file
+    fclose(source);
+}
 }
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
