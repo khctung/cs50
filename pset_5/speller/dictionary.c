@@ -2,10 +2,10 @@
 
 #include <ctype.h>
 #include <stdbool.h>
-#include <strings.h>
-#include <string.h>
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
 
 #include "dictionary.h"
 
@@ -14,11 +14,10 @@ typedef struct node
 {
     char word[LENGTH + 1];
     struct node *next;
-}
-node;
+} node;
 
 // TODO: Choose number of buckets in hash table
-const unsigned int N = 15000;
+const unsigned int N = 1500;
 
 // Hash table
 node *table[N];
@@ -72,7 +71,7 @@ bool load(const char *dictionary)
         return false;
     }
 
-    char word[LENGTH+1];
+    char word[LENGTH + 1];
 
     // Read each word in the file
     while (fscanf(source, "%s", word) != EOF)
