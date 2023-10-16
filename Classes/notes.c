@@ -381,4 +381,8 @@ void week_5()
         struct node *children[26];
         char *number;
     } node;
+
+
+    unsigned is an integer that can never be negative
+    const is declaring something as not being able to be changed
 }
