@@ -57,6 +57,8 @@ bool load(const char *dictionary)
         }
 
         strcpy(new_node->word, word);
+        new_node->next = head;
+        head = new_node;
     }
 
     // Close the dictionary file
