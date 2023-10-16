@@ -61,9 +61,10 @@ bool load(const char *dictionary)
 
         // getting the "bin" of the word
         int index = hash(word);
-        head = table[index-1];
-        new_node->next = table[index+1];
-        head->next = new_node;
+
+        // adding the node to the bin in the hash table
+        new_node->next = table[index]
+        table[index] = new_node
     }
 
     // Close the dictionary file
