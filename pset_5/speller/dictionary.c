@@ -56,12 +56,15 @@ bool load(const char *dictionary)
             return false;
         }
 
+        // copying the word into new node
         strcpy(new_node->word, word);
+
+        // getting the "bin" of the word
+        int index = hash(word);
+        head = 
 
         new_node->next = head;
         head = new_node;
-
-        int index = hash(word);
     }
 
     // Close the dictionary file
