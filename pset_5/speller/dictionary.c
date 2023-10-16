@@ -74,18 +74,10 @@ bool load(const char *dictionary)
     }
 
     node *new_node;
-    (new_node = malloc(sizeof(node))) != NULL
 
     // Read each word in the file
-    while (fscanf(source, "%s", new_node->word) != EOF) // making the condition in the while loop true, loop forever, use if condition to break
+    while (new_node = malloc(sizeof(node))) != NULL & fscanf(source, "%s", new_node->word) != EOF) // making the condition in the while loop true, loop forever, use if condition to break
     {
-        *new_node = malloc(sizeof(node));
-        if (!new_node)
-        {
-            free(new_node);
-            return false;
-        }
-
         // getting the "bin" of the word
         int index = hash(new_node->word);
 
@@ -95,6 +87,12 @@ bool load(const char *dictionary)
 
         // adding to counter for number of words in dictionary
         num_words++;
+    }
+
+    if (!new_node = malloc(sizeof(node)))
+    {
+        free(new_node);
+        return false;
     }
 
     // Close the dictionary file
