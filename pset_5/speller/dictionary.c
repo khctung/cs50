@@ -45,50 +45,19 @@ bool load(const char *dictionary)
         return false;
     }
 
-    // While there's still data left to read from the memory card
+    // Read each word in the file
     while (fscanf(source, "%s", word) != EOF)
     {
-        
-    }
-
-        fread(, 1, BLOCKSIZE, card) == BLOCKSIZE)
-    {
-        // Create JPEGs from the data
-        if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && buffer[3] >= 0xe0 && buffer[3] <= 0xef)
-        {
-            // checking if file is null or not
-            if (outptr)
-            {
-                fclose(outptr);
-            }
-
-            sprintf(outfile, "%03i.jpg", jpeg_count);
-
-            // Open output file
-            outptr = fopen(outfile, "w");
-            if (outptr == NULL)
-            {
-                printf("Could not create %s.\n", outfile);
-                return 1;
-            }
-
-            jpeg_count++;
-        }
-        // writing to jpeg
-        if (outptr)
-        {
-            fwrite(buffer, 1, BLOCKSIZE, outptr);
-        }
-    }
-    fclose(card);
-    if (outptr)
-    {
-        fclose(outptr);
-    }
-
-    // Read each word in the file
-
         // Add each word to the hash table
+        node *new_node = malloc(sizeof(node));
+        if (new_node == NULL)
+        {
+            unload();
+            return false;
+        }
+
+        strcpy(new_node->word, word);
+    }
 
     // Close the dictionary file
     fclose(source);
