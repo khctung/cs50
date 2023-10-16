@@ -234,10 +234,151 @@ void week_5()
         - similar to queues, but need code to pop
 
     - arrays must remain contiguous
-    - 
+
     typedef struct
     {
         person people[CAPACITY];
         int size;
     } stack;
+
+    - linked lists = nodes are not contiguous, but addresses point from one to the other
+        - has metadata (data was dont actually care about), namely the pointers)
+        - each node has both metadata (pointer) + data (actual values we care about)
+        - has an extra pointer to find first node, and last node points to NULL
+        - prepending = O(1) --> really fast
+        - searching = O(n) --> really slow (because not contiguous, cannot use binary search)
+        - prepending = O(n) if I want to have it sorted
+        - can code/shrink data structure, but using double the data (pointers)
+
+    typedef struct node
+    {
+        int number;
+        struct node *next;
+    } node;
+
+    int main(int argc, char *argv[])
+    {
+        // Memory for numbers
+        node *list = NULL;
+
+        // for each command-line argument
+        for (int i = 1; i < argc; i++)
+        {
+            // convert argument to int
+            int number = atoi(argv[i]);
+
+            // allocate node for number
+            node *n = malloc(sizeof(node));
+            if (n = NULL)
+            {
+                return 1;
+            }
+            n->number = number;
+            n->next = NULL;
+
+            // if list is empty
+            if (list == NULL)
+            {
+                // this node is the whole list
+                list = n;
+            }
+
+            // if list has numbers already
+            else
+            {
+                // iterate over nodes in list
+                for (node *ptr = list; ptr != NULL; ptr = ptr->next)
+                {
+                    // if at end of list
+                    if (ptr->next == NULL)
+                    {
+                        // append node
+                        ptr->next = n;
+                        break;
+                    }
+                }
+            }
+        }
+
+        // print numbers
+        for (node *ptr = ;ist; ptr != NULL; ptr = ptr->next)
+        {
+            printf("%i\n", ptr->number);
+        }
+
+        // free memory
+        node *ptr = list;
+        while (ptr != NULL)
+        {
+            node *next = ptr->next;
+            free(ptr);
+            ptr = next;
+        }
+
+        return 0;
+    }
+
+
+    - binary search tree = sorted tree, has 2 children values, recursive structure
+        - O(logn) -> can half and half and half (via each subtree eliminated, divide and conquer)
+
+    typedef struct node
+    {
+        int number;
+        struct node *left;
+        struct node *right;
+    } node;
+
+    bool search(node *tree, int number)
+    {
+        if (tree == NULL)
+        {
+            return false;
+        }
+        else if (number < tree-> number)
+        {
+            return search(tree->left, number);
+        }
+        else if (number > tree->number)
+        {
+            return search(tree->right, number);
+        }
+        else
+        {
+            return true;
+        }
+    }
+
+
+    - dictionaries = stores keys and values; associates keys with values
+    - hashing = technique that takes any number of inputs and maps them to a finite number of outputs
+        - like domain and ranges, maps infinite domain to a range
+        - hash function = process of converting inputs to outputs
+        - hash tables = array of linked lists: have arrays as pointer, then link other elements to them using linked lists
+        - searching hash table = O(n) --> technically O(n/k), where k = number of bins
+        - ideally (in best case scenario) would achieve O(1)
+
+    node *table[26];
+    typedef struct node
+    {
+        char *name;
+        char *number;
+        struct node *next;
+    } node;
+
+    int hash(char *word)
+    {
+        return toupper(word[0]) - 'A';
+    }
+
+
+    - trie = retrieval = tree of arrays
+         - every node is an array (root node = array)
+         - O(1) because actually O(k), where k is length of string
+
+    typdef struct node
+    {
+        struct node *children[26];
+        char *number;
+    } node;
 }
