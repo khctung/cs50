@@ -15,10 +15,11 @@ print(f"hello, {answer}")
 only bool, float, int, and string in python (cuts out char, long, double)
 
 range = range of values
-list = array (but better!)
+list = like array but has memory allocated for you (no nodes, etc) + have methods with them
 tuple = x,y -> combos of values that don't change
 dict = assigning key w value (basically hash tables)
 set = collection of values w/o duplicates
+len = length of list/string
 
 # traceback = traceback everything your program just did
 indentation is really important in python (because no curly braces)
