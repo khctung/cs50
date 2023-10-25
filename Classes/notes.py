@@ -52,7 +52,27 @@ def get_int(prompt):
             print("Not an integer")
             # or try pass (which keeps looping until right)
 
-for loops can have else conditionals
+- for loops can have else conditionals
+- sys = system related functionality (library)
 
-sys = system related functionality (library)
+version 1:
 from sys import argv
+
+if len(argv) == 2:
+    print(f"hello, {argv[1]}")
+
+
+version 2:
+import sys
+
+if len(sys.argv) != 2:
+    sys.exit()
+
+
+- pip
+- ex. pip install cowsay
+import cowsay
+cowsay.cow("hi!")
+
+pip intall qrcode
+
