@@ -53,3 +53,6 @@ def get_int(prompt):
             # or try pass (which keeps looping until right)
 
 for loops can have else conditionals
+
+sys = system related functionality (library)
+from sys import argv
