@@ -19,3 +19,5 @@ list = array (but better!)
 tuple = x,y -> combos of values that don't change
 dict = assigning key w value (basically hash tables)
 set = collection of values w/o duplicates
+
+# traceback = traceback everything your program just did
