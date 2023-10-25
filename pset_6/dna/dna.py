@@ -4,11 +4,19 @@ import sys
 
 def main():
 
-    # TODO: Check for command-line usage
+    # Check for command-line usage
+    if len(argv) == 2:
+    print(f"hello, {argv[1]}")
 
     # TODO: Read database file into a variable
+    rows = []
+    with open("foo.csv") as file:
+        reader = csv.DictReader(file)
+        for row in reader:
+            rows.append(row)
 
     # TODO: Read DNA sequence file into a variable
+
 
     # TODO: Find longest match of each STR in DNA sequence
 
