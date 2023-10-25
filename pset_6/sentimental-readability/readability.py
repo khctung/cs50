@@ -27,7 +27,7 @@ def main():
 def get_letters(input):
     num_letters = 0
     for i in range(len(input)):
-        if (cs50.isalpha(input[i])):
+        if (input[i]isalpha()):
             num_letters += 1
     return num_letters
 
@@ -35,7 +35,7 @@ def get_letters(input):
 def get_words(input):
     num_words = 0
     for i in range(len(input)):
-        if (cs50.isblank(input[i])):
+        if (input[i].isblank()):
             num_words += 1
     num_words += 1
     return num_words
