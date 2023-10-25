@@ -31,3 +31,9 @@ object-oriented programming (OOP) = variables/datatypes can have values AND func
 
 - positional parameters must be passed in the same order as they appear in function (defined by position)
 - named parameters can be passed in any order (defined by name)
+
+helper functions = using def
+def main():
+    # do stuff
+
+main() # need to call main
