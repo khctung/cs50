@@ -5,7 +5,11 @@ import sys
 def main():
 
     # Check for command-line usage
-    if len(argv) == 2:
+    if len(argv) == 3:
+        
+    else:
+        print("Incorrect command-line usage.")
+
     print(f"hello, {argv[1]}")
 
     # TODO: Read database file into a variable
@@ -19,7 +23,7 @@ def main():
 
 
     # TODO: Find longest match of each STR in DNA sequence
-    
+
 
     # TODO: Check database for matching profiles
 
