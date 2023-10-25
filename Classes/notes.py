@@ -7,3 +7,7 @@ import cs50
 from cs50 import get_string
 
 # don't need to declare type in python
+
+#format string
+answer = get_string("What's your name? ")
+print(f"hello, {answer}")
