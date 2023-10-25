@@ -37,3 +37,9 @@ def main():
     # do stuff
 
 main() # need to call main
+
+truncation = dividing ints -> truncates and give back a float
+floating-point imprecision remains in python
+integer overflow (too high of a number) -> not a problem in python!!
+
+exceptions =  
