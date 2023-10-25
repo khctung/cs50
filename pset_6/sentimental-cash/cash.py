@@ -21,4 +21,4 @@ coins += num_nickels
 change -= num_nickels*5
 
 coins += change;
-print((int)coins)
+print(int(coins))
