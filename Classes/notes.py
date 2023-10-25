@@ -25,3 +25,6 @@ indentation is really important in python (because no curly braces)
 
 can compare strings in python
 # doesn't work because addresses in string are different in c
+
+object-oriented programming (OOP) = variables/datatypes can have values AND functionality
+- ex. for strings, toupper function is built into strings themselves (methods)
