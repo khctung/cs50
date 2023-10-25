@@ -22,3 +22,6 @@ set = collection of values w/o duplicates
 
 # traceback = traceback everything your program just did
 indentation is really important in python (because no curly braces)
+
+can compare strings in python
+# doesn't work because addresses in string are different in c
