@@ -10,7 +10,7 @@ def main():
 
     # Read database file into a variable
     rows = []
-    with open("foo.csv") as file:
+    with open(argv[1]) as file:
         reader = csv.DictReader(file)
         for row in reader:
             rows.append(row)
