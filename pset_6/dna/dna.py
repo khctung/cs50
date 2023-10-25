@@ -5,14 +5,10 @@ import sys
 def main():
 
     # Check for command-line usage
-    if len(argv) == 3:
-        
-    else:
-        print("Incorrect command-line usage.")
+    if len(argv) != 3:
+        sys.exit("Incorrect command-line usage.")
 
-    print(f"hello, {argv[1]}")
-
-    # TODO: Read database file into a variable
+    # Read database file into a variable
     rows = []
     with open("foo.csv") as file:
         reader = csv.DictReader(file)
