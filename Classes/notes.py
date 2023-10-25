@@ -28,3 +28,6 @@ can compare strings in python
 
 object-oriented programming (OOP) = variables/datatypes can have values AND functionality
 - ex. for strings, toupper function is built into strings themselves (methods)
+
+- positional parameters must be passed in the same order as they appear in function (defined by position)
+- named parameters can be passed in any order (defined by name)
