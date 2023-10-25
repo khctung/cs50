@@ -42,4 +42,11 @@ truncation = dividing ints -> truncates and give back a float
 floating-point imprecision remains in python
 integer overflow (too high of a number) -> not a problem in python!!
 
-exceptions =  
+exceptions = error handling (ex. ValueError)
+def get_int(prompt):
+    while True:
+        try:
+            return int(input(prompt))
+        except ValueError:
+            print("Not an integer")
+            # or try pass (which keeps looping until right)
