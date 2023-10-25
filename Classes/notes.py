@@ -51,3 +51,5 @@ def get_int(prompt):
         except ValueError:
             print("Not an integer")
             # or try pass (which keeps looping until right)
+
+for loops can have else conditionals
