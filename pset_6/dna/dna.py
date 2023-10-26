@@ -21,10 +21,10 @@ def main():
         for col in reader:
             rows[col] = col
 
-    # TODO: Find longest match of each STR in DNA sequence
+    # Find longest match of each STR in DNA sequence
 
 
-    # TODO: Check database for matching profiles
+    # Check database for matching profiles
 
     return
 
