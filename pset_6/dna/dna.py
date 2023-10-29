@@ -16,17 +16,28 @@ def main():
             database.append(row)
 
     # Read DNA sequence file into a variable
-    with open(sys.argv[2]) as file:
-        reader = csv.DictReader(file)
-        for col in reader:
-            rows[col] = col
+    with open(sys.argv[2], 'r') as file:
+        dna_sequences = file.read()
 
     # Find longest match of each STR in DNA sequence
+    dna_subsequences = list(database[0].keys())[1:]
 
+    results = {}
+    for subsequence in dna_subsequences:
+        results[subsequence] = longest_match(dna_sequences, dna_subsequences)
 
     # Check database for matching profiles
+    for person in database:
+        match = 0
+        for subsequence in dna_subsequences:
+            if int(person[subsequence]) == result[subsequence]:
+                match += 1
 
-    return
+        # if all subsequences match
+        if match == len(dna_subsequences):
+            print(person["name"])
+            return
+    print("No match")
 
 
 def longest_match(sequence, subsequence):
