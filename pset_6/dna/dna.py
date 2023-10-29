@@ -26,34 +26,17 @@ def main():
 
     # Check database for matching profiles
     for person in database:
-        num_matches = 0
+        match = True
         for subsequence in dna_subsequences:
-            if int(person[subsequence]) == results[subsequence]:
-                num_matches += 1
-
-        # if all subsequences match for that person we're checking
-        if num_matches == len(dna_subsequences):
-            print(person["name"])
-            return
-
-
-    for person in database:
-        while (True):
-            for subsequence in dna_subsequences:
+            # kind of "backwards": if doesn't match then we skip to next person
             if int(person[subsequence]) != results[subsequence]:
+                match = False
                 break
 
-        num_matches = 0
-        for subsequence in dna_subsequences:
-            if int(person[subsequence]) == results[subsequence]:
-                num_matches += 1
-
-        # if all subsequences match for that person we're checking
-        if num_matches == len(dna_subsequences):
+        # if all subsequences match for that person we're checking, then print them
+        if match:
             print(person["name"])
             sys.exit(0)
-
-    challenge: 15 characters removal, assume true, if not break loop and go to next person. if still true, then
 
     print("No match")
     sys.exit(0)  # still 0 because not an error
