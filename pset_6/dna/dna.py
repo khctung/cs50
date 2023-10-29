@@ -5,15 +5,15 @@ import sys
 def main():
 
     # Check for command-line usage
-    if len(argv) != 3:
+    if len(sys.argv) != 3:
         sys.exit("Incorrect command-line usage.")
 
     # Read database file into a variable
-    rows = []
-    with open(sys.argv[1]) as file:
+    database = []
+    with open(sys.argv[1],'r') as file:
         reader = csv.DictReader(file)
         for row in reader:
-            rows.append(row)
+            database.append(row)
 
     # Read DNA sequence file into a variable
     with open(sys.argv[2]) as file:
