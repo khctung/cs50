@@ -39,7 +39,10 @@ def main():
 
     for person in database:
         while (True):
-            
+            for subsequence in dna_subsequences:
+            if int(person[subsequence]) != results[subsequence]:
+                break
+
         num_matches = 0
         for subsequence in dna_subsequences:
             if int(person[subsequence]) == results[subsequence]:
@@ -48,12 +51,12 @@ def main():
         # if all subsequences match for that person we're checking
         if num_matches == len(dna_subsequences):
             print(person["name"])
-            return
+            sys.exit(0)
 
     challenge: 15 characters removal, assume true, if not break loop and go to next person. if still true, then
 
     print("No match")
-    return
+    sys.exit(0)  # still 0 because not an error
 
 
 def longest_match(sequence, subsequence):
