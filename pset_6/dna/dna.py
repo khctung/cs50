@@ -36,7 +36,21 @@ def main():
             print(person["name"])
             return
 
-    challenge: 15 characters removal
+
+    for person in database:
+        while (True):
+            
+        num_matches = 0
+        for subsequence in dna_subsequences:
+            if int(person[subsequence]) == results[subsequence]:
+                num_matches += 1
+
+        # if all subsequences match for that person we're checking
+        if num_matches == len(dna_subsequences):
+            print(person["name"])
+            return
+
+    challenge: 15 characters removal, assume true, if not break loop and go to next person. if still true, then
 
     print("No match")
     return
