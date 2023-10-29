@@ -28,13 +28,13 @@ def main():
 
     # Check database for matching profiles
     for person in database:
-        match = 0
+        num_matches = 0
         for subsequence in dna_subsequences:
             if int(person[subsequence]) == results[subsequence]:
-                match += 1
+                num_matches += 1
 
         # if all subsequences match
-        if match == len(dna_subsequences):
+        if num_matches == len(dna_subsequences):
             print(person["name"])
             return
     print("No match")
