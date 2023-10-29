@@ -30,7 +30,7 @@ def main():
     for person in database:
         match = 0
         for subsequence in dna_subsequences:
-            if int(person[subsequence]) == result[subsequence]:
+            if int(person[subsequence]) == results[subsequence]:
                 match += 1
 
         # if all subsequences match
