@@ -32,7 +32,7 @@ def main():
             if int(person[subsequence]) == results[subsequence]:
                 num_matches += 1
 
-        # if all subsequences match
+        # if all subsequences match for that person we're checking
         if num_matches == len(dna_subsequences):
             print(person["name"])
             return
