@@ -11,6 +11,7 @@ def main():
     database = []
     with open(sys.argv[1], "r") as file:
         reader = csv.DictReader(file)
+        dna_subsequences = reader.fieldnames[1:]
         for row in reader:
             database.append(row)
 
@@ -19,8 +20,6 @@ def main():
         dna_sequences = file.read()
 
     # Find longest match of each STR in DNA sequence
-    dna_subsequences = list(database[0].keys())[1:]
-
     results = {}
     for subsequence in dna_subsequences:
         results[subsequence] = longest_match(dna_sequences, subsequence)
@@ -36,6 +35,9 @@ def main():
         if num_matches == len(dna_subsequences):
             print(person["name"])
             return
+
+    challenge: 15 characters removal
+
     print("No match")
     return
 
