@@ -93,4 +93,13 @@ close(file)
 metadata = data that describes my actual data, like the header row
 
 with open("favorites.csv", "r") as file:  # no need to close since it closes for you
-    # 
+    reader = csv.reader(file)
+    next(reader)
+    for row in reader:
+        print(row[1])
+
+with open("favorites.csv", "r") as file:  # no need to close since it closes for you
+    reader = csv.reader(file)
+    next(reader)
+    for row in reader:
+        print(row[1])
