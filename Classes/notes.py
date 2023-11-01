@@ -138,4 +138,13 @@ sqlite3 FILE_NAME
 .import filename.csv table_name
 .schema # shows the data in the database
 SELECT column_name FROM table_name LIMIT 10; # only show 10 data
-SELECT * FROM table_name; # * means to show everything
+SELECT COUNT(*) FROM table_name; # * means to show everything
+
+functions:
+AVG
+COUNT
+DISTINCT
+LOWER
+MAX
+MIN
+UPPER
