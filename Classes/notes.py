@@ -100,7 +100,13 @@ with open("favorites.csv", "r") as file:  # no need to close since it closes for
 
 with open("favorites.csv", "r") as file:  # no need to close since it closes for you
     reader = csv.DictReader(file)  # stores data into a dictionary w/ the header rows as keys
+    counts = {} = dict()
+
     for row in reader:
-        print(row["language"])
+        favorite = row["language"]
+        if favorite in counts:
+            counts[favorite] += 1
+        else:
+            counts[favorite] = 1
 
 
