@@ -90,5 +90,7 @@ file = open("favorites.csv", "r")  # r is not needed since python assumes read
 # do something with file
 close(file)
 
-with open("favorites.csv") as file:  # no need to close since it closes for you
+metadata = data that describes my actual data, like the header row
 
+with open("favorites.csv", "r") as file:  # no need to close since it closes for you
+    # 
