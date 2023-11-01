@@ -117,4 +117,7 @@ with open("favorites.csv", "r") as file:  # no need to close since it closes for
 
 for favorite in sorted(counts, key=counts.get, reverse=True): # sort by value instead of key, which is the default
     print(f"{favorite}: {counts[favorite]}")
+OR
+for favorite, count in counts.most_common():
+    print(f"{favorite}: {count}")
 
