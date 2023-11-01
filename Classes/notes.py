@@ -137,5 +137,5 @@ sqlite3 FILE_NAME
 .mode csv  # set to csv mode
 .import filename.csv table_name
 .schema # shows the data in the database
-SELECT column_name FROM table_name;
+SELECT column_name FROM table_name LIMIT 10; # only show 10 data
 SELECT * FROM table_name; # * means to show everything
