@@ -139,6 +139,7 @@ sqlite3 FILE_NAME
 .schema # shows the data in the database
 SELECT column_name FROM table_name LIMIT 10; # only show 10 data
 SELECT COUNT(*) FROM table_name; # * means to show everything
+SELECT language, COUNT(*) FROM favorites GROUP BY language; # shows the counts for each favorite language
 
 functions:
 AVG
