@@ -76,3 +76,19 @@ cowsay.cow("hi!")
 
 pip intall qrcode
 
+
+
+SQL notes
+
+flat-file database = literal text file (.txt or .csv)
+-> has delimiters to separate values, csv = comma separated values
+-> mimic row/columns by using n/ for rows and commas for columns
+-> first row is header row (describes what each column is for)
+
+import csv
+file = open("favorites.csv", "r")  # r is not needed since python assumes read
+# do something with file
+close(file)
+
+with open("favorites.csv") as file:  # no need to close since it closes for you
+
