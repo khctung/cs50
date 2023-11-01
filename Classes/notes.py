@@ -78,7 +78,7 @@ pip intall qrcode
 
 
 
-SQL notes
+
 
 flat-file database = literal text file (.txt or .csv)
 -> has delimiters to separate values, csv = comma separated values
@@ -121,3 +121,18 @@ OR
 for favorite, count in counts.most_common():
     print(f"{favorite}: {count}")
 
+
+
+SQL notes
+
+relational database = database program (running on computer w/ a lot of memory), can have many datasheets across with relationships
+SQL = structured query language, -> database specific language, describes the data i want to get back
+-> CRUD = Create (insert), Read (select), Update, Delete (drop)
+
+sqlite3 = lite version of SQL
+
+# essentially same as creating a spreadsheet
+CREATE TABLE table_name (column type, ...);
+sqlite3 FILE_NAME
+.mode csv  # set to csv mode
+.import filename.csv table_name
