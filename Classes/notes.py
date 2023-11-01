@@ -136,3 +136,6 @@ CREATE TABLE table_name (column type, ...);
 sqlite3 FILE_NAME
 .mode csv  # set to csv mode
 .import filename.csv table_name
+.schema # shows the data in the database
+SELECT column_name FROM table_name;
+SELECT * FROM table_name; # * means to show everything
