@@ -98,16 +98,22 @@ with open("favorites.csv", "r") as file:  # no need to close since it closes for
     for row in reader:
         print(row[1])
 
+from collections import Counter
+
 with open("favorites.csv", "r") as file:  # no need to close since it closes for you
     reader = csv.DictReader(file)  # stores data into a dictionary w/ the header rows as keys
-    counts = {} = dict()
+    # counts = {} = dict()
+    counts = Counter()
 
     for row in reader:
         favorite = row["language"]
+        counts[favorite] += 1
+        """
         if favorite in counts:
             counts[favorite] += 1
         else:
             counts[favorite] = 1
+        """
 
 for favorite in sorted(counts, key=counts.get, reverse=True): # sort by value instead of key, which is the default
     print(f"{favorite}: {counts[favorite]}")
