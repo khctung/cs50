@@ -99,7 +99,8 @@ with open("favorites.csv", "r") as file:  # no need to close since it closes for
         print(row[1])
 
 with open("favorites.csv", "r") as file:  # no need to close since it closes for you
-    reader = csv.reader(file)
-    next(reader)
+    reader = csv.DictReader(file)  # stores data into a dictionary w/ the header rows as keys
     for row in reader:
-        print(row[1])
+        print(row["language"])
+
+
