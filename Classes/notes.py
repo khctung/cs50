@@ -141,6 +141,8 @@ SELECT column_name FROM table_name LIMIT 10; # only show 10 data
 SELECT COUNT(*) FROM table_name; # * means to show everything
 SELECT language, COUNT(*) AS n FROM favorites GROUP BY language ORDER BY n DESC; # shows the counts for each favorite language
 
+INSERT INTO table_name (column, ...) VALUES(value, ...);
+
 functions:
 AVG
 COUNT
