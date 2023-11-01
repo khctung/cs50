@@ -109,4 +109,6 @@ with open("favorites.csv", "r") as file:  # no need to close since it closes for
         else:
             counts[favorite] = 1
 
+for favorite in sorted(counts, key=counts.get, reverse=True): # sort by value instead of key, which is the default
+    print(f"{favorite}: {counts[favorite]}")
 
