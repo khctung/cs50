@@ -145,6 +145,7 @@ INSERT INTO table_name (column_name, ...) VALUES(value_name, ...);
 # column_name = name of column i want to put value into, values = value name (basically adding new row)
 NULL = no data there
 DELETE FROM table_name WHERE condition;
+UPDATE table_name SET column = value WHERE condition;
 
 functions:
 AVG
@@ -159,5 +160,6 @@ LIKE
 ORDER BY
 LIMIT
 GROUP BY
+
 IS
 AND
