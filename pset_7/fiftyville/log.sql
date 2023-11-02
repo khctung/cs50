@@ -16,7 +16,7 @@ WHERE transcript LIKE "%bakery%";
 -- (3) thief leaving bakery -> called someone who talked < 1 min. thief plans to take earliest flight out of fiftyville tomorrow, person on phone purchased ticket
 
 -- storing current suspects into a table
--- suspects generated via checking bakery security log transcripts +/- 10 mins of theft
+-- suspects generated via checking first info from transcript: bakery security log transcripts +/- 10 mins of theft
 CREATE TABLE suspects (
   name TEXT NOT NULL
 );
@@ -28,6 +28,7 @@ VALUES (
     WHERE month = 7 AND day = 28 AND hour = 10 AND (minute >= 5 OR minute <= 25)
 );
 -- current list of suspects: Brandon, Sophia, Vanessa, Bruce, Barry, Luca, Sofia, Iman, Diana, Kelsey, Taylor, Denise, Thomas, Jeremy
+
 
 
 
