@@ -22,6 +22,11 @@ JOIN bakery_security_logs ON bakery_security_logs.license_plate = people.license
 WHERE month = 7 AND day = 28 AND hour = 10 AND (minute >= 5 OR minute <= 25);
 -- list of suspects: Brandon, Sophia, Vanessa, Bruce, Barry, Luca, Sofia, Iman, Diana, Kelsey, Taylor, Denise, Thomas, Jeremy
 
+-- storing current suspects into a table
+CREATE TABLE suspects (
+  name TEXT NOT NULL
+);
+
 -- find possible suspects
 SELECT COUNT(name)
 FROM people;
