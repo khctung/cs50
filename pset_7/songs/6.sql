@@ -1,5 +1,7 @@
 -- The names of songs that are by Post Malone.
-SELECT name FROM songs WHERE name = 'Post Malone';
+SELECT name FROM songs
+WHERE songs.artist_id = artists.id
+AND name = 'Post Malone';
 
 
 
