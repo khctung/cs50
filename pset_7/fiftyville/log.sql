@@ -9,7 +9,7 @@ WHERE year = 2023 AND month = 7 AND day = 28 AND street = 'Humphrey Street';
 -- get transcripts that mention "bakery"
 SELECT transcript
 FROM interviews
-WHERE transcript LIKE "%bakery%";
+WHERE year = 2023 AND month = 7 AND day = 28 AND transcript LIKE "%bakery%";
 -- info given:
 -- (1) +/- 10 mins of theft, got into car in bakery parking lot
 -- (2) before theft (morning), saw thief withdrawing money from ATM on Leggett Street
