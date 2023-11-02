@@ -194,3 +194,8 @@ SELECT title FROM shows
 JOIN stars ON shows.id = stars.show_id
 JOIN people ON stars.person_id = people.id
 WHERE name = 'Steve Carell';
+
+SELECT title FROM shows, stars, people
+WHERE shows.id = stars.show_id
+AND people.id = stars.person_id
+AND name = 'Steve Carell';
