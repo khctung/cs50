@@ -3,17 +3,16 @@ SELECT AVG(energy) FROM songs; --> 0.65906
 SELECT AVG(valence) FROM songs; --> 0.484443
 SELECT AVG(danceability) FROM songs; --> 0.71646
 As such, their audio aura would be characterized by these values. I'd probably give them pink
+since their energy/danceability is above average (0.5), but not so much for their valence.
 
+(2) The way I've calculated this aura might not be very representative of this listener because
 
-(2)
 
 Spotify Wrapped is a feature presenting Spotify users’ 100 most played songs
 from the past year. In 2021, Spotify Wrapped calculated an “Audio Aura” for each user,
 a “reading of [their] two most prominent moods as dictated by [their] top songs and artists
 of the year.” Suppose Spotify determines an audio aura by looking at the average energy,
 valence, and danceability of a person’s top 100 songs from the past year. In answers.txt, reflect on the following questions:
-
-If songs.db contains the top 100 songs of one listener from 2018, how would you characterize their audio aura?
 
 Hypothesize about why the way you’ve calculated this aura might not be very representative of the listener.
 What better ways of calculating this aura would you propose?
