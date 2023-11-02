@@ -4,12 +4,12 @@
 SELECT description
 FROM crime_scene_reports
 WHERE year = 2023 AND month = 7 AND day = 28 AND street = 'Humphrey Street';
--- info given: theft took place @ 10:15am at the Humphrey Street bakery, littering took place @ 16:36
+-- info given: theft took place @ 10:15am at the Humphrey Street bakery, interviews mention work bakery
 
--- get transcripts from the date the robbery took place
+-- get transcripts that mention "bakery"
 SELECT transcript
 FROM interviews
-WHERE month = 7 AND day = 28;
+WHERE transcript LIKE "%bakery%";
 -- info given:
 -- (1) +/- 10 mins of theft, got into car in bakery parking lot
 -- (2) before theft (morning), saw thief withdrawing money from ATM on Leggett Street
@@ -28,6 +28,10 @@ VALUES (
     WHERE month = 7 AND day = 28 AND hour = 10 AND (minute >= 5 OR minute <= 25)
 );
 -- current list of suspects: Brandon, Sophia, Vanessa, Bruce, Barry, Luca, Sofia, Iman, Diana, Kelsey, Taylor, Denise, Thomas, Jeremy
+
+
+
+
 SELECT * FROM suspects;
 -- code to view current suspects
 
