@@ -185,3 +185,7 @@ SELECT * shows WHERE id IN (SELECT show_id FROM ratings WHERE rating >= 6.0) # n
 SELECT title, rating FROM shows JOIN ratings ON shows.id = ratings.show_id WHERE rating >= 6.0 LIMIT 10; # titles & rating as a table
 
 if join 2 tables, will have duplication for rows with less "info" than others when joining
+
+SELECT title FROM shows WHERE id IN
+ (SELECT show_id FROM stars WHERE person_id =
+  (SELECT id FROM people WHERE name = 'Steve Carell'));
