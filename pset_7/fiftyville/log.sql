@@ -28,16 +28,14 @@ CREATE TABLE suspects (
   suspect_name TEXT NOT NULL
 );
 INSERT INTO suspects (suspect_name)
-VALUES (
-    SELECT name
-    FROM people
-    JOIN bakery_security_logs
-    ON bakery_security_logs.license_plate = people.license_plate
-    WHERE bakery_security_logs.month = 7
-    AND bakery_security_logs.day = 28
-    AND bakery_security_logs.hour = 10
-    AND (bakery_security_logs.minute >= 15 OR bakery_security_logs.minute <= 25)
-);
+SELECT name
+FROM people
+JOIN bakery_security_logs
+ON bakery_security_logs.license_plate = people.license_plate
+WHERE bakery_security_logs.month = 7
+AND bakery_security_logs.day = 28
+AND bakery_security_logs.hour = 10
+AND (bakery_security_logs.minute >= 15 OR bakery_security_logs.minute <= 25);
 -- current list of suspects: Brandon, Sophia, Vanessa, Bruce, Barry, Luca, Sofia, Iman, Diana, Kelsey, Taylor, Denise, Thomas, Jeremy
 
 -- suspects generated via checking (2) from transcript: withdrawing money from ATM on Legett Street -> check atm_transations
