@@ -81,7 +81,8 @@ WHERE suspects.name NOT IN (
   AND flights.year = 2023
   AND flights.month = 7
   AND flights.day = 29
-  AND 
+  AND MIN(flights.hour)
+  AND MIN(flights.minute)
 );
 SELECT * FROM suspects;
 
