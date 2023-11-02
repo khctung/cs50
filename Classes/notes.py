@@ -201,3 +201,5 @@ AND people.id = stars.person_id
 AND name = 'Steve Carell';
 
 indexes = data structure that makes it faster to perform queries
+
+CREATE INDEX name ON table (column, ...)
