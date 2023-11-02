@@ -206,3 +206,5 @@ CREATE INDEX name ON table (column, ...)
 B-trees = every node has multiple children
 -> shorter tree = shorter leaves
 -> created in index
+
+primary keys = indexes
