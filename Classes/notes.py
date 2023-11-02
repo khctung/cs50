@@ -160,7 +160,8 @@ LIKE
 ORDER BY
 LIMIT
 GROUP BY
-
+NOT NULL = cannot enter null value
+UNIQUE = has to be unique, no duplicate
 IS
 AND
 
@@ -170,5 +171,7 @@ INTEGER
 NUMERIC = dates, times (but not necessarily numbers)
 REAL = have decimal points
 TEXT
+PRIMARY KEY = unique integer that identifies each show
+FOREIGN KEY = in key but not created in them, primary keys in another table
 
 one-to-one = every x has one y
