@@ -176,6 +176,7 @@ PRIMARY KEY = unique integer that identifies each data set
 FOREIGN KEY = in key but not created in them, primary keys in another table
 
 one-to-one = every x has one y
+one-to-many = every x can have multiple y
 can have nested queries -> put one inside the other
 
 SELECT * shows WHERE id IN (SELECT show_id FROM ratings WHERE rating >= 6.0) # nested query
