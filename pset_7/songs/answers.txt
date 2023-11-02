@@ -1,4 +1,9 @@
-(1)
+(1) Let's look at the average energy, valence, and danceability of songs.db.
+SELECT AVG(energy) FROM songs; --> 0.65906
+SELECT AVG(valence) FROM songs; --> 0.484443
+SELECT AVG(danceability) FROM songs; --> 0.71646
+As such, their audio aura would be characterized by these values. I'd probably give them pink
+
 
 (2)
 
