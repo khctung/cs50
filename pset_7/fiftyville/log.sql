@@ -32,21 +32,15 @@ SELECT name
 FROM people
 JOIN bakery_security_logs
 ON bakery_security_logs.license_plate = people.license_plate
-WHERE bakery_security_logs.month = 7
+WHERE bakery_security_logs.year = 2023
+AND bakery_security_logs.month = 7
 AND bakery_security_logs.day = 28
 AND bakery_security_logs.hour = 10
 AND (bakery_security_logs.minute >= 15 OR bakery_security_logs.minute <= 25);
 -- current list of suspects: Brandon, Sophia, Vanessa, Bruce, Barry, Luca, Sofia, Iman, Diana, Kelsey, Taylor, Denise, Thomas, Jeremy
 
 -- suspects generated via checking (2) from transcript: withdrawing money from ATM on Legett Street -> check atm_transations
-INSERT INTO suspects (name)
-VALUES (
-    SELECT name
-    FROM people
-    JOIN bank_accounts ON bank_accounts.person_id = people.id
-    JOIN atm_transactions ON atm_transactions.account_number = bank_accounts.account_number
-    WHERE year = 2023 AND month = 7 AND day = 28 AND atm_location = 'Leggett Street' AND transaction_type = 'withdraw';
-);
+
 
 -- Finding the names associated with the corresponding account numbers. Putting these names in the 'Suspect List'
 SELECT name, atm_transactions.amount
