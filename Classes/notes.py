@@ -202,7 +202,8 @@ AND name = 'Steve Carell';
 
 indexes = data structure that makes it faster to perform queries
 
-CREATE INDEX name ON table (column, ...)
+CREATE INDEX name ON table (column, ...);
+CREATE INDEX show_index ON stars (show_id);
 B-trees = every node has multiple children
 -> shorter tree = shorter leaves
 -> created in index
