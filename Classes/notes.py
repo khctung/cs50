@@ -164,4 +164,11 @@ GROUP BY
 IS
 AND
 
+datatypes:
+BLOB = binary large object = file w 0s and 1s
+INTEGER
+NUMERIC = dates, times (but not necessarily numbers)
+REAL = have decimal points
+TEXT
+
 one-to-one = every x has one y
