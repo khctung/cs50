@@ -9,13 +9,17 @@ WHERE month = 7 AND day = 28 AND street = 'Humphrey Street';
 -- get transcripts from the date the robbery took place
 SELECT transcript
 FROM interviews
-WHERE month = 7 AND (day = 28 or day = 29);
+WHERE month = 7 AND day = 28;
 -- info given:
 -- (1) +/- 10 mins of theft, got into car in bakery parking lot
 -- (2) before theft (morning), saw thief withdrawing money from ATM on Leggett Street
 -- (3) thief leaving bakery -> called someone who talked < 1 min. thief plans to take earliest flight out of fiftyville tomorrow, person on phone purchased ticket
 
-Our neighboring courthouse has a very annoying rooster that crows loudly at 6am every day. My sons Robert and Patrick took the rooster to a city far, far away, so it may never bother us again. My sons have successfully arrived in Paris.
+-- check bakery security log transcripts +/- 10 mins of theft
+SELECT id
+FROM people
+JOIN bakery_security_logs ON shows.id = stars.show_id
+WHERE month = 7 AND day = 28;
 
 -- find possible suspects
 SELECT COUNT(name)
