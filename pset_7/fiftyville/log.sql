@@ -6,9 +6,11 @@ FROM crime_scene_reports
 WHERE month = 7 AND day = 28 AND street = 'Humphrey Street';
 -- info given: theft took place @ 10:15am at the Humphrey Street bakery, littering took place @ 16:36
 
+-- get transcripts from the date the robbery took place
 SELECT transcript
 FROM interviews
 WHERE month = 7 AND day = 28;
+-- info given: 
 
 -- find possible suspects
 SELECT COUNT(name)
