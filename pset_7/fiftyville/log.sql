@@ -38,25 +38,35 @@ AND (bakery_security_logs.minute >= 15 OR bakery_security_logs.minute <= 25);
 -- suspects generated via checking (2) from transcript: withdrawing money from ATM on Legett Street -> check atm_transations
 -- delete from suspect list if suspect is NOT in this list (because then no overlap w previous suspects)
 DELETE FROM suspects
-WHERE
-  (
-SELECT
-  name
-FROM
-  people
+WHERE suspects.name NOT IN (
+  SELECT name
+  FROM people
   JOIN bank_accounts ON people.id = bank_accounts.person_id
   JOIN atm_transactions ON bank_accounts.account_number = atm_transactions.account_number
-WHERE
-  atm_transactions.year = 2023
+  WHERE atm_transactions.year = 2023
   AND atm_transactions.month = 7
   AND atm_transactions.day = 28
   AND atm_transactions.atm_location = 'Leggett Street'
-  AND atm_transactions.transaction_type = 'withdraw';
+  AND atm_transactions.transaction_type = 'withdraw'
+);
+-- remaining list of suspects: Bruce, Luca, Iman, Diana, Taylor
 
-SELECT
-  *
-FROM
-  suspects;
+-- suspects generated via checking (3) from transcript: talked on phone for < 1 min -> check duration of phone calls
+
+DELETE FROM suspects
+WHERE suspects.name NOT IN (
+  SELECT name
+  FROM people
+  JOIN phone_calls ON phone_calls.caller = people.name
+  WHERE phone_calls.year = 2023
+  AND phone_calls.month = 7
+  AND phone_calls.day = 28
+  AND phone_calls.duration <= 1
+  AND atm_transactions.transaction_type = 'withdraw'
+);
+
+
+SELECT * FROM suspects;
 
 -- code to view current suspects
 -- find possible suspects
