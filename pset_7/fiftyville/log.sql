@@ -9,7 +9,7 @@ WHERE month = 7 AND day = 28 AND street = 'Humphrey Street';
 -- get transcripts from the date the robbery took place
 SELECT transcript
 FROM interviews
-WHERE month = 7 AND day = 28;
+WHERE month = 7 AND (day = 28 or day = 29);
 -- info given:
 -- (1) +/- 10 mins of theft, got into car in bakery parking lot
 -- (2) before theft (morning), saw thief withdrawing money from ATM on Leggett Street
