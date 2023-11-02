@@ -210,7 +210,8 @@ B-trees = every node has multiple children
 -> trade-off = more memory
 
 primary keys = indexes
-race conditions = order matters when we care 
+race conditions = order matters when we care;
+-> state of variable was about to be updated while it was being looked at
 
 from cs50 import SQL
 
@@ -221,6 +222,21 @@ rows = db.execute("SELECT COUNT(*) AS n FROM favorites WHERE problem = ?", favor
 row = rows[0]
 
 print(row["n"])
+
+
+race conditions code
+BEGIN TRANSACTION -> lines of code either happen together or don't happen at all (atomic)
+COMMIT
+ROLLBACK
+
+db.execute("BEGIN TRANSACTION")
+rows = db.execute("SELECT likes FROM posts WHERE id = ?", id)
+likes = rows[0]["likes"]
+db.execute("UPDATE posts SET likes = ? WHERE id = ?", likes+1, id)
+db.executive("COMMIT")
+
+
+sql injection attack = code too vulnerable to being hacked
 
 
 
