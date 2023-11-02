@@ -164,6 +164,7 @@ NOT NULL = cannot enter null value
 UNIQUE = has to be unique, no duplicate
 IS
 AND
+JOIN = join 2 tables
 
 datatypes:
 BLOB = binary large object = file w 0s and 1s
@@ -177,4 +178,6 @@ FOREIGN KEY = in key but not created in them, primary keys in another table
 one-to-one = every x has one y
 can have nested queries -> put one inside the other
 
-SELECT * shows WHERE id IN (SELECT show_id FROM ratings WHERE rating >= 6.0)
+SELECT * shows WHERE id IN (SELECT show_id FROM ratings WHERE rating >= 6.0) # nested query
+SELECT title, rating FROM shows JOIN ratings ON shows.id = ratings.show_id WHERE rating >= 6.0 LIMIT 10; # titles & rating as a table
+
