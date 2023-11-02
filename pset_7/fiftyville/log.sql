@@ -16,7 +16,7 @@ WHERE year = 2023 AND month = 7 AND day = 28 AND transcript LIKE "%bakery%";
 -- (3) thief leaving bakery -> called someone who talked < 1 min. thief plans to take earliest flight out of fiftyville tomorrow, person on phone purchased ticket
 
 -- storing current suspects into a table
--- suspects generated via checking first info from transcript: bakery security log transcripts +/- 10 mins of theft
+-- suspects generated via checking (1) from transcript: bakery security log transcripts +/- 10 mins of theft
 CREATE TABLE suspects (
   name TEXT NOT NULL
 );
@@ -29,7 +29,29 @@ VALUES (
 );
 -- current list of suspects: Brandon, Sophia, Vanessa, Bruce, Barry, Luca, Sofia, Iman, Diana, Kelsey, Taylor, Denise, Thomas, Jeremy
 
+-- suspects generated via checking (2) from transcript: withdrawing money from ATM on Legett Street -> check atm_transations
+INSERT INTO suspects (name)
+VALUES (
+    SELECT name
+    FROM people
+    JOIN bank_accounts ON bank_accounts.person_id = people.id
+    JOIN atm_transactions ON atm_transactions.account
 
+WHERE year = 2023 AND month = 7 AND day = 28 AND atm_location = 'Leggett Street' AND transaction_type = 'withdraw';
+);
+
+-- Finding the names associated with the corresponding account numbers. Putting these names in the 'Suspect List'
+SELECT name, atm_transactions.amount
+  FROM people
+  JOIN bank_accounts
+    ON people.id = bank_accounts.person_id
+  JOIN atm_transactions
+    ON bank_accounts.account_number = atm_transactions.account_number
+ WHERE atm_transactions.year = 2021
+   AND atm_transactions.month = 7
+   AND atm_transactions.day = 28
+   AND atm_transactions.atm_location = 'Leggett Street'
+   AND atm_transactions.transaction_type = 'withdraw';
 
 
 
