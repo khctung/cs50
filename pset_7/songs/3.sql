@@ -1,1 +1,2 @@
-SELECT name FROM songs ORDER BY tempo DESC LIMIT 5;
+-- The names of the top 5 longest songs, in descending order of length.
+SELECT name FROM songs ORDER BY duration_ms DESC LIMIT 5;
