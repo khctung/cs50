@@ -16,10 +16,11 @@ WHERE month = 7 AND day = 28;
 -- (3) thief leaving bakery -> called someone who talked < 1 min. thief plans to take earliest flight out of fiftyville tomorrow, person on phone purchased ticket
 
 -- check bakery security log transcripts +/- 10 mins of theft
-SELECT id
+SELECT name
 FROM people
-JOIN bakery_security_logs ON shows.id = stars.show_id
-WHERE month = 7 AND day = 28;
+JOIN bakery_security_logs ON bakery_security_logs.license_plate = people.license_plate
+WHERE month = 7 AND day = 28 AND hour = 10 AND (minute >= 5 OR minute <= 25);
+-- list of suspects: Brandon, Sophia, Vanessa, Bruce, Barry, Luca, Sofia, Iman, Diana, Kelsey, Taylor, Denise, Thomas, Jeremy
 
 -- find possible suspects
 SELECT COUNT(name)
