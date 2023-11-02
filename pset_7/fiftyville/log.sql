@@ -75,11 +75,13 @@ WHERE suspects.name NOT IN (
   SELECT name
   FROM people
   JOIN passengers ON passengers.passport_number = people.passport_number
-  JOIN flights ON flights.passport_number = people.passport_number
-  WHERE phone_calls.year = 2023
-  AND phone_calls.month = 7
-  AND phone_calls.day = 28
-  AND phone_calls.duration <= 60
+  JOIN flights ON flights.id = passengers.flight_id
+  JOIN airports ON airports.id = flights.origin_airport_id
+  WHERE airports.city = "Fiftyville"
+  AND flights.year = 2023
+  AND flights.month = 7
+  AND flights.day = 29
+  AND 
 );
 SELECT * FROM suspects;
 
