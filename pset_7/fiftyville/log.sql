@@ -33,6 +33,7 @@ AND bakery_security_logs.month = 7
 AND bakery_security_logs.day = 28
 AND bakery_security_logs.hour = 10
 AND (bakery_security_logs.minute >= 15 OR bakery_security_logs.minute <= 25);
+SELECT * FROM suspects;
 -- current list of suspects: Brandon, Sophia, Vanessa, Bruce, Barry, Luca, Sofia, Iman, Diana, Kelsey, Taylor, Denise, Thomas, Jeremy
 
 -- suspects generated via checking (2) from transcript: withdrawing money from ATM on Legett Street -> check atm_transations
@@ -49,23 +50,37 @@ WHERE suspects.name NOT IN (
   AND atm_transactions.atm_location = 'Leggett Street'
   AND atm_transactions.transaction_type = 'withdraw'
 );
+SELECT * FROM suspects;
 -- remaining list of suspects: Bruce, Luca, Iman, Diana, Taylor
 
 -- suspects generated via checking (3) from transcript: talked on phone for < 1 min -> check duration of phone calls
-
+-- delete from suspect list if suspect is NOT in this list (because then no overlap w previous suspects)
 DELETE FROM suspects
 WHERE suspects.name NOT IN (
   SELECT name
   FROM people
-  JOIN phone_calls ON phone_calls.caller = people.name
+  JOIN phone_calls ON phone_calls.caller = people.phone_number
   WHERE phone_calls.year = 2023
   AND phone_calls.month = 7
   AND phone_calls.day = 28
-  AND phone_calls.duration <= 1
-  AND atm_transactions.transaction_type = 'withdraw'
+  AND phone_calls.duration <= 60
 );
+SELECT * FROM suspects;
+-- remaining list of suspects: Bruce, Diana, Taylor
 
-
+-- suspects generated via checking (3) from transcript: went on earliest flight out of fiftyville -> check flights + passengers
+-- delete from suspect list if suspect is NOT in this list (because then no overlap w previous suspects)
+DELETE FROM suspects
+WHERE suspects.name NOT IN (
+  SELECT name
+  FROM people
+  JOIN passengers ON passengers.passport_number = people.passport_number
+  JOIN flights ON flights.passport_number = people.passport_number
+  WHERE phone_calls.year = 2023
+  AND phone_calls.month = 7
+  AND phone_calls.day = 28
+  AND phone_calls.duration <= 60
+);
 SELECT * FROM suspects;
 
 -- code to view current suspects
