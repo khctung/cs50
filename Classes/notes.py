@@ -207,5 +207,6 @@ CREATE INDEX show_index ON stars (show_id);
 B-trees = every node has multiple children
 -> shorter tree = shorter leaves
 -> created in index
+-> trade-off = more memory
 
 primary keys = indexes
