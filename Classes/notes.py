@@ -182,3 +182,4 @@ can have nested queries -> put one inside the other
 SELECT * shows WHERE id IN (SELECT show_id FROM ratings WHERE rating >= 6.0) # nested query
 SELECT title, rating FROM shows JOIN ratings ON shows.id = ratings.show_id WHERE rating >= 6.0 LIMIT 10; # titles & rating as a table
 
+if join 2 tables, will have duplication for rows with less "info" than others when joining
