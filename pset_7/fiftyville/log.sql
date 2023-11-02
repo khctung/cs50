@@ -25,9 +25,9 @@ LIKE "%bakery%";
 -- storing current suspects into a table
 -- suspects generated via checking (1) from transcript: bakery security log transcripts within 10 mins of theft
 CREATE TABLE suspects (
-  name TEXT NOT NULL
+  suspect_name TEXT NOT NULL
 );
-INSERT INTO suspects (name)
+INSERT INTO suspects (suspect_name)
 VALUES (
     SELECT name
     FROM people
