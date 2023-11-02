@@ -34,6 +34,12 @@ VALUES (
     WHERE month = 7 AND day = 28 AND hour = 10 AND (minute >= 5 OR minute <= 25)
 );
 
+INSERT INTO suspects (name)
+SELECT name
+FROM people
+JOIN bakery_security_logs ON bakery_security_logs.license_plate = people.license_plate
+WHERE month = 7 AND day = 28 AND hour = 10 AND (minute >= 5 OR minute <= 25);
+
 
 -- find possible suspects
 SELECT COUNT(name)
