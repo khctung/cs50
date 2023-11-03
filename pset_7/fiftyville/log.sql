@@ -25,7 +25,7 @@ AND transcript LIKE "%bakery%";
 CREATE TABLE suspects (name TEXT NOT NULL);
 
 INSERT INTO suspects (name)
-SELECT name
+SELECT DISTINCT name
 FROM people
 JOIN bakery_security_logs ON bakery_security_logs.license_plate = people.license_plate
 WHERE bakery_security_logs.year = 2023
