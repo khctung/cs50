@@ -90,6 +90,18 @@ WHERE suspects.name NOT IN (
 );
 SELECT * FROM suspects;
 
+SELECT name
+  FROM people
+  JOIN passengers ON passengers.passport_number = people.passport_number
+  JOIN flights ON flights.id = passengers.flight_id
+  JOIN airports ON airports.id = flights.origin_airport_id
+  WHERE airports.city = "Fiftyville"
+  AND flights.year = 2023
+  AND flights.month = 7
+  AND flights.day = 29
+  ORDER BY flights.hour, flights.minute
+  LIMIT 1;
+
 -- code to view current suspects
 -- find possible suspects
 SELECT
