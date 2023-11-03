@@ -103,7 +103,7 @@ SELECT * FROM suspects;
 -- Now we need to figure out the accomplice by seeing who Bruce called
 SELECT name
 FROM people
-JOIN phone_calls ON phone_calls.caller = people.phone_number
+JOIN phone_calls ON phone_calls.receiver = people.phone_number
 WHERE people.name = 'Bruce'
 AND phone_calls.caller = 2023
 AND phone_calls.month = 7
