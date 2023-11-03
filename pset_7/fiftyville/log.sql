@@ -102,6 +102,19 @@ SELECT name
   ORDER BY flights.hour, flights.minute
   LIMIT 1;
 
+  SELECT flights.id, full_name, city, flights.hour, flights.minute
+  FROM airports
+  JOIN flights
+    ON airports.id = flights.destination_airport_id
+ WHERE flights.origin_airport_id =
+       (SELECT id
+          FROM airports
+         WHERE city = 'Fiftyville')
+   AND flights.year = 2023
+   AND flights.month = 7
+   AND flights.day = 29
+ ORDER BY flights.hour, flights.minute;
+
 -- code to view current suspects
 -- find possible suspects
 SELECT
