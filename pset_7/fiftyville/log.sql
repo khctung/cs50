@@ -83,6 +83,7 @@ WHERE suspects.name NOT IN (
   AND flights.day = 29
   AND flights.hour = MIN(flights.hour)
   AND flights.minute = MIN(flights.minute)
+  GROUP BY flights.hour, flights.minute
 );
 SELECT * FROM suspects;
 
