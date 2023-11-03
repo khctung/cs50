@@ -81,6 +81,7 @@ WHERE flights.origin_airport_id = (
   AND flights.day = 29
   ORDER BY flights.hour, flights.minute;
 
+-- now we know that earliest possible flight is at 8:20AM and that they went to New York City
 -- delete from suspect list if suspect is NOT in this list (because then no overlap w previous suspects)
 DELETE FROM suspects
 WHERE suspects.name NOT IN (
@@ -97,31 +98,6 @@ WHERE suspects.name NOT IN (
   AND flights.minute = 20
 );
 SELECT * FROM suspects;
-
-SELECT name
-  FROM people
-  JOIN passengers ON passengers.passport_number = people.passport_number
-  JOIN flights ON flights.id = passengers.flight_id
-  JOIN airports ON airports.id = flights.origin_airport_id
-  WHERE airports.city = "Fiftyville"
-  AND flights.year = 2023
-  AND flights.month = 7
-  AND flights.day = 29
-  ORDER BY flights.hour, flights.minute
-  LIMIT 1;
-
-  SELECT flights.id, full_name, city, flights.hour, flights.minute
-  FROM airports
-  JOIN flights
-    ON airports.id = flights.destination_airport_id
- WHERE flights.origin_airport_id =
-       (SELECT id
-          FROM airports
-         WHERE city = 'Fiftyville')
-   AND flights.year = 2023
-   AND flights.month = 7
-   AND flights.day = 29
- ORDER BY flights.hour, flights.minute;
 
 -- code to view current suspects
 -- find possible suspects
