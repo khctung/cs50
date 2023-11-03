@@ -81,6 +81,8 @@ WHERE suspects.name NOT IN (
   AND flights.year = 2023
   AND flights.month = 7
   AND flights.day = 29
+  ORDER BY flights.hour, flights.minute
+  LIMIT 1;
   AND (flights.hour, flights.minute) = (
     SELECT MIN(flights.hour), MIN(flights.minute)
     FROM flights
