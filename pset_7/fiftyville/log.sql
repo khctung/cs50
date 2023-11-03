@@ -81,9 +81,10 @@ WHERE suspects.name NOT IN (
   AND flights.year = 2023
   AND flights.month = 7
   AND flights.day = 29
-  AND flights.hour = MIN(flights.hour)
-  AND flights.minute = MIN(flights.minute)
-  GROUP BY flights.hour, flights.minute
+  AND (flights.hour, flights.minute) = (
+    SELECT MIN(flights.hour), MIN(flights.minute)
+    FROM flights
+  )
 );
 SELECT * FROM suspects;
 
