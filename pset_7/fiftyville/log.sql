@@ -69,6 +69,18 @@ SELECT * FROM suspects;
 -- remaining list of suspects: Bruce, Diana, Taylor
 
 -- suspects generated via checking (3) from transcript: went on earliest flight out of fiftyville -> check flights + passengers
+SELECT flights.id, full_name, city, flights.hour, flights.minute
+FROM airports
+JOIN flights ON airports.id = flights.destination_airport_id
+WHERE flights.origin_airport_id = (
+  SELECT id
+  FROM airports
+  WHERE city = 'Fiftyville')
+  AND flights.year = 2023
+  AND flights.month = 7
+  AND flights.day = 29
+  ORDER BY flights.hour, flights.minute;
+
 -- delete from suspect list if suspect is NOT in this list (because then no overlap w previous suspects)
 DELETE FROM suspects
 WHERE suspects.name NOT IN (
@@ -81,12 +93,8 @@ WHERE suspects.name NOT IN (
   AND flights.year = 2023
   AND flights.month = 7
   AND flights.day = 29
-  ORDER BY flights.hour, flights.minute
-  LIMIT 1;
-  AND (flights.hour, flights.minute) = (
-    SELECT MIN(flights.hour), MIN(flights.minute)
-    FROM flights
-  )
+  AND flights.hour = 8
+  AND flights.minute = 20
 );
 SELECT * FROM suspects;
 
