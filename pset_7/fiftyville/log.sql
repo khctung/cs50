@@ -32,9 +32,9 @@ WHERE bakery_security_logs.year = 2023
 AND bakery_security_logs.month = 7
 AND bakery_security_logs.day = 28
 AND bakery_security_logs.hour = 10
-AND (bakery_security_logs.minute >= 15 OR bakery_security_logs.minute <= 25);
+AND (bakery_security_logs.minute >= 15 AND bakery_security_logs.minute <= 25);
 SELECT * FROM suspects;
--- current list of suspects: Brandon, Sophia, Vanessa, Bruce, Barry, Luca, Sofia, Iman, Diana, Kelsey, Taylor, Denise, Thomas, Jeremy
+-- current list of suspects: Vanessa, Bruce, Barry, Luca, Sofia, Iman, Diana, Kelsey
 
 -- suspects generated via checking (2) from transcript: withdrawing money from ATM on Legett Street -> check atm_transations
 -- delete from suspect list if suspect is NOT in this list (because then no overlap w previous suspects)
@@ -51,7 +51,7 @@ WHERE suspects.name NOT IN (
   AND atm_transactions.transaction_type = 'withdraw'
 );
 SELECT * FROM suspects;
--- remaining list of suspects: Bruce, Luca, Iman, Diana, Taylor
+-- remaining list of suspects: Bruce, Luca, Iman, Diana
 
 -- suspects generated via checking (3) from transcript: talked on phone for < 1 min -> check duration of phone calls
 -- delete from suspect list if suspect is NOT in this list (because then no overlap w previous suspects)
@@ -66,7 +66,7 @@ WHERE suspects.name NOT IN (
   AND phone_calls.duration <= 60
 );
 SELECT * FROM suspects;
--- remaining list of suspects: Bruce, Diana, Taylor
+-- remaining list of suspects: Bruce, Diana
 
 -- suspects generated via checking (3) from transcript: went on earliest flight out of fiftyville -> check flights + passengers
 SELECT flights.id, full_name, city, flights.hour, flights.minute
@@ -98,10 +98,14 @@ WHERE suspects.name NOT IN (
   AND flights.minute = 20
 );
 SELECT * FROM suspects;
+-- remaining suspects: Bruce
 
--- code to view current suspects
--- find possible suspects
-SELECT
-  COUNT(name)
-FROM
-  people;
+-- Now we need to figure out the accomplice by seeing who Bruce called
+SELECT name
+FROM people
+JOIN phone_calls ON phone_calls.caller = people.phone_number
+WHERE people.name = 'Bruce'
+AND phone_calls.caller = 2023
+AND phone_calls.month = 7
+AND phone_calls.day = 28
+AND phone_calls.duration <= 60
