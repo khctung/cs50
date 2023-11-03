@@ -79,9 +79,10 @@ WHERE flights.origin_airport_id = (
   AND flights.year = 2023
   AND flights.month = 7
   AND flights.day = 29
-  ORDER BY flights.hour, flights.minute;
+  ORDER BY flights.hour, flights.minute
+  LIMIT 1;
 
--- now we know that earliest possible flight is at 8:20AM and that they went to New York City
+-- now we know that earliest possible flight is at 8:20 so the thief boarded this flight and went to New York City
 -- delete from suspect list if suspect is NOT in this list (because then no overlap w previous suspects)
 DELETE FROM suspects
 WHERE suspects.name NOT IN (
@@ -101,11 +102,13 @@ SELECT * FROM suspects;
 -- remaining suspects: Bruce
 
 -- Now we need to figure out the accomplice by seeing who Bruce called
-SELECT name
-FROM people
-JOIN phone_calls ON phone_calls.receiver = people.phone_number
-WHERE people.name = 'Bruce'
-AND phone_calls.caller = 2023
+SELECT receiver_name.name
+FROM phone_calls
+JOIN people AS caller_name ON phone_calls.caller = caller_name.phone_number
+JOIN people AS receiver_name ON phone_calls.receiver = receiver_name.phone_number
+WHERE caller_name.name = 'Bruce'
+AND phone_calls.year = 2023
 AND phone_calls.month = 7
 AND phone_calls.day = 28
-AND phone_calls.duration <= 60
+AND phone_calls.duration <= 60;
+-- the person returned is Robin, so we know that the accomplice is robin
