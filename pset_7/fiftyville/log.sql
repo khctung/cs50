@@ -108,7 +108,7 @@ JOIN people AS caller_name ON phone_calls.caller = caller_name.phone_number
 JOIN people AS receiver_name ON phone_calls.receiver = receiver_name.phone_number
 WHERE caller_name.name = 'Bruce'
 
-instead of bruce, do select name from table
+-- instead of bruce, do select name from table
 
 AND phone_calls.year = 2023
 AND phone_calls.month = 7
