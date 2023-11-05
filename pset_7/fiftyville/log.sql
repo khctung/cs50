@@ -69,7 +69,7 @@ SELECT * FROM suspects;
 -- remaining list of suspects: Bruce, Diana
 
 -- suspects generated via checking (3) from transcript: went on earliest flight out of fiftyville -> check flights + passengers
-SELECT flights.id, full_name, city, flights.hour, flights.minute
+SELECT city, flights.hour, flights.minute
 FROM airports
 JOIN flights ON airports.id = flights.destination_airport_id
 WHERE flights.origin_airport_id = (
@@ -107,7 +107,7 @@ SELECT receiver_name.name
 FROM phone_calls
 JOIN people AS caller_name ON phone_calls.caller = caller_name.phone_number
 JOIN people AS receiver_name ON phone_calls.receiver = receiver_name.phone_number
-WHERE caller_name.name = suspects.name
+WHERE caller_name.name = suspects(name)
 AND phone_calls.year = 2023
 AND phone_calls.month = 7
 AND phone_calls.day = 28
