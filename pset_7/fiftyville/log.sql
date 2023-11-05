@@ -75,12 +75,13 @@ JOIN flights ON airports.id = flights.destination_airport_id
 WHERE flights.origin_airport_id = (
   SELECT id
   FROM airports
-  WHERE city = 'Fiftyville')
+  WHERE city = 'Fiftyville'
   AND flights.year = 2023
   AND flights.month = 7
   AND flights.day = 29
-  ORDER BY flights.hour, flights.minute
-  LIMIT 1;
+)
+ORDER BY flights.hour, flights.minute
+LIMIT 1;
 
 -- now we know that earliest possible flight is at 8:20 so the thief boarded this flight and went to New York City
 -- delete from suspect list if suspect is NOT in this list (because then no overlap w previous suspects)
@@ -106,10 +107,7 @@ SELECT receiver_name.name
 FROM phone_calls
 JOIN people AS caller_name ON phone_calls.caller = caller_name.phone_number
 JOIN people AS receiver_name ON phone_calls.receiver = receiver_name.phone_number
-WHERE caller_name.name = 'Bruce'
-
--- instead of bruce, do select name from table
-
+WHERE caller_name.name = suspects.name
 AND phone_calls.year = 2023
 AND phone_calls.month = 7
 AND phone_calls.day = 28
