@@ -32,7 +32,7 @@ WHERE bakery_security_logs.year = 2023
 AND bakery_security_logs.month = 7
 AND bakery_security_logs.day = 28
 AND bakery_security_logs.hour = 10
-AND (bakery_security_logs.minute >= 15 AND bakery_security_logs.minute <= 25);
+AND (bakery_security_logs.minute >= 15 AND bakery_security_logs.minute <= 25); -- is b/w 15 and 25 because we're given that it's within 10 mins of theft
 SELECT * FROM suspects;
 -- current list of suspects: Vanessa, Bruce, Barry, Luca, Sofia, Iman, Diana, Kelsey
 
@@ -107,6 +107,9 @@ FROM phone_calls
 JOIN people AS caller_name ON phone_calls.caller = caller_name.phone_number
 JOIN people AS receiver_name ON phone_calls.receiver = receiver_name.phone_number
 WHERE caller_name.name = 'Bruce'
+
+instead of bruce, do select name from table
+
 AND phone_calls.year = 2023
 AND phone_calls.month = 7
 AND phone_calls.day = 28
