@@ -12,4 +12,10 @@ WHERE id IN (
   JOIN people ON stars.person_id = people.id
   WHERE name = 'Jennifer Lawrence'
 );
+
+WHERE person_id IN (
+  SELECT id
+  FROM people
+  WHERE name = 'Jennifer Lawrence'
+)
 -- nested selects, replace join with a nested select
