@@ -7,3 +7,5 @@ JOIN ratings ON movies.id = ratings.movie_id
 WHERE people.name = 'Chadwick Boseman'
 ORDER BY ratings.rating DESC
 LIMIT 5;
+-- def need to join movies and ratings (only getting one specific piece of info through nested select)
+-- WHERE for getting id for chadwick boseman
