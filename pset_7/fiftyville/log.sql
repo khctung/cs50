@@ -20,7 +20,7 @@ AND transcript LIKE "%bakery%";
 -- (2) before theft (morning), saw thief withdrawing money from ATM on Leggett Street
 -- (3) thief leaving bakery -> called someone who talked < 1 min. thief plans to take earliest flight out of fiftyville tomorrow, person on phone purchased ticket
 
--- storing current suspects into a table
+-- storing current suspects into a table and updating it with each condition that the suspect fulfills
 -- suspects generated via checking (1) from transcript: bakery security log transcripts within 10 mins of theft
 CREATE TABLE suspects (name TEXT NOT NULL);
 
@@ -117,7 +117,7 @@ SELECT receiver_name.name
 FROM phone_calls
 JOIN people AS caller_name ON phone_calls.caller = caller_name.phone_number
 JOIN people AS receiver_name ON phone_calls.receiver = receiver_name.phone_number
-WHERE caller_name.name IN (SELECT name FROM suspects)
+WHERE caller_name.name IN (SELECT name FROM suspects) -- use the table for getting accomplice
 AND phone_calls.year = 2023
 AND phone_calls.month = 7
 AND phone_calls.day = 28
