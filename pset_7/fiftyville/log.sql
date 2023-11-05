@@ -92,12 +92,7 @@ WHERE suspects.name NOT IN (
   JOIN passengers ON passengers.passport_number = people.passport_number
   JOIN flights ON flights.id = passengers.flight_id
   JOIN airports ON airports.id = flights.origin_airport_id
-  WHERE airports.city = "Fiftyville"
-  AND flights.year = 2023
-  AND flights.month = 7
-  AND flights.day = 29
-  AND flights.hour = 8        -- got these times from the last query
-  AND flights.minute = 20
+  WHERE 
 );
 SELECT * FROM suspects;
 -- remaining suspects: Bruce
