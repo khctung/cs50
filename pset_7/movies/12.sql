@@ -12,3 +12,4 @@ WHERE id IN (
   JOIN people ON stars.person_id = people.id
   WHERE name = 'Jennifer Lawrence'
 );
+-- if join, no need for nested

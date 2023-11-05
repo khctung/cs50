@@ -5,4 +5,4 @@ JOIN stars ON people.id = stars.person_id
 WHERE people.name = 'Kevin Bacon' AND people.birth = 1958
 AND people.name != 'Kevin Bacon';
 
--- if join then no need for nested select (stars is already in my table)
+-- fix it up
