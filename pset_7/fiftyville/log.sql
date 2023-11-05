@@ -96,7 +96,7 @@ WHERE suspects.name NOT IN (
   AND flights.year = 2023
   AND flights.month = 7
   AND flights.day = 29
-  AND flights.hour = 8
+  AND flights.hour = 8        -- got these times from the last query
   AND flights.minute = 20
 );
 SELECT * FROM suspects;
@@ -107,7 +107,7 @@ SELECT receiver_name.name
 FROM phone_calls
 JOIN people AS caller_name ON phone_calls.caller = caller_name.phone_number
 JOIN people AS receiver_name ON phone_calls.receiver = receiver_name.phone_number
-WHERE caller_name.name = suspects(name)
+WHERE caller_name.name IN (SELECT name FROM suspects)
 AND phone_calls.year = 2023
 AND phone_calls.month = 7
 AND phone_calls.day = 28
