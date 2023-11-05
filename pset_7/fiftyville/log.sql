@@ -69,7 +69,7 @@ SELECT * FROM suspects;
 -- remaining list of suspects: Bruce, Diana
 
 -- suspects generated via checking (3) from transcript: went on earliest flight out of fiftyville -> check flights + passengers
-SELECT city, flights.hour, flights.minute
+SELECT city, flights.
 FROM airports
 JOIN flights ON airports.id = flights.destination_airport_id
 WHERE flights.origin_airport_id = (
@@ -92,7 +92,7 @@ WHERE suspects.name NOT IN (
   JOIN passengers ON passengers.passport_number = people.passport_number
   JOIN flights ON flights.id = passengers.flight_id
   JOIN airports ON airports.id = flights.origin_airport_id
-  WHERE 
+  WHERE
 );
 SELECT * FROM suspects;
 -- remaining suspects: Bruce
