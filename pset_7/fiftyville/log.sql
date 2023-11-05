@@ -36,7 +36,7 @@ AND (bakery_security_logs.minute >= 15 AND bakery_security_logs.minute <= 25); -
 SELECT * FROM suspects;
 -- current list of suspects: Vanessa, Bruce, Barry, Luca, Sofia, Iman, Diana, Kelsey
 
--- suspects generated via checking (2) from transcript: withdrawing money from ATM on Legett Street -> check atm_transations
+-- suspects generated via checking (2) from transcript: withdrawing money from ATM on Leggett Street -> check atm_transations
 -- delete from suspect list if suspect is NOT in this list (because then no overlap w previous suspects)
 DELETE FROM suspects
 WHERE suspects.name NOT IN (
