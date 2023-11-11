@@ -125,6 +125,8 @@ IP = internet protocol
 --> #.#.#.# -- each number is between 0 and 255; so 8 bits/1 byte per number; 2^32 = 4 billion unique numbers
 --> provides source and destination address
 
-TCP = guarantees delivery via writing a sequence number
+TCP = pair of protocols that gets us from point a to b
+--> guarantees delivery via writing a sequence number
 --> gives us port numbers
 --> common port numbers: 80 (HTTP), 443 (HTTPS, secure version of HTTP)
+--> sequence numbers are really big (using up all 32 bits)
