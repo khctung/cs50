@@ -138,5 +138,6 @@ DNS = domain-name-system servers
 
 DHCP = dynamic host configuration protocol
 --> what should be by DNS server and router?
-
+--> HTTP = worldwide web = protocol that governs how web browsers and servers speak
+--> 
 
