@@ -127,3 +127,4 @@ IP = internet protocol
 
 TCP = guarantees delivery via writing a sequence number
 --> gives us port numbers
+--> common port numbers: 80 (HTTP), 443 (HTTPS, secure version of HTTP)
