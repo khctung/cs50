@@ -164,3 +164,5 @@ Content-Type: text/html
 curl -I https://www.harvard.edu/
 curl = connect to url
 --> no pics or anything, just returning what the website is
+301 = moved permanently
+404 = page not found
