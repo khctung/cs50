@@ -142,5 +142,10 @@ DHCP = dynamic host configuration protocol
 --> for web, standardizes what goes inside the envelope
 --> HTTP = hyper text transfer protocol
 
-
+HTTPS = secure version of HTTP (secure version that prevents interceptors)
+https://www.example.com/path --> something a page inside
+                   ^ / = root, default page/folder for website
+https://www.example.com/folder/file.html --> file, usually doesn't have html there
+         ^ full domain name, includes www
+         ^ www = host name
 
