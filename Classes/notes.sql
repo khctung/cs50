@@ -152,3 +152,7 @@ https://www.example.com/folder/file.html --> file, usually doesn't have html the
 GET = getting information
 POST = posting information
 
+info sent from browser to server:
+GET / HTTP/2
+Host: www.harvard.edu
+...
