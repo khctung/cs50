@@ -149,3 +149,6 @@ https://www.example.com/folder/file.html --> file, usually doesn't have html the
          ^ full domain name, includes www
          ^ www = host name
 
+GET = getting information
+POST = posting information
+
