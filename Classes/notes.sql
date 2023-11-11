@@ -121,6 +121,9 @@ internet = can route across/down servers -> dynamic
 packet = generic name for information
 TCP/IP = 2 protocols that the internet uses to get data from point a to b
 IP = internet protocol
--> every computer/internet device has a IP address (unique string that identifies computers)
--> #.#.#.# -- each number is between 0 and 255; so 8 bits/1 byte per number; 2^32 = 4 billion unique numbers
+--> every computer/internet device has a IP address (unique string that identifies computers)
+--> #.#.#.# -- each number is between 0 and 255; so 8 bits/1 byte per number; 2^32 = 4 billion unique numbers
+--> provides source and destination address
 
+TCP = guarantees delivery via writing a sequence number
+--> gives us port numbers
