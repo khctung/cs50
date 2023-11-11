@@ -120,13 +120,12 @@ router = send info from point a to point b
 internet = can route across/down servers -> dynamic
 packet = generic name for information
 TCP/IP = 2 protocols that the internet uses to get data from point a to b
-IP = internet protocol
+IP = internet protocol = standardizes how the addresses work
 --> every computer/internet device has a IP address (unique string that identifies computers)
 --> #.#.#.# -- each number is between 0 and 255; so 8 bits/1 byte per number; 2^32 = 4 billion unique numbers
 --> provides source and destination address
 
-TCP = pair of protocols that gets us from point a to b
---> guarantees delivery via writing a sequence number
+TCP = pair of protocols that gets us from point a to b, guarantees delivery via writing a sequence number, helps servers do more than one thing
 --> gives us port numbers
 --> common port numbers: 80 (HTTP), 443 (HTTPS, secure version of HTTP)
 --> sequence numbers are really big (using up all 32 bits)
