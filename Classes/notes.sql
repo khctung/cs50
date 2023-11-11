@@ -136,3 +136,7 @@ DNS = domain-name-system servers
 --> dictionary: fully qualified domain name (key) -> ip address (values)
 --> ask local, then bigger, then eventually root systems
 
+DHCP = dynamic host configuration protocol
+--> what should be by DNS server and router?
+
+
