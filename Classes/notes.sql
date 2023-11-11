@@ -129,3 +129,9 @@ TCP = pair of protocols that gets us from point a to b, guarantees delivery via 
 --> gives us port numbers
 --> common port numbers: 80 (HTTP), 443 (HTTPS, secure version of HTTP)
 --> sequence numbers are really big (using up all 32 bits)
+
+domain names = wix.com
+DNS = domain-name-system servers
+--> answers what ip address is for the domain name (numeric address)
+--> dictionary: fully qualified domain name (key) -> ip address (values)
+
