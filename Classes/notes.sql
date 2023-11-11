@@ -111,3 +111,9 @@ db.executive("COMMIT")
 
 
 sql injection attack = code too vulnerable to being hacked
+
+
+
+--
+
+router = send info from point a to point b
