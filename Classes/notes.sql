@@ -156,3 +156,11 @@ info sent from browser to server:
 GET / HTTP/2
 Host: www.harvard.edu
 ...
+
+server sends back:
+HTTP/2 200
+Content-Type: text/html
+
+curl -I https://www.harvard.edu/
+curl = connect to url
+--> no pics or anything, just returning what the website is
