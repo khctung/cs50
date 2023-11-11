@@ -166,3 +166,21 @@ curl = connect to url
 --> no pics or anything, just returning what the website is
 301 = moved permanently
 404 = page not found
+
+
+HTML basics
+tags =
+attributes =
+
+<!DOCTYPE html?
+
+<html lang="en">
+  <head>
+    <title>
+      hello, title
+    </title>
+  </head>
+  <body>
+    hello, body
+  </body?
+</html>
