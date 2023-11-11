@@ -117,3 +117,10 @@ sql injection attack = code too vulnerable to being hacked
 --
 
 router = send info from point a to point b
+internet = can route across/down servers -> dynamic
+packet = generic name for information
+TCP/IP = 2 protocols that the internet uses to get data from point a to b
+IP = internet protocol
+-> every computer/internet device has a IP address (unique string that identifies computers)
+-> #.#.#.# -- each number is between 0 and 255; so 8 bits/1 byte per number; 2^32 = 4 billion unique numbers
+
