@@ -134,4 +134,5 @@ domain names = wix.com
 DNS = domain-name-system servers
 --> answers what ip address is for the domain name (numeric address)
 --> dictionary: fully qualified domain name (key) -> ip address (values)
+--> ask local, then bigger, then eventually root systems
 
