@@ -47,13 +47,34 @@
 
 
         <h2>Goofy pics + videos of just her</h2>
-        <div class="gallery">
-            <img src="pictures_videos/IMG_4094.jpg">
-            <img src="pictures_videos/IMG_4143.jpg">
-            <img src="pictures_videos/IMG_4258.jpg">
-            <img src="pictures_videos/IMG_8983.jpg">
-            <img src="pictures_videos/IMG_1007.JPG">
-            <img src="pictures_videos/IMG_0138.jpg">
+        <div class="gallery-container">
+            <div class="gallery-item" onclick="showNextImage()">
+                <img src="pictures_videos/IMG_4094.jpg" alt="Photo 1">
+            </div>
+            <div class="gallery-item" onclick="showNextImage()">
+                <img src="pictures_videos/IMG_4143.jpg" alt="Photo 2">
+            </div>
+            <div class="gallery-item" onclick="showNextImage()">
+                <img src="pictures_videos/IMG_4258.jpg" alt="Photo 3">
+            </div>
+            <!-- Add more gallery items as needed -->
         </div>
+
+        <button id="nextButton" onclick="showNextImage()">Next</button>
+
+        <script>
+            let images = ['image1.jpg', 'image2.jpg', 'image3.jpg'];
+            let currentIndex = 0;
+
+            function showNextImage() {
+                currentIndex = (currentIndex + 1) % images.length;
+                updateImage();
+            }
+
+            function updateImage() {
+                let currentImage = document.querySelector('.gallery-item img');
+                currentImage.src = images[currentIndex];
+            }
+        </script>
     </body>
 </html>
