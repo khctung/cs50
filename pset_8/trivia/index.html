@@ -8,15 +8,17 @@
         <script>
             // TODO: Add code to check answers to questions
             document.addEventListener('DOMContentLoaded', function() {
+
+                // clicked correct answer
                 let correct = document.querySelector('.correct');
                 correct.addEventListener('click', function() {
-                correct.style.backgroundColor = 'red';
-                document.querySelector("#answer1").innerHTML = "Correct!";
+                    correct.style.backgroundColor = 'green';
+                    document.querySelector("#answer1").innerHTML = "Correct!";
                 })
 
                 let incorrect = document.querySelectorAll(".incorrect");
                 for (let i = 0; i < incorrect.length; i++) {
-                    
+
                 }
             });
 
