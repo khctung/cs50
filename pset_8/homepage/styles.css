@@ -47,6 +47,10 @@ nav a {
 }
 
 .gallery img {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
     width: 270px; /* Set the width to a specific value, adjust as needed */
     height: auto; /* Maintain the aspect ratio */
     border-radius: 8px;
@@ -64,7 +68,6 @@ button, input[type="submit"] {
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
     vertical-align: middle;
 }
-
 
 input[type="text"] {
     line-height: 1.8;
