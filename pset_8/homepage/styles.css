@@ -71,6 +71,25 @@ nav a {
     border-radius: 8px;
 }
 
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    color: #007BFF;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+#prevButton {
+    left: 10px;
+}
+
+#nextButton {
+    right: 10px;
+}
+
 button, input[type="submit"] {
     background-color: #d9edff;
     border: 1px solid transparent;
