@@ -175,6 +175,11 @@ CSS
     {
       alert('hello, ' + document.querySelector('#name').value);
     }
+
+    document.querySelector('form').addEventListener('submit', function(event)) {
+      alert('hello, ' + document.querySelector('#name').value);
+      event.preventDefault();
+    }
   </script>
   <body style="text-align: center">
     <div style="font-size: large">
