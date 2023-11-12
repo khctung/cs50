@@ -189,6 +189,14 @@ CSS
     }
   </script>
   <body style="text-align: center">
+    <button id="red">R</button>
+    <script>
+      let body = document.querySelector('body');
+      document.querySelector('#red').addEventListener('click', function() {
+        body.style.backgroundColor = 'red';
+      });
+    </script>
+
     <div style="font-size: large">
       John Harvard
     </div>
