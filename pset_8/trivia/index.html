@@ -7,6 +7,13 @@
         <title>Trivia!</title>
         <script>
             // TODO: Add code to check answers to questions
+            document.addEventListener('DOMContentLoaded', function() {
+                let correct = document.querySelector('.correct');
+                correct.addEventListener('click', function() {
+                correct.style.backgroundColor = 'red';
+                document.querySelector("#answer1").innerHTML = "Correct!";
+                })
+            });
         </script>
     </head>
     <body>
@@ -24,30 +31,6 @@
                 <button>1 person per 3 sheep</button>
                 <button>1 person per 6 sheep</button>
                 <button id="red">R</button>
-                <script>
-                let body = document.querySelector('body');
-                document.querySelector('#red').addEventListener('click', function() {
-                    body.style.backgroundColor = 'red';
-                });
-
-                // Get a reference to your button
-                    let button = document.querySelector('#yourButtonId');
-
-                    // Add an event listener to the button
-                    button.addEventListener('click', function() {
-                        // Change the button color
-                        button.style.backgroundColor = 'red';
-
-                        // Create a new paragraph element
-                        let p = document.createElement('p');
-
-                        // Set the paragraph text
-                        p.textContent = 'Incorrect';
-
-                        // Append the paragraph to the body
-                        document.body.appendChild(p);
-                    });
-                </script>
             </div>
 
             <div class="section">
