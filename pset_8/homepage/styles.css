@@ -34,13 +34,14 @@ body {
 
 h1 {
     font-family: 'Montserrat', sans-serif;
-    
-    font-size: 70px;
+    color: #007BFF;
+    margin-down: 10px;
+    font-size: 80px;
 }
 
 nav a {
     text-decoration: none;
-    margin-right: 20px;
+    margin-right: 10px;
     font-size: 30px;
     color: #007BFF;
 }
