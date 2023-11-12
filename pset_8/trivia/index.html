@@ -29,6 +29,24 @@
                 document.querySelector('#red').addEventListener('click', function() {
                     body.style.backgroundColor = 'red';
                 });
+
+                // Get a reference to your button
+                    let button = document.querySelector('#yourButtonId');
+
+                    // Add an event listener to the button
+                    button.addEventListener('click', function() {
+                        // Change the button color
+                        button.style.backgroundColor = 'red';
+
+                        // Create a new paragraph element
+                        let p = document.createElement('p');
+
+                        // Set the paragraph text
+                        p.textContent = 'Incorrect';
+
+                        // Append the paragraph to the body
+                        document.body.appendChild(p);
+                    });
                 </script>
             </div>
 
