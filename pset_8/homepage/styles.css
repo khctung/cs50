@@ -59,6 +59,18 @@ nav a {
     border-radius: 8px;
 }
 
+.gallery-container {
+    display: flex;
+    overflow-x: hidden;
+    white-space: nowrap;
+}
+
+.gallery-item img {
+    max-width: 400px; /* Set a maximum width for the images */
+    height: auto;
+    border-radius: 8px;
+}
+
 button, input[type="submit"] {
     background-color: #d9edff;
     border: 1px solid transparent;
