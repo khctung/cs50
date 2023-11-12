@@ -170,11 +170,17 @@ CSS
       }
     </style>
   </head>
+  <script>
+    function greet()
+    {
+      alert('hello, ' + document.querySelector('#name').value);
+    }
+  </script>
   <body style="text-align: center">
     <div style="font-size: large">
       John Harvard
     </div>
-    <form onsubmit="greet(); return false;">
+    <form onsubmit="greet(); return false;"> <!-- is javascript! -->
     </form>
   </body>
 </html>
