@@ -12,10 +12,8 @@
 
         h1 {
             color: #333;
-        }
-
-        nav {
-            margin-top: 20px;
+            display: inline-block; /* Keep the title and links on the same line */
+            margin-right: 20px; /* Add some space between the title and links */
         }
 
         nav a {
@@ -27,38 +25,56 @@
 </head>
 <body>
 
-    <h1>About Me</h1>
-
-    <nav>
-        <a href="#life_at_school">Life at School</a>
-        <a href="#pets">Pets</a>
-        <a href="#sleeping">Sleeping</a>
-        <a href="#foodie">Foodie</a>
-    </nav>
+    <h1>About Me
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="life_at_school.html">Life at School</a>
+            <a href="pets.html">Pets</a>
+            <a href="sleeping.html">Sleeping</a>
+            <a href="foodie.html">Foodie</a>
+        </nav>
+    </h1>
 
     <p>
         Welcome to my personal webpage! I'm excited to share a bit about myself with you.
     </p>
 
-    <section id="life_at_school">
-        <h2>Life at School</h2>
-        <p>Content about life at school goes here...</p>
-    </section>
-
-    <section id="pets">
-        <h2>Pets</h2>
-        <p>Content about pets goes here...</p>
-    </section>
-
-    <section id="sleeping">
-        <h2>Sleeping</h2>
-        <p>Content about sleeping goes here...</p>
-    </section>
-
-    <section id="foodie">
-        <h2>Foodie</h2>
-        <p>Content about being a foodie goes here...</p>
-    </section>
+    <!-- Content goes here -->
 
 </body>
 </html>
+In this example, the navigation links are placed inside the <h1> element. The display: inline-block; CSS property is used to keep the "About Me" title and the navigation links on the same line. Adjust the styling as needed to achieve the desired appearance.
+
+
+
+
+
+    <body>
+
+        <h1>About Me</h1>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="life_at_school.html">Life at School</a>
+            <a href="pets.html">Pets</a>
+            <a href="sleeping.html">Sleeping</a>
+            <a href="foodie.html">Foodie</a>
+        </nav>
+
+        <p>
+            Welcome to my personal webpage! I'm excited to share a bit about myself with you.
+        </p>
+
+        <p>
+            Check out these pages to learn more:
+        </p>
+
+        <ul>
+            <li><a href="life_at_school.html">Life at School</a></li>
+            <li><a href="pets.html">Pets</a></li>
+            <li><a href="sleeping.html">Sleeping</a></li>
+            <li><a href="foodie.html">Foodie</a></li>
+        </ul>
+
+    </body>
+    </html>

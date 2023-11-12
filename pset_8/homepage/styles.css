@@ -37,6 +37,12 @@ h1 {
     font-size: 48px;
 }
 
+nav a {
+    text-decoration: none;
+    margin-right: 20px;
+    color: #007BFF;
+}
+
 button, input[type="submit"] {
     background-color: #d9edff;
     border: 1px solid transparent;
