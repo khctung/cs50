@@ -45,7 +45,11 @@ nav a {
     text-decoration: none;
     margin-right: 10px;
     font-size: 30px;
-    color: #007BFF;
+    color: ##0400ff;
+}
+
+nav a.active {
+    color: #fff; /* Set the text color for the active link */
 }
 
 .gallery img {
