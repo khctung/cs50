@@ -103,7 +103,7 @@ nav a {
     margin-bottom: 30px;
 }
 
-.gallery-item img {
+.gallery-item img, .gallery-item video {
     max-width: 600px;
     align-items: center;
     justify-content: center;
