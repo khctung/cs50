@@ -95,6 +95,20 @@ nav a.active {
     border-radius: 8px;
 }
 
+.gallery-container2 {
+    background-color: #fadadd;
+    border-radius: 15px; /* Border radius for rounded corners */
+    overflow: hidden; /* Hide overflow to contain rounded corners */
+    padding: 20px; /* Padding for inner content */
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
 .gallery-item2 {
     text-align: center;
     max-width: 300px; /* Adjust the max-width as needed */
