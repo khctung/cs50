@@ -58,15 +58,15 @@
 
         <script>
             let images = ['pictures_videos/a.jpg', 'pictures_videos/b.jpg', 'pictures_videos/c.jpg', 'pictures_videos/d.jpg', 'pictures_videos/e.jpg', 'pictures_videos/g.jpg'];
-            let currentIndex = 0;
+            let index = 0;
 
             function showPrevImage() {
-                currentIndex = (currentIndex - 1 + images.length) % images.length;
+                index = (index - 1 + images.length) % images.length;
                 updateImage();
             }
 
             function showNextImage() {
-                currentIndex = (currentIndex + 1) % images.length;
+                index = (index + 1) % images.length;
                 updateImage();
             }
 
