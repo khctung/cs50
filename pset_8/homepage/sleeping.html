@@ -59,11 +59,11 @@
         <script>
             document.querySelector("#check").addEventListener('click', function() {
                 let input = document.querySelector('input');
-                let src = document.querySelector('img');
+                let img = document.querySelector('img');
 
                 if (((input.value.toUpperCase() == 'WIGG') || (input.value.toUpperCase() == 'WIGGS') ||
                     (input.value.toUpperCase() == 'WIGGLESWORTH') || (input.value.toUpperCase() == 'WIGGLESWORTH COMMON ROOM') ||
-                    (input.value.toUpperCase() == 'COMMON ROOM')) && src.value == "pictures_videos/sleep1.jpg") {
+                    (input.value.toUpperCase() == 'COMMON ROOM')) && img.src == "pictures_videos/sleep1.jpg") {
                     input.style.backgroundColor = 'green';
                     document.querySelector('#feedback').innerHTML = 'Correct!';
                 } else {
@@ -73,7 +73,7 @@
 
                 if (((input.value.toUpperCase() == 'BERG') || (input.value.toUpperCase() == 'ANNENBERG') ||
                     (input.value.toUpperCase() == 'MEMORIAL HALL') || (input.value.toUpperCase() == 'LOKER COMMONS') ||
-                    (input.value.toUpperCase() == 'BENEATH ANNENBERG')) && src == "pictures_videos/sleep2.jpg") {
+                    (input.value.toUpperCase() == 'BENEATH ANNENBERG')) && img.src == "pictures_videos/sleep2.jpg") {
                     input.style.backgroundColor = 'green';
                     document.querySelector('#feedback').innerHTML = 'Correct!';
                 } else {
@@ -82,7 +82,7 @@
                 }
 
                 if (((input.value.toUpperCase() == 'SANDERS') || (input.value.toUpperCase() == 'SANDERS THEATRE') ||
-                    (input.value.toUpperCase() == 'SANDERS THEATER')) && src == "pictures_videos/sleep3.jpg") {
+                    (input.value.toUpperCase() == 'SANDERS THEATER')) && img.src == "pictures_videos/sleep3.jpg") {
                     input.style.backgroundColor = 'green';
                     document.querySelector('#feedback').innerHTML = 'Correct!';
                 } else {
@@ -92,7 +92,7 @@
 
                 if (((input.value.toUpperCase() == 'GYM') || (input.value.toUpperCase() == 'QUINCY') ||
                     (input.value.toUpperCase() == 'QUINCY GYM') || (input.value.toUpperCase() == 'QUINCY HOUSE GYM') ||
-                    (input.value.toUpperCase() == 'QUINCY HOUSE')) || && src == "pictures_videos/sleep4.jpg") {
+                    (input.value.toUpperCase() == 'QUINCY HOUSE')) || && img.src == "pictures_videos/sleep4.jpg") {
                     input.style.backgroundColor = 'green';
                     document.querySelector('#feedback').innerHTML = 'Correct!';
                 } else {
