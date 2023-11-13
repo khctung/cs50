@@ -63,43 +63,33 @@
                     let img = button.parentElement.querySelector('img');
                     let feedback = button.parentElement.querySelector('.feedback');
 
+                    feedback.innerHTML = ''; // Clear previous feedback
+
+                    let correctLocation = '';
+
                     if (((input.value.toUpperCase() == 'WIGG') || (input.value.toUpperCase() == 'WIGGS') ||
                         (input.value.toUpperCase() == 'WIGGLESWORTH') || (input.value.toUpperCase() == 'WIGGLESWORTH COMMON ROOM') ||
                         (input.value.toUpperCase() == 'COMMON ROOM')) && img.src.endsWith("pictures_videos/sleep1.jpg")) {
-                        input.style.backgroundColor = 'green';
-                        feedback.innerHTML = 'Correct!';
-                    } else {
-                        input.style.backgroundColor = 'red';
-                        feedback.innerHTML = 'Incorrect; Wigglesworth Common Room';
-                    }
-
-                    if (((input.value.toUpperCase() == 'BERG') || (input.value.toUpperCase() == 'ANNENBERG') ||
+                        correctLocation = 'Wigglesworth Common Room';
+                    } else if (((input.value.toUpperCase() == 'BERG') || (input.value.toUpperCase() == 'ANNENBERG') ||
                         (input.value.toUpperCase() == 'MEMORIAL HALL') || (input.value.toUpperCase() == 'LOKER COMMONS') ||
                         (input.value.toUpperCase() == 'BENEATH ANNENBERG')) && img.src.endsWith("pictures_videos/sleep2.jpg")) {
-                        input.style.backgroundColor = 'green';
-                        feedback.innerHTML = 'Correct!';
-                    } else {
-                        input.style.backgroundColor = 'red';
-                        feedback.innerHTML = 'Incorrect; Beneath Annenberg';
-                    }
-
-                    if (((input.value.toUpperCase() == 'SANDERS') || (input.value.toUpperCase() == 'SANDERS THEATRE') ||
+                        correctLocation = 'Beneath Annenberg';
+                    } else if (((input.value.toUpperCase() == 'SANDERS') || (input.value.toUpperCase() == 'SANDERS THEATRE') ||
                         (input.value.toUpperCase() == 'SANDERS THEATER')) && img.src.endsWith("pictures_videos/sleep3.jpg")) {
-                        input.style.backgroundColor = 'green';
-                        feedback.innerHTML = 'Correct!';
-                    } else {
-                        input.style.backgroundColor = 'red';
-                        feedback.innerHTML = 'Incorrect; Sanders Theater';
-                    }
-
-                    if (((input.value.toUpperCase() == 'GYM') || (input.value.toUpperCase() == 'QUINCY') ||
+                        correctLocation = 'Sanders Theater';
+                    } else if (((input.value.toUpperCase() == 'GYM') || (input.value.toUpperCase() == 'QUINCY') ||
                         (input.value.toUpperCase() == 'QUINCY GYM') || (input.value.toUpperCase() == 'QUINCY HOUSE GYM') ||
                         (input.value.toUpperCase() == 'QUINCY HOUSE')) && img.src.endsWith("pictures_videos/sleep4.jpg")) {
+                        correctLocation = 'Quincy House Gym';
+                    }
+
+                    if (correctLocation !== '' && input.value.toUpperCase() === correctLocation.toUpperCase()) {
                         input.style.backgroundColor = 'green';
                         feedback.innerHTML = 'Correct!';
                     } else {
                         input.style.backgroundColor = 'red';
-                        feedback.innerHTML = 'Incorrect; Quincy House Gym';
+                        feedback.innerHTML = 'Incorrect; ' + correctLocation;
                     }
                 });
             });
