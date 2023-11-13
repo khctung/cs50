@@ -46,6 +46,12 @@ h1 {
     font-size: 80px;
 }
 
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    margin-down: 10px;
+    font-size: 40px;
+}
+
 nav a {
     text-decoration: none;
     margin-right: 10px;
