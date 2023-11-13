@@ -63,9 +63,10 @@ nav a {
 }
 
 .gallery-container {
-    display: flex;
-    overflow-x: hidden;
-    white-space: nowrap;
+    background-color: #ff8c8c; /* Lighter pink background color */
+    border-radius: 15px; /* Border radius for rounded corners */
+    overflow: hidden; /* Hide overflow to contain rounded corners */
+    padding: 20px; /* Padding for inner content */
 }
 
 .gallery-item img {
