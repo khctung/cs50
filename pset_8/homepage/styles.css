@@ -39,6 +39,10 @@ body {
     transition: color 2s ease-in-out, background-color 0.15s ease-in-out;
 }
 
+.div {
+    margin-bottom: 20px; /* Adjust as needed */
+}
+
 h1 {
     font-family: 'Montserrat', sans-serif;
     color: #007BFF;
@@ -77,7 +81,6 @@ nav a {
 
 .gallery-container {
     background-color: #d1ffbd;
-    display: flex;
     border-radius: 15px; /* Border radius for rounded corners */
     overflow: hidden; /* Hide overflow to contain rounded corners */
     padding: 20px; /* Padding for inner content */
