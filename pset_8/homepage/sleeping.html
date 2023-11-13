@@ -68,7 +68,7 @@
             document.querySelectorAll(".check").forEach(function (button) {
                 button.addEventListener('click', function () {
                     let input = button.parentElement.querySelector('input');
-                    let img = button.parentElement.querySelector('img');
+                    let img = button.parentElement.parentElement.querySelector('img');
                     let feedback = button.parentElement.querySelector('.feedback');
 
                     feedback.innerHTML = ''; // Clear previous feedback
