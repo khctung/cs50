@@ -81,13 +81,36 @@
                     document.querySelector('#answer_feedback_2').innerHTML = 'Incorrect; Wigglesworth Common Room';
                 }
 
-                if ((input.value.toUpperCase()  == 'WIGG') & src == "pictures_videos/sleep2.jpg") {
+                if (((input.value.toUpperCase()  == 'BERG') || (input.value.toUpperCase()  == 'ANNENBERG') ||
+                    (input.value.toUpperCase()  == 'MEMORIAL HALL') || (input.value.toUpperCase()  == 'LOKER COMMONS') ||
+                    input.value.toUpperCase()  == 'BENEATH ANNENBERG')) & src == "pictures_videos/sleep2.jpg") {
                     input.style.backgroundColor = 'green';
                     document.querySelector('feedback').innerHTML = 'Correct!';
                 } else {
                     input.style.backgroundColor = 'red';
-                    document.querySelector('#answer_feedback_2').innerHTML = 'Incorrect; Wigglesworth Common Room';
+                    document.querySelector('#answer_feedback_2').innerHTML = 'Incorrect; Beneath Annenberg';
                 }
+
+                if (((input.value.toUpperCase()  == 'SANDERS') || (input.value.toUpperCase()  == 'SANDERS THEATRE') ||
+                    (input.value.toUpperCase()  == 'SANDERS THEATER')) & src == "pictures_videos/sleep3.jpg") {
+                    input.style.backgroundColor = 'green';
+                    document.querySelector('feedback').innerHTML = 'Correct!';
+                } else {
+                    input.style.backgroundColor = 'red';
+                    document.querySelector('#answer_feedback_2').innerHTML = 'Incorrect; Sanders Theater';
+                }
+
+                if (((input.value.toUpperCase()  == 'GYM') || (input.value.toUpperCase()  == 'QUINCY') ||
+                    (input.value.toUpperCase()  == 'QUINCY GYM') || input.value.toUpperCase()  == 'QUINCY HOUSE GYM')
+                    input.value.toUpperCase()  == 'QUINCY HOUSE')) & src == "pictures_videos/sleep4.jpg") {
+                    input.style.backgroundColor = 'green';
+                    document.querySelector('feedback').innerHTML = 'Correct!';
+                } else {
+                    input.style.backgroundColor = 'red';
+                    document.querySelector('#answer_feedback_2').innerHTML = 'Incorrect; Quincy House Gym';
+                }
+
+                
             });
 
         </script>
