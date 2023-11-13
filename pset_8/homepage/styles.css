@@ -113,11 +113,11 @@ nav a.active {
 .check-item {
     position: relative;
     text-align: center;
+    margin-top: 10px; /* Adjust the top margin for spacing between image and input/check elements */
 }
 
-.check-item {
-    margin-top: 10px;
-    justify-content: center;
+.check-item input {
+    margin-bottom: 5px;
 }
 
 .arrow {
