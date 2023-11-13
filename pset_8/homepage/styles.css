@@ -114,3 +114,8 @@ nav a.active {
 #nextButton {
     right: 35px;
 }
+
+.check {
+    display: block;
+    position: relative;
+}
