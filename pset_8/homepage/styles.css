@@ -150,3 +150,17 @@ nav a.active {
 #nextButton {
     right: 35px;
 }
+
+table {
+    border-collapse: collapse;
+    width: 50%;
+    margin: 20px;
+}
+
+th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 12px;
+    font-size: 16px; /* Adjust the font size as needed */
+    background-color: #f2f2f2;
+}
