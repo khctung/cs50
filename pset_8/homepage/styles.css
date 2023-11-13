@@ -97,9 +97,7 @@ nav a.active {
 
 .gallery-item2 {
     text-align: center;
-    position: relative;
-    flex: 0 0 calc(25% - 20px); /* Make each item take 25% width with a gap of 20px */
-    max-width: calc(25% - 20px); /* Fix max width to prevent item overflow */
+    max-width: 300px; /* Adjust the max-width as needed */
 }
 
 .gallery-item2 img {
@@ -111,9 +109,8 @@ nav a.active {
 }
 
 .check-item {
-    position: relative;
     text-align: center;
-    margin-top: 10px; /* Adjust the top margin for spacing between image and input/check elements */
+    margin-top: 10px;
 }
 
 .check-item input {
