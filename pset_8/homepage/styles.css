@@ -48,8 +48,8 @@ h1 {
 h2 {
     font-family: 'Arial', sans-serif;
     font-size: 40px;
-    margin-left: 20px;
     margin-bottom: 15px;
+    margin-left: 20px;
 }
 
 nav a {
@@ -66,8 +66,8 @@ nav a.active {
 .gallery img {
     border-radius: 8px;
     height: auto;
-    margin-left: 25px;
     margin-bottom: 20px;
+    margin-left: 25px;
     width: 325px;
 }
 
@@ -93,9 +93,9 @@ nav a.active {
     align-items: center;
     display: flex;
     justify-content: center;
-    position: relative;
-    margin-right: 20px;
     margin-bottom: 30px;
+    margin-right: 20px;
+    position: relative;
 }
 
 .gallery-item img {
@@ -126,8 +126,8 @@ nav a.active {
 
 .gallery-item2 img {
     border-radius: 8px;
-    height: auto;
     display: block;
+    height: auto;
     margin: 0 auto;
     max-width: 100%;
 }
