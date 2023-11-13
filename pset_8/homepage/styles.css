@@ -54,7 +54,7 @@ nav a {
 }
 
 .gallery img {
-    width: 270px; /* Set the width to a specific value, adjust as needed */
+    width: 325px; /* Set the width to a specific value, adjust as needed */
     height: auto; /* Maintain the aspect ratio */
     border-radius: 8px;
 }
