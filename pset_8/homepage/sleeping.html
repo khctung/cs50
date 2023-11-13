@@ -29,7 +29,7 @@
 
         <div class="gallery-container2">
             <div class="gallery-item2">
-                <img src="pictures_videos/sleep1.jpg">
+                <img src="pictures_videos/sleep1.jpg" alt="sleep1">
                 <div class="check-item">
                     <input type='text' placeholder="Location">
                     <button class="check">Check!</button>
@@ -37,7 +37,7 @@
                 </div>
             </div>
             <div class="gallery-item2">
-                <img src="pictures_videos/sleep2.jpg">
+                <img src="pictures_videos/sleep2.jpg" alt="sleep2">
                 <div class="check-item">
                     <input type='text' placeholder="Location">
                     <button class="check">Check!</button>
@@ -45,7 +45,7 @@
                 </div>
             </div>
             <div class="gallery-item2">
-                <img src="pictures_videos/sleep3.jpg">
+                <img src="pictures_videos/sleep3.jpg" alt="sleep3">
                 <div class="check-item">
                     <input type='text' placeholder="Location">
                     <button class="check">Check!</button>
@@ -53,7 +53,7 @@
                 </div>
             </div>
             <div class="gallery-item2">
-                <img src="pictures_videos/sleep4.jpg">
+                <img src="pictures_videos/sleep4.jpg" alt="sleep4">
                 <div class="check-item">
                     <input type='text' placeholder="Location">
                     <button class="check">Check!</button>
@@ -63,8 +63,8 @@
         </div>
 
         <script>
-            document.querySelectorAll(".check").forEach(function (button) {
-                button.addEventListener('click', function () {
+            document.querySelectorAll(".check").forEach(function(button) {
+                button.addEventListener('click', function() {
                     let input = button.parentElement.querySelector('input');
                     let img = button.parentElement.parentElement.querySelector('img');
                     let feedback = button.parentElement.querySelector('.feedback');
@@ -96,4 +96,5 @@
             });
         </script>
     </body>
+
 </html>

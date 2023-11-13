@@ -9,13 +9,14 @@ body {
 }
 
 video {
-    max-width: 100%; /* Set the maximum width to 100% */
-    height: auto; /* Maintain the aspect ratio */
+    height: auto;
+    max-width: 100%;
 }
 
-ul, ol {
+ul,
+ol {
+    font-size: 25px;
     margin-left: 15px;
-    font-size: 25px; /* Adjust the font size as needed */
 }
 
 .container {
@@ -38,100 +39,98 @@ ul, ol {
 }
 
 h1 {
-    font-family: 'Montserrat', sans-serif;
     color: #007BFF;
-    margin-bottom: 10px;
+    font-family: 'Montserrat', sans-serif;
     font-size: 80px;
+    margin-bottom: 10px;
 }
 
 h2 {
     font-family: 'Arial', sans-serif;
+    font-size: 40px;
     margin-left: 20px;
     margin-bottom: 15px;
-    font-size: 40px;
 }
 
 nav a {
-    text-decoration: none;
-    margin-right: 10px;
-    font-size: 155%;
     color: #007BFF;
+    font-size: 155%;
+    margin-right: 10px;
+    text-decoration: none;
 }
 
 nav a.active {
-    color: #0400ff; /* Set the text color for the active link */
+    color: #0400ff;
 }
 
 .gallery img {
-    width: 325px; /* Set the width to a specific value, adjust as needed */
-    height: auto; /* Maintain the aspect ratio */
     border-radius: 8px;
+    height: auto;
     margin-left: 25px;
     margin-bottom: 20px;
+    width: 325px;
 }
 
 .gallery {
-    background-color: #fadadd; /* Lighter pink background color */
-    border-radius: 15px; /* Border radius for rounded corners */
-    overflow: hidden; /* Hide overflow to contain rounded corners */
-    padding: 20px; /* Padding for inner content */
+    background-color: #fadadd;
+    border-radius: 15px;
+    overflow: hidden;
+    padding: 20px;
 }
 
 .gallery-container {
-    background-color: #d1ffbd;
-    border-radius: 15px; /* Border radius for rounded corners */
-    overflow: hidden; /* Hide overflow to contain rounded corners */
-    padding: 20px; /* Padding for inner content */
-    justify-content: center;
     align-items: center;
+    background-color: #d1ffbd;
+    border-radius: 15px;
     flex-wrap: wrap;
+    justify-content: center;
+    overflow: hidden;
+    padding: 20px;
     position: relative;
 }
 
 .gallery-item {
-    display: flex;
-    position: relative;
     align-items: center;
+    display: flex;
     justify-content: center;
+    position: relative;
     margin-right: 20px;
     margin-bottom: 30px;
 }
 
 .gallery-item img {
-    max-width: 50%; /* Set the maximum width to 100% */
-    height: auto; /* Maintain the aspect ratio */
     align-items: center;
-    justify-content: center;
-    height: auto;
     border-radius: 8px;
+    height: auto;
+    justify-content: center;
     margin-left: 20px;
+    max-width: 50%;
 }
 
 .gallery-container2 {
-    background-color: #fadadd;
-    border-radius: 15px; /* Border radius for rounded corners */
-    overflow: hidden; /* Hide overflow to contain rounded corners */
-    padding: 20px; /* Padding for inner content */
-    justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
-    position: relative;
+    background-color: #fadadd;
+    border-radius: 15px;
     display: flex;
+    flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
+    overflow: hidden;
+    padding: 20px;
+    position: relative;
 }
 
 .gallery-item2 {
     text-align: center;
-    max-width: 600px; /* Adjust the max-width as needed */
+    max-width: 600px;
 }
 
 .gallery-item2 img {
-    max-width: 100%;
-    height: auto;
     border-radius: 8px;
+    height: auto;
     display: block;
     margin: 0 auto;
+    max-width: 100%;
 }
 
 .check-item {
@@ -144,15 +143,15 @@ nav a.active {
 }
 
 .arrow {
+    background: none;
+    border: none;
+    color: #023020;
+    cursor: pointer;
+    font-size: 75px;
     position: absolute;
     top: 60%;
     transform: translateY(-50%);
-    font-size: 75px;
-    color: #023020;
-    cursor: pointer;
-    background: none;
-    border: none;
-    z-index: 1; /* Ensure buttons are on top */
+    z-index: 1;
 }
 
 #prevButton {
@@ -168,20 +167,20 @@ table {
     margin: 20px;
 }
 
-th, td {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 12px;
-    font-size: 16px; /* Adjust the font size as needed */
+th,
+td {
     background-color: #f2f2f2;
+    border: 1px solid #dddddd;
+    font-size: 16px;
+    padding: 12px;
+    text-align: left;
 }
 
 td:nth-child(1) {
-    width: 15%; /* You can adjust the percentage as needed */
+    width: 15%;
 }
 
 td:nth-child(2) {
-    width: 15%; /* You can adjust the percentage as needed */
     font-size: 48.5%;
+    width: 15%;
 }
-
