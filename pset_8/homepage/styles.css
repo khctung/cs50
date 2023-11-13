@@ -93,12 +93,16 @@ nav a {
 .gallery-item {
     display: flex;
     position: relative;
-    margin-right: 20px; /* Adjust the right margin as needed */
-    margin-bottom: 30px; /* Adjust the bottom margin as needed */
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    margin-bottom: 30px;
 }
 
 .gallery-item img {
-    max-width: 400px; /* Set a maximum width for the images */
+    max-width: 400px;
+    align-items: center;
+    justify-content: center;
     height: auto;
     border-radius: 8px;
 }
