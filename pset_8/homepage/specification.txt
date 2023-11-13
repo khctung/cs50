@@ -17,6 +17,14 @@ LIST OF HTML TAGS USED:
 14. <script>
 
 
+LIST OF 5 CSS SELECTORS USED:
+1. tag (examples: h1, h2)
+2. class (examples: .gallery, .gallery-item, etc. mainly used for pictures/videos)
+3. ID (examples: #prevButton, #nextButton)
+4. :nth-child(n) --> used for determining rating star size for the table + width of table column
+5. element.class --> example: nav a.active --> selects all <a> elements with class="active"
+
+
 LIST OF 5 CSS PROPERTIES USED:
 1. tag (examples: h1, h2)
 2. class (examples: .gallery, .gallery-item, etc. mainly used for pictures/videos)
