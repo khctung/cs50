@@ -104,6 +104,7 @@ nav a.active {
     justify-content: center;
     height: auto;
     border-radius: 8px;
+    margin-left: 20px;
 }
 
 .gallery-container2 {
