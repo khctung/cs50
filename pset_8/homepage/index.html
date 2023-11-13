@@ -25,11 +25,11 @@
             <h2>HI!! So excited that you're visting my webpage &#9829; I'll be dedicating the home page to facts about myself, and the rest of the pages to things that are important/interest me!</h2>
 
             <ul>
-                <li>I'm thinking of joing concentrating in CS + Stats w/ a secondary in Econ!</li>
-                <li>I live in Matthews (best dorm EVER), but the fourth floor kinda sucks</li>
-                <li>I'm from California! I really miss the weather in the Bay Area... it's too cold here</li>
-                <li>In my free time, I love playing foosball, reading manga, journaling, and sleeping</li>
-                <li>Fun fact: I have a black belt in Taekwondo! My favorite kick is the roundhouse kick!</li>
+                <li>I'm thinking of joint concentrating in Computer Science + Statistics with a secondary in Economics!</li>
+                <li>I live in Matthews (best dorm EVER), but the fourth floor kinda sucks (I do love all of the leg exercise that I get from this tho)</li>
+                <li>I'm from California! I really miss the weather in the Bay Area... it's too cold here. literally unbearable. </li>
+                <li>In my free time, I love playing foosball, reading manga, journaling, eating, walking my dog, and sleeping (more on the last three in the other tabs!!) </li>
+                <li>I have a black belt in Taekwondo! My favorite kick is the roundhouse kick, and I've broken 6 wooden boards at once before!</li>
             </ul>
         </div>
 
@@ -51,37 +51,5 @@
             <img src="pictures_videos/pic1.jpg">
             <img src="pictures_videos/IMG_3422.jpg">
         </div>
-
-
-        <div class="gallery-container">
-            <h2>Goofy shots of just Coco herself</h2>
-            <button id="prevButton" class="arrow" onclick="showPrevImage()">&#8592;</button>
-            <div class="gallery-item">
-                <img src="pictures_videos/a.jpg">
-            </div>
-            <button id="nextButton" class="arrow" onclick="showNextImage()">&#8594;</button>
-        </div>
-
-        <script>
-            let images = ['pictures_videos/a.jpg', 'pictures_videos/b.jpg', 'pictures_videos/c.jpg', 'pictures_videos/d.jpg', 'pictures_videos/e.jpg'];
-            let currentIndex = 0;
-
-            function showPrevImage() {
-                currentIndex = (currentIndex - 1 + images.length) % images.length;
-                updateImage();
-            }
-
-            function showNextImage() {
-                currentIndex = (currentIndex + 1) % images.length;
-                updateImage();
-            }
-
-            function updateImage() {
-                let currentImage = document.querySelector('.gallery-item img');
-                currentImage.src = images[currentIndex];
-            }
-
-
-        </script>
     </body>
 </html>
