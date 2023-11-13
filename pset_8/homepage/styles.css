@@ -126,7 +126,7 @@ nav a {
     right: 35px;
 }
 
-button, input[type="submit"] {
+button, input[type="check!"] {
     background-color: #d9edff;
     border: 1px solid transparent;
     border-radius: 0.25rem;
