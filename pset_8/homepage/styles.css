@@ -8,6 +8,11 @@ body {
     text-align: left;
 }
 
+video {
+    max-width: 100%; /* Set the maximum width to 100% */
+    height: auto; /* Maintain the aspect ratio */
+}
+
 ul, ol {
     margin-left: 15px;
     font-size: 25px; /* Adjust the font size as needed */
@@ -23,8 +28,8 @@ ul, ol {
 .header {
     background-color: #DFF2FF;
     color: #fff;
-    margin-bottom: 2rem;
-    padding: 2rem 1rem;
+    margin-bottom: 20px;
+    padding: 30px;
     text-align: center;
 }
 
