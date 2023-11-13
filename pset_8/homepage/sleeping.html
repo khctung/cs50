@@ -40,33 +40,14 @@
         </div>
 
 
-        <div class="gallery-container">
-            <h2>Goofy shots of just Coco herself</h2>
-            <button id="prevButton" class="arrow" onclick="showPrevImage()">&#8592;</button>
-            <div class="gallery-item">
-                <img src="pictures_videos/a.jpg">
-            </div>
-            <button id="nextButton" class="arrow" onclick="showNextImage()">&#8594;</button>
+        <div class="section">
+            <h2>Part 2: Free Response</h2>
+            <hr>
+            <h3>In which country is it illegal to own only one guinea pig, as a lone guinea pig might get lonely?</h3>
+            <input type = 'text'></input>
+            <button id = "check">Check Answer</button>
+
+            <p id = "answer_feedback_2"></p>
         </div>
-
-        <script>
-            let images = ['pictures_videos/a.jpg', 'pictures_videos/b.jpg', 'pictures_videos/c.jpg', 'pictures_videos/d.jpg', 'pictures_videos/e.jpg'];
-            let currentIndex = 0;
-
-            function showPrevImage() {
-                currentIndex = (currentIndex - 1 + images.length) % images.length;
-                updateImage();
-            }
-
-            function showNextImage() {
-                currentIndex = (currentIndex + 1) % images.length;
-                updateImage();
-            }
-
-            function updateImage() {
-                let currentImage = document.querySelector('.gallery-item img');
-                currentImage.src = images[currentIndex];
-            }
-        </script>
     </body>
 </html>
