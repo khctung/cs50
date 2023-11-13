@@ -101,6 +101,15 @@ nav a.active {
     border-radius: 8px;
 }
 
+.check-item {
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    bottom: 0; /* Position at the bottom */
+    left: 0;
+    width: 100%; /* Take the full width */
+}
+
 .arrow {
     position: absolute;
     top: 50%;
@@ -119,12 +128,4 @@ nav a.active {
 
 #nextButton {
     right: 35px;
-}
-
-.check-item {
-    position: absolute;
-    align-items: center;
-    justify-content: center;
-    top: 100%;
-    left: 0;
 }
