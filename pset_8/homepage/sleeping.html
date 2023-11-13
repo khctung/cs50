@@ -65,31 +65,26 @@
 
                     feedback.innerHTML = ''; // Clear previous feedback
 
-                    let correctLocation = '';
+                    let correctLocations = [];
 
-                    if (((input.value.toUpperCase() == 'WIGG') || (input.value.toUpperCase() == 'WIGGS') ||
-                        (input.value.toUpperCase() == 'WIGGLESWORTH') || (input.value.toUpperCase() == 'WIGGLESWORTH COMMON ROOM') ||
-                        (input.value.toUpperCase() == 'COMMON ROOM')) && img.src.endsWith("pictures_videos/sleep1.jpg")) {
-                        correctLocation = 'Wigglesworth Common Room';
-                    } else if (((input.value.toUpperCase() == 'BERG') || (input.value.toUpperCase() == 'ANNENBERG') ||
-                        (input.value.toUpperCase() == 'MEMORIAL HALL') || (input.value.toUpperCase() == 'LOKER COMMONS') ||
-                        (input.value.toUpperCase() == 'BENEATH ANNENBERG')) && img.src.endsWith("pictures_videos/sleep2.jpg")) {
-                        correctLocation = 'Beneath Annenberg';
-                    } else if (((input.value.toUpperCase() == 'SANDERS') || (input.value.toUpperCase() == 'SANDERS THEATRE') ||
-                        (input.value.toUpperCase() == 'SANDERS THEATER')) && img.src.endsWith("pictures_videos/sleep3.jpg")) {
-                        correctLocation = 'Sanders Theater';
-                    } else if (((input.value.toUpperCase() == 'GYM') || (input.value.toUpperCase() == 'QUINCY') ||
-                        (input.value.toUpperCase() == 'QUINCY GYM') || (input.value.toUpperCase() == 'QUINCY HOUSE GYM') ||
-                        (input.value.toUpperCase() == 'QUINCY HOUSE')) && img.src.endsWith("pictures_videos/sleep4.jpg")) {
-                        correctLocation = 'Quincy House Gym';
+                    if (img.src.endsWith("pictures_videos/sleep1.jpg")) {
+                        correctLocations = ['Wigglesworth Common Room', 'WIGG', 'WIGGS', 'WIGGLESWORTH', 'COMMON ROOM'];
+                    } else if (img.src.endsWith("pictures_videos/sleep2.jpg")) {
+                        correctLocations = ['Beneath Annenberg', 'BERG', 'ANNENBERG', 'MEMORIAL HALL', 'LOKER COMMONS'];
+                    } else if (img.src.endsWith("pictures_videos/sleep3.jpg")) {
+                        correctLocations = ['Sanders Theater', 'SANDERS', 'SANDERS THEATRE', 'SANDERS THEATER'];
+                    } else if (img.src.endsWith("pictures_videos/sleep4.jpg")) {
+                        correctLocations = ['Quincy House Gym', 'GYM', 'QUINCY', 'QUINCY GYM', 'QUINCY HOUSE'];
                     }
 
-                    if (correctLocation !== '' && input.value.toUpperCase() === correctLocation.toUpperCase()) {
+                    let inputValueUpper = input.value.toUpperCase();
+
+                    if (correctLocations.some(location => inputValueUpper === location.toUpperCase())) {
                         input.style.backgroundColor = 'green';
                         feedback.innerHTML = 'Correct!';
                     } else {
                         input.style.backgroundColor = 'red';
-                        feedback.innerHTML = 'Incorrect; ' + correctLocation;
+                        feedback.innerHTML = 'Incorrect; ' + correctLocations[0];
                     }
                 });
             });
