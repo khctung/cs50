@@ -23,13 +23,6 @@ body {
     text-align: center;
 }
 
-<style>
-    ol {
-        margin-left: 20px;
-        font-size: 30px; /* Adjust the font size as needed */
-    }
-</style>
-
 .section {
     padding: 0.5rem 2rem 1rem 2rem;
 }
@@ -52,7 +45,7 @@ h1 {
 
 h2 {
     font-family: 'Arial', sans-serif;
-    margin-left: 25px;
+    margin-left: 20px;
     margin-bottom: 15px;
     font-size: 40px;
 }
