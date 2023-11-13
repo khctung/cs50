@@ -95,6 +95,12 @@ nav a.active {
     border-radius: 8px;
 }
 
+.gallery-item2 img {
+    max-width: 600px;
+    height: auto;
+    border-radius: 8px;
+}
+
 .arrow {
     position: absolute;
     top: 50%;
