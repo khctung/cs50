@@ -99,6 +99,8 @@ nav a.active {
 
 .gallery-item img {
     max-width: 600px;
+    max-width: 100%; /* Set the maximum width to 100% */
+    height: auto; /* Maintain the aspect ratio */
     align-items: center;
     justify-content: center;
     height: auto;
