@@ -87,7 +87,7 @@ nav a.active {
     margin-bottom: 30px;
 }
 
-.gallery-item img, .gallery-item video {
+.gallery-item img {
     max-width: 600px;
     align-items: center;
     justify-content: center;
@@ -116,5 +116,7 @@ nav a.active {
 }
 
 .check-item {
-    position:absolute;
+    position: absolute;
+    top: 100%;
+    left: 0;
 }
