@@ -1,6 +1,6 @@
 specification.txt
 
-LIST OF HTML TAGS USED:
+LIST OF 10+ HTML TAGS USED:
 1. <nav>
 2. <div>
 3. <a>
@@ -25,20 +25,16 @@ LIST OF 5 CSS SELECTORS USED:
 5. element.class --> example: nav a.active --> selects all <a> elements with class="active"
 
 
-LIST OF 5 CSS PROPERTIES USED:
-1. tag (examples: h1, h2)
-2. class (examples: .gallery, .gallery-item, etc. mainly used for pictures/videos)
-3. ID (examples: #prevButton, #nextButton)
-4. :nth-child(n) --> used for determining rating star size for the table + width of table column
-5. element.class --> example: nav a.active --> selects all <a> elements with class="active"
+LIST OF 5+ CSS PROPERTIES USED:
+1. background-color
+2. color
+3. font-size
+4. margin
+5. text-align
+6. height
+7. max-width
 
 
 HOW I CHOSE TO USE JAVASCRIPT AND BOOTSTRAP:
-
-
-Have at least one stylesheet file of your own creation, styles.css, which uses at least five (5) different CSS selectors (e.g. tag (example), class (.example), or ID (#example)), and within which you use a total of at least five (5) different CSS properties, such as font-size, or margin; and
-Integrate one or more features of JavaScript into your site to make your site more interactive. For example, you can use JavaScript to add alerts, to have an effect at a recurring interval, or to add interactivity to buttons, dropdowns, or forms. Feel free to be creative!
-Ensure that your site looks nice on browsers both on mobile devices as well as laptops and desktops.
-
-
-5 CSS properties you’ve used, as well as a brief (one-sentence) description of how you chose to use JavaScript and Bootstrap.
+I used JavaScript to allow users to click through the gallery of fun Coco pictures as well as try to get the correct answer for where I slept
+in each of the sleeping pictures. As for Bootstrap, 

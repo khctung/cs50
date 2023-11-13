@@ -113,6 +113,7 @@ nav a.active {
     border-radius: 15px;
     display: flex;
     flex-wrap: wrap;
+    gap: 20px;
     justify-content: center;
     overflow: hidden;
     padding: 20px;
@@ -133,8 +134,8 @@ nav a.active {
 }
 
 .check-item {
-    margin-top: 10px;
     text-align: center;
+    margin-top: 10px;
 }
 
 .check-item input {
@@ -142,14 +143,14 @@ nav a.active {
 }
 
 .arrow {
-    background: none;
-    border: none;
-    color: #023020;
-    cursor: pointer;
     font-size: 75px;
     position: absolute;
     top: 60%;
     transform: translateY(-50%);
+    color: #023020;
+    cursor: pointer;
+    background: none;
+    border: none;
     z-index: 1;
 }
 
