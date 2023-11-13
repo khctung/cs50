@@ -156,11 +156,11 @@ nav a.active {
 }
 
 #prevButton {
-    left: 35px;
+    left: 35%;
 }
 
 #nextButton {
-    right: 35px;
+    right: 35%;
 }
 
 table {
