@@ -116,6 +116,7 @@ nav a {
     cursor: pointer;
     background: none;
     border: none;
+    z-index: 1; /* Ensure buttons are on top */
 }
 
 #prevButton {
