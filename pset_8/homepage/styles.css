@@ -116,6 +116,5 @@ nav a.active {
 }
 
 .check-item {
-    display:block;
-    clear:both;
+    position:relative;
 }
