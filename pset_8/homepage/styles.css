@@ -176,11 +176,11 @@ th, td {
 }
 
 td:nth-child(1) {
-    width: 10%; /* You can adjust the percentage as needed */
+    width: 15%; /* You can adjust the percentage as needed */
 }
 
 td:nth-child(2) {
-    width: 20%; /* You can adjust the percentage as needed */
-    font-size: 45%;
+    width: 15%; /* You can adjust the percentage as needed */
+    font-size: 48.5%;
 }
 
