@@ -115,7 +115,6 @@ nav a.active {
     right: 35px;
 }
 
-.check {
-    display: block;
+.check-item {
     position: relative;
 }
