@@ -71,7 +71,9 @@
             document.querySelector("#check").addEventListener('click', function() {
                 let input = document.querySelector('input');
                 let src = document.querySelector('img');
-                if ((input.value.toUpperCase()  == 'WIGG') ||  & src == "pictures_videos/sleep1.jpg") {
+                if (((input.value.toUpperCase()  == 'WIGG') || (input.value.toUpperCase()  == 'WIGGS') ||
+                    (input.value.toUpperCase()  == 'WIGGLESWORTH') || (input.value.toUpperCase()  == 'WIGGLESWORTH COMMON ROOM') ||
+                    (input.value.toUpperCase()  == 'COMMON ROOM')) & src == "pictures_videos/sleep1.jpg") {
                     input.style.backgroundColor = 'green';
                     document.querySelector('feedback').innerHTML = 'Correct!';
                 } else {
@@ -79,7 +81,7 @@
                     document.querySelector('#answer_feedback_2').innerHTML = 'Incorrect; Wigglesworth Common Room';
                 }
 
-                if (input.value == 'Switzerland' & src == "pictures_videos/sleep2.jpg") {
+                if ((input.value.toUpperCase()  == 'WIGG') & src == "pictures_videos/sleep2.jpg") {
                     input.style.backgroundColor = 'green';
                     document.querySelector('feedback').innerHTML = 'Correct!';
                 } else {
