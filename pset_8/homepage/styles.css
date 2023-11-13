@@ -123,6 +123,8 @@ nav a.active {
 
 .check-item {
     position: absolute;
+    align-items: center;
+    justify-content: center;
     top: 100%;
     left: 0;
 }
