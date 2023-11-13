@@ -102,12 +102,7 @@ nav a.active {
 }
 
 .check-item {
-    position: absolute;
-    align-items: center;
-    justify-content: center;
-    bottom: 0; /* Position at the bottom */
-    left: 0;
-    width: 100%; /* Take the full width */
+    margin-top: 10px;
 }
 
 .arrow {
