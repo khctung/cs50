@@ -103,7 +103,7 @@ nav a.active {
 
 .check-item {
     margin-top: 10px;
-    align-items: center;
+    justify-content: center;
 }
 
 .arrow {
