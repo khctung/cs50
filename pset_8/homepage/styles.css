@@ -95,10 +95,24 @@ nav a.active {
     border-radius: 8px;
 }
 
+.gallery-item2 {
+    text-align: center;
+    position: relative;
+    flex: 0 0 calc(25% - 20px); /* Make each item take 25% width with a gap of 20px */
+    max-width: calc(25% - 20px); /* Fix max width to prevent item overflow */
+}
+
 .gallery-item2 img {
-    max-width: 600px;
+    max-width: 100%;
     height: auto;
     border-radius: 8px;
+    display: block;
+    margin: 0 auto;
+}
+
+.check-item {
+    position: relative;
+    text-align: center;
 }
 
 .check-item {
