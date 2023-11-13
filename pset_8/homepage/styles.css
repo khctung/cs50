@@ -25,7 +25,7 @@ body {
 
 <style>
     ol {
-        margin-right: 20rem;
+        margin-right: 20px;
         font-size: 30px; /* Adjust the font size as needed */
     }
 </style>
@@ -47,8 +47,16 @@ h1 {
 }
 
 h2 {
-    font-family: 'Helvetica', sans-serif;
-    margin-down: 10px;
+    font-family: 'Alegreya', sans-serif;
+    margin-left: 25px;
+    margin-down: 15px;
+    font-size: 40px;
+}
+
+h3 {
+    font-family: 'Alegreya', sans-serif;
+    margin-left: 25px;
+    margin-down: 15px;
     font-size: 40px;
 }
 
