@@ -145,10 +145,10 @@ nav a.active {
 
 .arrow {
     position: absolute;
-    top: 50%;
+    top: 60%;
     transform: translateY(-50%);
     font-size: 100px;
-    color: #000000;
+    color: #FFFFFF;
     cursor: pointer;
     background: none;
     border: none;
@@ -156,11 +156,11 @@ nav a.active {
 }
 
 #prevButton {
-    left: 35%;
+    left: 30px;
 }
 
 #nextButton {
-    right: 35%;
+    right: 30px;
 }
 
 table {
