@@ -58,8 +58,8 @@ nav a {
     height: auto; /* Maintain the aspect ratio */
     border-radius: 8px;
     margin-right: 10px;
-    margin-left: 15px;
-    margin-down: 15px;
+    margin-left: 25px;
+    margin-bottom: 20px;
 }
 
 .gallery-container {
