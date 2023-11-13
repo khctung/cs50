@@ -37,4 +37,4 @@ LIST OF 5+ CSS PROPERTIES USED:
 
 HOW I CHOSE TO USE JAVASCRIPT AND BOOTSTRAP:
 I used JavaScript to allow users to click through the gallery of fun Coco pictures as well as try to get the correct answer for where I slept
-in each of the sleeping pictures. As for Bootstrap, I used it to make the buttons more aesthetically pleasing in the sleeping page.
+in each of the sleeping pictures. As for Bootstrap, I used it to make the buttons more aesthetically pleasing in the sleeping page as well as for the header!
