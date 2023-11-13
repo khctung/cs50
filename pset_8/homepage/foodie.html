@@ -29,72 +29,29 @@
         </div>
 
         <div class="gallery-container2">
-            <div class="gallery-item2">
-                <img src="pictures_videos/sleep1.jpg">
-                <div class="check-item">
-                    <input type='text' placeholder="Location">
-                    <button class="check">Check!</button>
-                    <p class="feedback">Where is this?</p>
-                </div>
-            </div>
-            <div class="gallery-item2">
-                <img src="pictures_videos/sleep2.jpg">
-                <div class="check-item">
-                    <input type='text' placeholder="Location">
-                    <button class="check">Check!</button>
-                    <p class="feedback">Where is this?</p>
-                </div>
-            </div>
-            <div class="gallery-item2">
-                <img src="pictures_videos/sleep3.jpg">
-                <div class="check-item">
-                    <input type='text' placeholder="Location">
-                    <button class="check">Check!</button>
-                    <p class="feedback">Where is this?</p>
-                </div>
-            </div>
-            <div class="gallery-item2">
-                <img src="pictures_videos/sleep4.jpg">
-                <div class="check-item">
-                    <input type='text' placeholder="Location">
-                    <button class="check">Check!</button>
-                    <p class="feedback">Where is this?</p>
-                </div>
-            </div>
+            <table>
+                <tr>
+                    <th>Cafe</th>
+                    <th>Rating</th>
+                    <th>Explanation</th>
+                </tr>
+                <tr>
+                    <td>Cozy Coffee</td>
+                    <td>4.5</td>
+                    <td>Great atmosphere and friendly staff.</td>
+                </tr>
+                <tr>
+                    <td>Java Junction</td>
+                    <td>3.8</td>
+                    <td>Good coffee, but limited seating.</td>
+                </tr>
+                <tr>
+                    <td>Bean Bliss</td>
+                    <td>4.2</td>
+                    <td>Excellent variety of drinks and desserts.</td>
+                </tr>
+                <!-- Add more rows as needed -->
+            </table>
         </div>
-
-        <script>
-            document.querySelectorAll(".check").forEach(function (button) {
-                button.addEventListener('click', function () {
-                    let input = button.parentElement.querySelector('input');
-                    let img = button.parentElement.parentElement.querySelector('img');
-                    let feedback = button.parentElement.querySelector('.feedback');
-
-                    feedback.innerHTML = ''; // Clear previous feedback
-
-                    let correctLocations = [];
-
-                    if (img.src.endsWith("pictures_videos/sleep1.jpg")) {
-                        correctLocations = ['Wigglesworth Common Room', 'WIGG', 'WIGGS', 'WIGGLESWORTH', 'COMMON ROOM'];
-                    } else if (img.src.endsWith("pictures_videos/sleep2.jpg")) {
-                        correctLocations = ['Beneath Annenberg', 'BERG', 'ANNENBERG', 'MEMORIAL HALL', 'LOKER COMMONS'];
-                    } else if (img.src.endsWith("pictures_videos/sleep3.jpg")) {
-                        correctLocations = ['Sanders Theater', 'SANDERS', 'SANDERS THEATRE', 'SANDERS THEATER'];
-                    } else if (img.src.endsWith("pictures_videos/sleep4.jpg")) {
-                        correctLocations = ['Quincy House Gym', 'GYM', 'QUINCY', 'QUINCY GYM', 'QUINCY HOUSE'];
-                    }
-
-                    let inputValueUpper = input.value.toUpperCase();
-
-                    if (correctLocations.some(location => inputValueUpper === location.toUpperCase())) {
-                        input.style.backgroundColor = 'green';
-                        feedback.innerHTML = 'Correct!';
-                    } else {
-                        input.style.backgroundColor = 'red';
-                        feedback.innerHTML = 'Incorrect; ' + correctLocations[0];
-                    }
-                });
-            });
-        </script>
     </body>
 </html>
