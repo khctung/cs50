@@ -35,25 +35,25 @@
                 <img src="pictures_videos/sleep1.jpg">
                 <input type='text' placeholder="Location"></input>
                 <button id="check">Check!</button>
-                <p id="feedback"></p>
+                <p id="#feedback"></p>
             </div>
             <div class="gallery">
                 <img src="pictures_videos/sleep2.jpg">
                 <input type='text' placeholder="Location"></input>
                 <button id="check">Check!</button>
-                <p id="feedback"></p>
+                <p id="#feedback"></p>
             </div>
             <div class="gallery">
                 <img src="pictures_videos/sleep3.jpg">
                 <input type='text' placeholder="Location"></input>
                 <button id="check">Check!</button>
-                <p id="feedback"></p>
+                <p id="#feedback"></p>
             </div>
             <div class="gallery">
                 <img src="pictures_videos/sleep4.jpg">
                 <input type='text' placeholder="Location"></input>
                 <button id="check">Check!</button>
-                <p id="feedback"></p>
+                <p id="#feedback"></p>
             </div>
         </div>
 
@@ -66,39 +66,39 @@
                     (input.value.toUpperCase() == 'WIGGLESWORTH') || (input.value.toUpperCase() == 'WIGGLESWORTH COMMON ROOM') ||
                     (input.value.toUpperCase() == 'COMMON ROOM')) & src == "pictures_videos/sleep1.jpg") {
                     input.style.backgroundColor = 'green';
-                    document.querySelector('feedback').innerHTML = 'Correct!';
+                    document.querySelector('#feedback').innerHTML = 'Correct!';
                 } else {
                     input.style.backgroundColor = 'red';
-                    document.querySelector('feedback').innerHTML = 'Incorrect; Wigglesworth Common Room';
+                    document.querySelector('#feedback').innerHTML = 'Incorrect; Wigglesworth Common Room';
                 }
 
                 if (((input.value.toUpperCase() == 'BERG') || (input.value.toUpperCase() == 'ANNENBERG') ||
                     (input.value.toUpperCase() == 'MEMORIAL HALL') || (input.value.toUpperCase() == 'LOKER COMMONS') ||
                     (input.value.toUpperCase() == 'BENEATH ANNENBERG')) & src == "pictures_videos/sleep2.jpg") {
                     input.style.backgroundColor = 'green';
-                    document.querySelector('feedback').innerHTML = 'Correct!';
+                    document.querySelector('#feedback').innerHTML = 'Correct!';
                 } else {
                     input.style.backgroundColor = 'red';
-                    document.querySelector('feedback').innerHTML = 'Incorrect; Beneath Annenberg';
+                    document.querySelector('#feedback').innerHTML = 'Incorrect; Beneath Annenberg';
                 }
 
                 if (((input.value.toUpperCase() == 'SANDERS') || (input.value.toUpperCase() == 'SANDERS THEATRE') ||
                     (input.value.toUpperCase() == 'SANDERS THEATER')) & src == "pictures_videos/sleep3.jpg") {
                     input.style.backgroundColor = 'green';
-                    document.querySelector('feedback').innerHTML = 'Correct!';
+                    document.querySelector('#feedback').innerHTML = 'Correct!';
                 } else {
                     input.style.backgroundColor = 'red';
-                    document.querySelector('feedback').innerHTML = 'Incorrect; Sanders Theater';
+                    document.querySelector('#feedback').innerHTML = 'Incorrect; Sanders Theater';
                 }
 
                 if (((input.value.toUpperCase() == 'GYM') || (input.value.toUpperCase() == 'QUINCY') ||
                     (input.value.toUpperCase() == 'QUINCY GYM') || (input.value.toUpperCase() == 'QUINCY HOUSE GYM') ||
                     (input.value.toUpperCase() == 'QUINCY HOUSE')) || & src == "pictures_videos/sleep4.jpg") {
                     input.style.backgroundColor = 'green';
-                    document.querySelector('feedback').innerHTML = 'Correct!';
+                    document.querySelector('#feedback').innerHTML = 'Correct!';
                 } else {
                     input.style.backgroundColor = 'red';
-                    document.querySelector('feedback').innerHTML = 'Incorrect; Quincy House Gym';
+                    document.querySelector('#feedback').innerHTML = 'Incorrect; Quincy House Gym';
                 }
             });
         </script>
