@@ -236,6 +236,8 @@ requirements.txt // specify which 3rd party libraries i use
 static/ // put images, css files, static files
 templates/
 
+
+index.html
 <!DOCTYPE html>
 
 // static code
@@ -248,3 +250,13 @@ templates/
     hello, world
   </body>
 </html>
+
+
+app.py
+from flask import Flask, render_template, request
+
+app = Flask(__name__)  // refers to current file's name
+@app.route("/") // defining route for application
+def index(): // called whenever appliccation opened
+  return "hello, world"
+
