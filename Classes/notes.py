@@ -120,3 +120,20 @@ for favorite in sorted(counts, key=counts.get, reverse=True): # sort by value in
 OR
 for favorite, count in counts.most_common():
     print(f"{favorite}: {count}")
+
+
+
+
+
+11/13/2023 notes (lecture 9)
+app.py
+from flask import Flask, render_template, request
+
+app = Flask(__name__)  #refers to current file's name
+@app.route("/") #defining route for application
+def index(): #called whenever appliccation opened
+  return render_template("index.html") #goes into template, then index, and returns
+
+click "view page source" --> technically not valid HTML, just returning
+
+request.args = refers to any http request, args = all the key-value dictionary pair 

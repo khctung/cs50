@@ -223,7 +223,7 @@ https://www.example.com/path
 https://www.example.com/route (route = some letter of letters that refers to some part of application)
 https://www.example.com/route?key=value&key=value
 
-GEt /search?q=cats HTTP/2
+GET /search?q=cats HTTP/2
 Host: www.google.com
 ...
 
@@ -252,13 +252,4 @@ index.html
 </html>
 
 
-app.py
-from flask import Flask, render_template, request
-
-app = Flask(__name__)  // refers to current file's name
-@app.route("/") // defining route for application
-def index(): // called whenever appliccation opened
-  return "hello, world"
-
-click "view page source" --> technically not valid HTML, just returning
 
