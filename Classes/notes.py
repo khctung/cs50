@@ -132,8 +132,9 @@ from flask import Flask, render_template, request
 app = Flask(__name__)  #refers to current file's name
 @app.route("/") #defining route for application
 def index(): #called whenever appliccation opened
-  return render_template("index.html") #goes into template, then index, and returns
+    name = request.args["name"]
+    return render_template("index.html", placeholder=name) #goes into template, then index, and returns
 
 click "view page source" --> technically not valid HTML, just returning
 
-request.args = refers to any http request, args = all the key-value dictionary pair 
+request.args = refers to any http request, args = property of all the key-value dictionary pairs that user could have provided in url
