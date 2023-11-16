@@ -132,7 +132,10 @@ from flask import Flask, render_template, request
 app = Flask(__name__)  #refers to current file's name
 @app.route("/") #defining route for application
 def index(): #called whenever appliccation opened
-    name = request.args["name"]
+    if "name" in request.args:
+        name = request.args["name"]
+    else:
+        name = "world"
     return render_template("index.html", placeholder=name) #goes into template, then index, and returns
 
 click "view page source" --> technically not valid HTML, just returning
