@@ -146,6 +146,14 @@ def greet():
     name = request.form.get("name", "world") #for post
     return render_template("greet.html", name=name)
 
+
+@app.route("/", methods=["GET", "POST"])
+def index():
+    if request.method == "POST": #via post: process form (do something with input)
+        name = request.form.get("name", "world") #for post
+        return render_template("greet.html", name=name)
+    return render_template("index.html") #via get: see form
+
 click "view page source" --> technically not valid HTML, just returning
 
 request.args = refers to any http request, args = property of all the key-value dictionary pairs that user could have provided in url
