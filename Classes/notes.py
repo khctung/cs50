@@ -155,7 +155,7 @@ def index():
     return render_template("index.html") #via get: see form
 
 
-@app.route("/register")
+@app.route("/register", methods=["POST"])
 def register():
     if not request.form.get("name"):
         return "failure"
