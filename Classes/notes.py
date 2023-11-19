@@ -191,3 +191,9 @@ controller = in app.py, the logic
 Set-Cookie: session=value
 session = maintenance of state b/w client and server, if server remembers info abt u, u have a session (ex. shopping cart = session)
 cookies = store value in brower for a set amount of time
+-> function of http, how session maintains state + reminders server who you are
+-> don't need to include your username/pw
+-> problem is that identifier is sending your info everytime via cookies (even in incognito mode)
+-> when clearing cookies, becomes a new "user" but still can track via ip addresses and others
+
+
