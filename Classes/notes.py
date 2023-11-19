@@ -141,3 +141,4 @@ def index(): #called whenever application opened
 click "view page source" --> technically not valid HTML, just returning
 
 request.args = refers to any http request, args = property of all the key-value dictionary pairs that user could have provided in url
+error 400 = blindly expecting parameter to exist
