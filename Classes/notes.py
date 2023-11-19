@@ -226,3 +226,5 @@ def login():
 def logout():
     session.clear()
     return redirect("/")
+
+AJAX = using javascript to get more data from server without having to create new links
