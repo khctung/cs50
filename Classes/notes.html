@@ -240,14 +240,6 @@ templates/
 index.html
 <!DOCTYPE html>
 
-{% extends "layout.html" %} // inheritance, parent-child relationship
-
-{% block body %}
-
-  hello {{ name }}
-
-{% endblock %}
-
 // static code, using it more as a template/blueprint
 <html lang="en">
   <head>
@@ -258,7 +250,7 @@ index.html
     hello, {{ name }}
     // Jinja implented via the {}
 
-    <form action="/greet" fmethod="get">
+    <form action="/greet" method="get" OR method="post">
       <input autocomplete="off" autofocus name="name" placeholder="Name" type="text">
       <buttton type="submit">Greet</button>
     </form>
@@ -266,6 +258,18 @@ index.html
     {% block body %}{% endblock %} // template for a block of code
   </body>
 </html>
+
+
+JINJA
+{% extends "layout.html" %} // inheritance, parent-child relationship
+
+{% block body %}
+
+  hello {{ name }}
+
+{% endblock %}
+
+
 
 
 

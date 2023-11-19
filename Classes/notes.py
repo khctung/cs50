@@ -139,8 +139,8 @@ def index(): #called whenever application opened
     name = request.args.get("name", "world") #can delete if-else conditional above
     return render_template("index.html", name=name) #goes into template, then index, and returns
 
-    # newest version
-@app.route("/greet")
+# newest version
+@app.route("/greet", methods=["POST"])
 def greet():
     name = request.args.get("name", "world")
     return render_template("greet.html", name=name)
