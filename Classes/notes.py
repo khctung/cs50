@@ -154,6 +154,12 @@ def index():
         return render_template("greet.html", name=name)
     return render_template("index.html") #via get: see form
 
+
+@app.route("/register")
+def register():
+    if not request.form.get("name"):
+        return "failure"
+
 click "view page source" --> technically not valid HTML, just returning
 
 request.args = refers to any http request, args = property of all the key-value dictionary pairs that user could have provided in url
