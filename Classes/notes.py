@@ -197,17 +197,29 @@ cookies = store value in brower for a set amount of time
 -> when clearing cookies, becomes a new "user" but still can track via ip addresses and others
 
 
+# creating login program implementing cookies
+from flask import Flask, redirect, render_template, request, session
+from flask_session import Session
 
 app.config["SESSION_PERMANENT"] = False #session cookie is deleted when quit browswer
 app.config["SESSION_TYPE"] = "filesystem" #stored in file, not cookies
 Session(app) #active sessions
 
-@app.route("/")
-def index():
-    return render_template("index.html")
+REGISTRANTS = {}
 
 @app.route("/")
+def index():
+    return render_template("index.html", name=session.get("name")) #treat session like request.arg or request.form
+
+@app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
-        session #essentially a dictionary and tuck it in the session
+        session["name"] = request.form.get("name") #essentially a dictionary and tuck it in the session
+        # session is guaranteed to always be unique for each user, like each user has their unique shopping cart
+        return redirect("/")
     return render_template("login.html")
+
+@app.route("/logout")
+def logout():
+    session.clear()
+    return redirect("/")
