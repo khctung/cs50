@@ -46,5 +46,3 @@ def index():
 
         # Render birthdays page
         return render_template("index.html", birthdays=birthdays)
-
-
