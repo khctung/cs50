@@ -27,8 +27,33 @@ def index():
     if request.method == "POST":
 
         # TODO: Add the user's entry into the database
+        # Access form data
+        name = request.form.get("name")
+        if not name:
+            return redirect("/")
 
-        return redirect("/")
+        month = request.form.get("month")
+        if not month:
+            return redirect("/")
+        try:
+            month = int(month)
+        except ValueError:
+            return redirect("/")
+        if month < 0 or month > 12:
+            return redirect("/")
+
+        day = request.form.get("day")
+        if not day:
+            return redirect("/")
+        try:
+            day = int(day)
+        except ValueError:
+            return redirect("/")
+        if day < 0 or day > 31:
+            return redirect("/")
+
+        # Insert data into database
+        db.execute("INSERT INTO birthdays (name, month, day) VALUES(?, ?, ?)", name, month, day)
 
     else:
 
