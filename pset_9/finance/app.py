@@ -35,7 +35,24 @@ def after_request(response):
 @login_required
 def index():
     """Show portfolio of stocks"""
-    return apology("TODO")
+
+    stocks = db.execute("SELECT symbol, SUM(shares) as total_shares FROM transactions WHERE user_id = :user_id GROUP BY symbol HAVING total_shares > 0",
+                        user_id = session["user_id"])
+
+    cash = db.execute("SELECT cash FROM users WHERE id = :user_id", user_id = session["user_id"])[0]["cash"]
+
+    total_value = cash
+    grand_total = cash
+
+    for stock in stocks:
+        quote = lookup(stock["symbol"])
+        stock["name"] = quote["name"]
+        stock["price"] = quote["price"]
+        stock["value"] = quote["price"] * stock["total_shares"]
+        total_value += stock["value"]
+        grand_total += stock["value"]
+
+    return render_template("index.html", stocks=stocks, cash=cash, total_value=total_value, grand_total=grand_total, )
 
 
 @app.route("/buy", methods=["GET", "POST"])
@@ -65,8 +82,14 @@ def buy():
         db.execute("UPDATE users SET cash = cash - :total_cost WHERE id = :user_id",
                    total_cost=total_cost, uder_id=session["user_id"])
 
-        db.execute("INSERT INTO transactions (user_id, ymbol, shares, price) VALUES (:user_id, :symbol,
-                   user_id=session["usesr_id"], symbol=symbol, shares = shares, price = price))
+        db.execute("INSERT INTO transactions (user_id, ymbol, shares, price) VALUES (:user_id, :symbol, :shares, :price)",
+                   user_id=session["usesr_id"], symbol=symbol, shares = shares, price = price)
+
+        flash(f"Bought {shares} shares of {symbol} for {usd(total_cost)}!")
+        return redirect("/")
+
+    else:
+        return render_template("buy.html")
 
 
 @app.route("/history")
