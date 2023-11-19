@@ -197,3 +197,17 @@ cookies = store value in brower for a set amount of time
 -> when clearing cookies, becomes a new "user" but still can track via ip addresses and others
 
 
+
+app.config["SESSION_PERMANENT"] = False #session cookie is deleted when quit browswer
+app.config["SESSION_TYPE"] = "filesystem" #stored in file, not cookies
+Session(app) #active sessions
+
+@app.route("/")
+def index():
+    return render_template("index.html")
+
+@app.route("/")
+def login():
+    if request.method == "POST":
+        session #essentially a dictionary and tuck it in the session
+    return render_template("login.html")

@@ -315,3 +315,23 @@ JINJA
   <button type="submit">Deregister</button>
 </form>
 
+// index.html
+{% extends "layout.html" %}
+{% block body %}
+  {% if name %}
+    You are logged in as {{ name }}.
+  {% else %}
+     You are not logged in.
+  {% endif %}
+{% endblock %}
+
+// login.html
+{% extends "layout.html" %}
+{% block body %}
+  <form action="/login" method="post">
+    <input autocomplete="off" autofocus name="name" placeholder="Name" type="text">
+    <button type="submit">Log In</button>
+  </form>
+{% endblock %}
+
+
