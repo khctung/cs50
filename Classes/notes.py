@@ -198,7 +198,7 @@ cookies = store value in brower for a set amount of time
 
 
 # creating login program implementing cookies
-from flask import Flask, redirect, render_template, request, session
+from flask import Flask, jsonify, redirect, render_template, request, session
 from flask_session import Session
 
 app = Flas(__name__)
@@ -228,6 +228,5 @@ def logout():
     return redirect("/")
 
 AJAX = using javascript to get more data from server without having to create new links
-APIs =
-
-
+APIs = application programming interface, taking someones server and applying it to your application
+JSON = looks very similar to how a list w/ dictionary has (must use double quotes)
