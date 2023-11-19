@@ -186,3 +186,8 @@ MVC = model view controller
 model = where data is stored
 view = human sees, javascript, css
 controller = in app.py, the logic
+
+
+Set-Cookie: session=value
+session = maintenance of state b/w client and server, if server remembers info abt u, u have a session (ex. shopping cart = session)
+cookies = store value in brower for a set amount of time
