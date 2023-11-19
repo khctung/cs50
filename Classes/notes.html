@@ -271,5 +271,25 @@ JINJA
 
 
 
+{% extends "layout.html" %} // inheritance, parent-child relationship
+
+{% block body %}
+
+  <h1>Register</h1>
+  <form action="/register" method="post">
+      <input autocomplete="off" autofocus name ="name" placeholder="name" required type="text">
+      <select name="sport">
+        <option disabled selected value="">Sport</option>
+        <option>Basketball</option>
+        <option>Soccer</option>
+        <option>Ultimate Frisbee</option>
+      </select>
+      <button type="submit">Rgister</option>
+  </form>
+
+
+{% endblock %}
+
+
 
 
