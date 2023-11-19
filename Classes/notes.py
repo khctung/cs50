@@ -181,3 +181,8 @@ redirect = 300 autoput in flask to redirect to file
 def registrants():
     registrants = db.exectue("SELECT * FROM registrants")
     return render_template("registrants.html", registrants=registrants)
+
+MVC = model view controller
+model = where data is stored
+view = human sees, javascript, css
+controller = in app.py, the logic
