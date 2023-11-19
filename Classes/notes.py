@@ -131,7 +131,7 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)  #refers to current file's name
 @app.route("/") #defining route for application
-def index(): #called whenever appliccation opened
+def index(): #called whenever application opened
     if "name" in request.args:
         name = request.args["name"]
     else:
