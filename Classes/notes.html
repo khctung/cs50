@@ -283,6 +283,9 @@ JINJA
         <option>Basketball</option>
         <option>Soccer</option>
         <option>Ultimate Frisbee</option>
+          <option value="{{ sport }}">{{ sport }}</option>
+        {% for sport in sports %}
+        {% endfor %}
       </select>
       <button type="submit">Rgister</option>
   </form>
