@@ -136,7 +136,8 @@ def index(): #called whenever application opened
         name = request.args["name"]
     else:
         name = "world"
-    return render_template("index.html", placeholder=name) #goes into template, then index, and returns
+    name = request.args.get("name", "world") #can delete if-else conditional above
+    return render_template("index.html", name=name) #goes into template, then index, and returns
 
 click "view page source" --> technically not valid HTML, just returning
 
