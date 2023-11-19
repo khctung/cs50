@@ -240,6 +240,14 @@ templates/
 index.html
 <!DOCTYPE html>
 
+{% extends "layout.html" %} // inheritance, parent-child relationship
+
+{% block body %}
+
+  hello {{ name }}
+
+{% endblock %}
+
 // static code, using it more as a template/blueprint
 <html lang="en">
   <head>
@@ -254,6 +262,8 @@ index.html
       <input autocomplete="off" autofocus name="name" placeholder="Name" type="text">
       <buttton type="submit">Greet</button>
     </form>
+
+    {% block body %}{% endblock %} // template for a block of code
   </body>
 </html>
 
