@@ -228,3 +228,6 @@ def logout():
     return redirect("/")
 
 AJAX = using javascript to get more data from server without having to create new links
+APIs =
+
+
