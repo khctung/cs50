@@ -96,7 +96,10 @@ def buy():
 @login_required
 def history():
     """Show history of transactions"""
-    return apology("TODO")
+
+    transactions = db.execute(
+        "SELECT * FROM transactions WHERE user_id = :usesr_id ORDER BY timestamp DESC", user_id=session["user_id"])
+    return render_template("history.html", transactions=transactions)
 
 
 @app.route("/login", methods=["GET", "POST"])
@@ -229,7 +232,7 @@ def sell():
 
                     flash(f"Sold {shares} shsares of {symbol} for {usd(total_sale)}!")
                     return redirect("/")
-            return apology("ymbol not found)
+            return apology("symbol not found")
 
         else:
             return render_templates("sell.html", stocks=stocks)
