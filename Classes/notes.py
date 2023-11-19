@@ -175,3 +175,9 @@ request.args = refers to any http request, args = property of all the key-value 
 error 400 = blindly expecting parameter to exist
 
 redirect = 300 autoput in flask to redirect to file
+
+
+@app.route("/registrants")
+def registrants():
+    registrants = db.exectue("SELECT * FROM registrants")
+    return render_template("registrants.html", registrants=registrants)
