@@ -162,8 +162,11 @@ def index():
 
 @app.route("/register", methods=["POST"])
 def register():
-    if !request.form.get("name") or request.form.get("sport") not in SPORTS:
+    if !request.form.get("name"):
         return render_template("failure.html")
+    for sport in request.form.getall("sport"):
+        if sport not in SPORTS:
+            return render_template("failure.html")
     return render_template("success.html") #must return some value
 
 click "view page source" --> technically not valid HTML, just returning
