@@ -139,6 +139,12 @@ def index(): #called whenever application opened
     name = request.args.get("name", "world") #can delete if-else conditional above
     return render_template("index.html", name=name) #goes into template, then index, and returns
 
+    # newest version
+@app.route("/greet")
+def greet():
+    name = request.args.get("name", "world")
+    return render_template("greet.html", name=name)
+
 click "view page source" --> technically not valid HTML, just returning
 
 request.args = refers to any http request, args = property of all the key-value dictionary pairs that user could have provided in url
