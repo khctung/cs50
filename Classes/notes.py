@@ -140,9 +140,10 @@ def index(): #called whenever application opened
     return render_template("index.html", name=name) #goes into template, then index, and returns
 
 # newest version
-@app.route("/greet", methods=["POST"])
+@app.route("/greet", methods=["POST"]) #post is more secure, doesn't show in URL
 def greet():
-    name = request.args.get("name", "world")
+    name = request.args.get("name", "world") #for get
+    name = request.form.get("name", "world") #for post
     return render_template("greet.html", name=name)
 
 click "view page source" --> technically not valid HTML, just returning
