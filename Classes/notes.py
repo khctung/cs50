@@ -201,6 +201,9 @@ cookies = store value in brower for a set amount of time
 from flask import Flask, redirect, render_template, request, session
 from flask_session import Session
 
+app = Flas(__name__)
+db = SQL("sqlite:///store.db")
+
 app.config["SESSION_PERMANENT"] = False #session cookie is deleted when quit browswer
 app.config["SESSION_TYPE"] = "filesystem" #stored in file, not cookies
 Session(app) #active sessions
