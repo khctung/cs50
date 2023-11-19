@@ -42,7 +42,31 @@ def index():
 @login_required
 def buy():
     """Buy shares of stock"""
-    return apology("TODO")
+
+    if request.method == "POST":
+        symbol = request.form.get("symbol").upper()
+        shares = request.form.get("shares")
+        if not symbol:
+            return apology("must provide symbol")
+        elif not shares or not shares.isdigit() or int(shares) <= 0:
+            return apology("must provide a positive integer number of shares")
+
+        quote = lookup(symbol)
+        if quote is None:
+            return apology("symbol not found")
+
+        price = quote["price"]
+        total_cost = int(shares) * price
+        cash = db.execute("SELECT cash FROM users WHERE id = :user_id", user_id=session["user_id"])[0]["cash"]
+
+        if cash < total_cost:
+            return apology("not enough cash")
+
+        db.execute("UPDATE users SET cash = cash - :total_cost WHERE id = :user_id",
+                   total_cost=total_cost, uder_id=session["user_id"])
+
+        db.execute("INSERT INTO transactions (user_id, ymbol, shares, price) VALUES (:user_id, :symbol,
+                   user_id=session["usesr_id"], symbol=symbol, shares = shares, price = price))
 
 
 @app.route("/history")
@@ -103,14 +127,46 @@ def logout():
 @login_required
 def quote():
     """Get stock quote."""
-    
-    return apology("TODO")
+    if request.method == "POST":
+        symbol = request.form.get("symbol")
+        quote = lookup(symbol)
+        if not quote:
+            return apology("invalid symobl", 400)
+        return render_template("quote.html", quote=quote)
+    else:
+        return render_template("quote.html")
 
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
-    """Register user"""
-    return apology("TODO")
+    session.clear()
+
+    if request.method == "POST":
+        if not request.form.get("username"):
+            return apology("must provide username", 400)
+        elif not requqest.form.get("password"):
+            return apology("must provide password", 400)
+        elif not request.form.get("confrmation"):
+            return apology("must confirm password", 400)
+        elif request.form.get("password") != request.form.get("confirmation"):
+            return apology("passwords do not match", 400)
+
+        rows = db.execute("SELECT * FROM users WHERE username = ?". request.form.get("username"))
+
+        if len(rows) != 0:
+            return apology("username already exists", 400)
+
+        db.execute("INSERT INTO users (username, hash) VALUES(?, ?)",
+                request.form.get("username"), generte_password_hash(request.form.get("password")))
+
+        rows = db.execute("SELECT * FROM users WHERE username = ?". request.form.get("username"))
+
+        session["users_id"] = rows[0]["id"]
+
+        return redirect("/")
+
+    else:
+        return render_template("register.html")
 
 
 @app.route("/sell", methods=["GET", "POST"])
