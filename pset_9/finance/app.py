@@ -268,3 +268,37 @@ def index():
     """Deposit additional cash"""
 
      return render_template("sell.html", symbols=shares_to_sell)
+    shares_to_sell = db.execute("SELECT symbol, SUM(shares) as total_shares FROM transactions WHERE user_id = ? GROUP BY symbol HAVING total_shares > 0",
+                        session["user_id"])
+
+    if request.method == "POST":
+        symbol = request.form.get("symbol").upper()
+        shares = request.form.get("shares")
+
+        if not symbol:
+            return apology("INVALID SYMBOL.")
+
+        elif not shares or not shares.isdigit() or int(shares) <= 0:
+            return apology("INVALID SHARES.")
+
+        shares = int(shares)
+
+        for sell_share in shares_to_sell:
+            if sell_share["symbol"] == symbol:
+                if sell_share["total_shares"] < shares:
+                    return apology("NOT ENOUGH SHARES.")
+                else:
+                    quote = lookup(symbol)
+                    if quote is None:
+                        return apology("INVALID SYMBOL.")
+
+                    db.execute("UPDATE users SET cash = cash + ? WHERE id = ?",
+                               shares * quote["price"], session["user_id"])
+
+                    db.execute("INSERT INTO transactions (user_id, symbol, shares, price) VALUES (?, ?, ?, ?)",
+                               session["user_id"], symbol, -shares,  quote["price"])
+
+                    flash("Sold!")
+                    return redirect("/")
+
+            return apology("INVALID SYMBOL.")
