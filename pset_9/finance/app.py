@@ -217,37 +217,36 @@ def register():
 def sell():
     """Sell shares of stock"""
 
-    stocks = db.execute("SELECT symbol, SUM(shares) as total_shares FROM transactions WHERE user_id = :user_id GROUP BY symbol HAVING total_shares > 0",
-                        user_id = session["user_id"])
+    sell_shares = db.execute("SELECT symbol, SUM(shares) as total_shares FROM transactions WHERE user_id = ? GROUP BY symbol HAVING total_shares > 0",
+                        session["user_id"])
 
     if request.method == "POST":
         symbol = request.form.get("symbol").upper()
         shares = request.form.get("shares")
         if not symbol:
-            return apology("must provide symbol")
+            return apology("INVALID SYMBOL.")
         elif not shares or not shares.isdigit() or int(shares) <= 0:
-            return apology("must provide a positive integer number of shares")
-        else:
-            shares = int(shares)
+            return apology("INVALID SHARES.")
+        shares = int(shares)
 
-        for stock in stocks:
-            if stock["symbol"] == symbol:
-                if stock["total_shares"] < shares:
-                    return apology("not enough shares")
+        for sell_share in sell_shares:
+            if sell_share["symbol"] == symbol:
+                if sell_share["total_shares"] < shares:
+                    return apology("NOT ENOUGH SHARES.")
                 else:
                     quote = lookup(symbol)
                     if quote is None:
-                        return apology("symbol not found")
+                        return apology("INVALID SYMBOL.")
                     price = quote["price"]
                     total_sale = shares * price
 
-                    db.execute("UPDATE users SET cash = cash + :total_sale WHERE id = :user_id",
-                               total_sale=total_sale, user_id=session["user_id"])
+                    db.execute("UPDATE users SET cash = cash + ? WHERE id = ?",
+                               total_sale, session["user_id"])
 
-                    db.execute("INSERT INTO transactions (user_id, symbol, shares, price) VALUES (:user_id, :symbol, :shares, :price)",
-                               user_id=session["user_id"], symbol=symbol, shares=-shares, price=price)
+                    db.execute("INSERT INTO transactions (user_id, symbol, shares, price) VALUES (?, ?, ?, ?)",
+                               session["user_id"], symbol, -shares, price)
 
-                    flash(f"Sold {shares} shsares of {symbol} for {usd(total_sale)}!")
+                    flash("Sold!")
                     return redirect("/")
             return apology("symbol not found")
 
