@@ -55,9 +55,9 @@ def index():
 
     # loop for each share
     for share in shares:
-        quote = lookup(share["symbol"])
-        share["name"] = quote["name"]
-        share["price"] = quote["price"]
+        summary = lookup(share["symbol"])
+        share["name"] = summary["name"]
+        share["price"] = summary["price"]
         share["value"] = share["price"] * share["num_shares"]
         total_value += share["value"]
 
@@ -78,9 +78,9 @@ def buy():
         elif not shares or not shares.isdigit() or int(shares) <= 0:
             return apology("INVALID SHARES.")
 
-        quote = lookup(symbol)
-        if quote is None:
-            return apology("symbol not found")
+        summary = lookup(symbol)
+        if summary is None:
+            return apology("INVALID SYMBOL.")
 
         price = quote["price"]
         total_cost = int(shares) * price
