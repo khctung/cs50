@@ -40,18 +40,10 @@ def index():
     user_id = session["user_id"]
 
     # get the current user's stocks that they own right now (stocks w more than 0 shares)
-    shares = db.execute("SELECT symbol, SUM(shares) as num_shares
-                        FROM transactions
-                        WHERE user_id = ?
-                        GROUP BY symbol
-                        HAVING num_shares > 0;",
-                        user_id)
+    shares = db.execute("SELECT symbol, SUM(shares) as num_shares FROM transactions WHERE user_id = ? GROUP BY symbol HAVING num_shares > 0;", user_id)
 
     # retrieve the cash balance from our database (with the current user's user_id)
-    cash = db.execute("SELECT cash
-                      FROM users
-                      WHERE id = ?;",
-                      user_id)[0]["cash"]
+    cash = db.execute("SELECT cash FROM users WHERE id = ?;", user_id)[0]["cash"]
 
     # calculating total value of cash balance + shares (added in later in loop)
     total_value = cash
@@ -90,26 +82,17 @@ def buy():
         total_cost = int(shares) * summary["price"]
 
         # getting user's cash balance
-        cash = db.execute("SELECT cash
-                          FROM users
-                          WHERE id = ?;",
-                          user_id=session["user_id"])[0]["cash"]
+        cash = db.execute("SELECT cash FROM users WHERE id = ?;", session["user_id"])[0]["cash"]
 
         # if user cannot afford the transaction
         if cash < total_cost:
             return apology("NOT ENOUGH CASH.")
 
         # execute a transaction
-        db.execute("INSERT INTO transactions (user_id, symbol, shares, price)
-                   VALUES (?, ?, ?, ?);",
-                   session["user_id"], symbol, shares, summary["price"])
+        db.execute("INSERT INTO transactions (user_id, symbol, shares, price) VALUES (?, ?, ?, ?);", session["user_id"], symbol, shares, summary["price"])
 
         # update the amount of cash the user has
-        db.execute("UPDATE users
-                   SET cash = ?
-                   WHERE id = ?",
-                   cash-total_cost,
-                   session["user_id"])
+        db.execute("UPDATE users SET cash = ? WHERE id = ?", cash-total_cost, session["user_id"])
 
         flash("Bought!")
         return redirect("/")
@@ -117,91 +100,16 @@ def buy():
     else:
         return render_template("buy.html")
 
-
-
-
-    if request.method == "POST":
-        # Get the symbol and try to get the shares from the form data
-        symbol = request.form.get("symbol")
-        try:
-            # Convert shares to integer
-            shares = int(request.form.get("shares"))
-        except ValueError:
-            return apology("shares must be a positive integer")
-        # Check if number of shares is positive
-        if shares <= 0:
-            return apology("shares must be a positive integer")
-
-        # Lookup price of stock via its symbol and ensure its valid
-        stock = lookup(symbol)
-        if stock is None:
-            return apology("invalid symbol")
-
-        # Calculate total cost of purchase
-        total_cost = shares * stock["price"]
-
-        # Get the user's id
-        user_id = session["user_id"]
-        # Get the user's cash balance from the database and check if the user has enough funds to make the purchase
-        rows = db.execute("SELECT cash FROM users WHERE id = ?", user_id)
-        cash = rows[0]["cash"]
-
-        if cash < total_cost:
-            return apology("not enough funds")
-
-        # Update the user's cash balance
-        db.execute("UPDATE users SET cash = cash - ? WHERE id = ?", total_cost, user_id)
-
-        # Record the transaction, check if the user already owns this stock
-        db.execute(
-            "INSERT INTO transactions (user_id, symbol, shares, price, type, transacted) VALUES (?, ?, ?, ?, 'buy', CURRENT_TIMESTAMP)",
-            user_id,
-            symbol,
-            shares,
-            stock["price"],
-        )
-
-        existing_holding = db.execute(
-            "SELECT shares FROM holdings WHERE user_id = ? AND symbol = ?",
-            user_id,
-            symbol,
-        )
-
-        # If the user already has this stock, update the holding. If not, insert a new holding
-        if len(existing_holding) == 0:
-            # Insert new holding record
-            db.execute(
-                "INSERT INTO holdings (user_id, symbol, shares) VALUES (?, ?, ?)",
-                user_id,
-                symbol,
-                shares,
-            )
-        else:  # Update existing holding
-            db.execute(
-                "UPDATE holdings SET shares = shares + ? WHERE user_id = ? AND symbol = ?",
-                shares,
-                user_id,
-                symbol,
-            )
-
-        # Redirect to the home page
-        flash("Bought!")
-        return redirect("/")
-
-    # If the method is GET, render buy.html
-
-    else:
-        return render_template("buy.html")
 
 
 @app.route("/history")
 @login_required
 def history():
     """Show history of transactions"""
-
-    transactions = db.execute(
-        "SELECT * FROM transactions WHERE user_id = :usesr_id ORDER BY timestamp DESC", user_id=session["user_id"])
+    # get the transactions from the transactions table in the database for current user
+    transactions = db.execute("SELECT * FROM transactions WHERE user_id = ?", session["user_id"])
     return render_template("history.html", transactions=transactions)
+
 
 
 @app.route("/login", methods=["GET", "POST"])
