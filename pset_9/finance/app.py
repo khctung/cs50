@@ -251,7 +251,29 @@ def sell():
 
                     flash("Sold!")
                     return redirect("/")
-            return apology("INVALID SYMBOL.")
 
-        else:
-            return render_templates("sell.html", stocks=stocks)
+            else:
+                return render_templates("sell.html", sell_shares=sell_shares)
+
+                                return apology("INVALID SYMBOL.")
+
+             if not (symbol := request.form.get("symbol")):
+            return apology("MISSING SYMBOL")
+
+        if not (shares := request.form.get("shares")):
+            return apology("MISSING SHARES")
+
+        # Check share is numeric data type
+        try:
+            shares = int(shares)
+        except ValueError:
+            return apology("INVALID SHARES")
+
+        # Check shares is positive number
+        if not (shares > 0):
+            return apology("INVALID SHARES")
+
+        symbols_dict = {d['symbol']: d['sum_of_shares'] for d in owned_symbols}
+
+        if symbols_dict[symbol] < shares:
+            return apology("TOO MANY SHARES")
