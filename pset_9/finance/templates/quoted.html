@@ -6,8 +6,6 @@
 
 {% block main %}
     <p>
-        A share of {{ quote }} ({{ quote }}) costs {{ $146.50 }}.
-
-            <td class="border-0">{{ total_value | usd }}</td>
+        A share of {{ quote.name }} ({{ quote.symbol }}) costs {{ quote.price | usd }}.
     </p>
 {% endblock %}
