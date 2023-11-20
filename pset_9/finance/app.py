@@ -40,7 +40,11 @@ def index():
     user_id = session["user_id"]
 
     # get the current user's stocks that they own right now (stocks w more than 0 shares)
-    stocks = db.execute("SELECT symbol, SUM(shares) as total_shares FROM transactions WHERE user_id = ? GROUP BY symbol HAVING total_shares > 0",
+    stocks = db.execute("SELECT symbol, SUM(shares) as total_shares
+                        FROM transactions
+                        WHERE user_id = ?
+                        GROUP BY symbol
+                        HAVING total_shares > 0;",
                         user_id)
 
     # Get the user's holdings (stocks they currently own) but select only holdings with more than 0 shares
