@@ -19,11 +19,11 @@
         </tbody>
             {% for share in shares %}
                 <tr>
-                    <td>{{ share.name }}</td>
-                    <td>{{ share.symbol }}</td>
-                    <td>{{ share.num_shares }}</td>
-                    <td>{{ share.price }}</td>
-                    <td>{{ share.value }}</td>
+                    <td class="text-start">{{ share.name }}</td>
+                    <td class="text-start">{{ share.symbol }}</td>
+                    <td class="text-end">{{ share.num_shares }}</td>
+                    <td class="text-end">{{ share.price | usd }}</td>
+                    <td class="text-end">{{ share.value | usd }}</td>
                 </tr>
             {% endfor %}
         </tbody>
