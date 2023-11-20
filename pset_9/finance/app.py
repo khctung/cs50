@@ -40,11 +40,11 @@ def index():
     user_id = session["user_id"]
 
     # get the current user's stocks that they own right now (stocks w more than 0 shares)
-    shares = db.execute("SELECT symbol, SUM(shares) as total_shares
+    shares = db.execute("SELECT symbol, SUM(shares) as num_shares
                         FROM transactions
                         WHERE user_id = ?
                         GROUP BY symbol
-                        HAVING total_shares > 0;",
+                        HAVING num_shares > 0;",
                         user_id)
 
     # retrieve the cash balance from our database (with the current user's user_id)
@@ -56,7 +56,7 @@ def index():
         quote = lookup(share["symbol"])
         share["name"] = quote["name"]
         share["price"] = quote["price"]
-        share["value"] = quote["price"] * share["total_shares"]
+        share["value"] = quote["price"] * share["num_shares"]
         total_value += share["value"]
         grand_total += share["value"]
 
