@@ -56,7 +56,7 @@ def index():
         quote = lookup(share["symbol"])
         share["name"] = quote["name"]
         share["price"] = quote["price"]
-        share["value"] = quote["price"] * share["num_shares"]
+        share["value"] = share["price"] * share["num_shares"]
         total_value += share["value"]
         grand_total += share["value"]
 
