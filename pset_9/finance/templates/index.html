@@ -33,13 +33,13 @@
                 </tr>
             {% endfor %}
         </tbody>
-            {% for summary in summaries %}
+            {% for share in shares %}
                 <tr>
-                    <td>{{ summary.symbol }}</td>
-                    <td>{{ summary.symbol }}</td>
-                    <td>{{ summary.shares }}</td>
-                    <td>{{ summary.price }}</td>
-                    <td>{{ summary.value }}</td>
+                    <td>{{ share.name }}</td>
+                    <td>{{ share.symbol }}</td>
+                    <td>{{ share.shares }}</td>
+                    <td>{{ share.price }}</td>
+                    <td>{{ share.value }}</td>
                 </tr>
             {% endfor %}
         </tbody>
