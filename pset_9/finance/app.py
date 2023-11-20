@@ -55,6 +55,36 @@ def index():
     return render_template("index.html", stocks=stocks, cash=cash, total_value=total_value, grand_total=grand_total, )
 
 
+    """Show portfolio of stocks"""
+
+    # Get the current user ID
+    user_id = session["user_id"]
+
+    # Get the cash balance from the database
+    rows = db.execute("SELECT cash FROM users WHERE id = ?", user_id)
+    cash = rows[0]["cash"]
+
+    # Get the user's holdings (stocks they currently own) but select only holdings with more than 0 shares
+    holdings = db.execute(
+        "SELECT symbol, shares FROM holdings WHERE user_id = ? AND shares > 0", user_id
+    )
+
+    # Store total value (cash + holding value)
+    total = cash
+
+    # Iterate over the holdings to calculate each holdings market value
+    for holding in holdings:
+        # Lookup the stock name, price, and update the total value of the holding
+        stock = lookup(holding["symbol"])
+        holding["name"] = stock["name"]
+        holding["price"] = stock["price"]
+        holding["total"] = holding["shares"] * stock["price"]
+        total += holding["total"]
+
+    # Render the index.html template with the appropriate values passed through
+    return render_template("index.html", holdings=holdings, cash=cash, total=total)
+
+
 @app.route("/buy", methods=["GET", "POST"])
 @login_required
 def buy():
