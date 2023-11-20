@@ -5,6 +5,7 @@
 {% endblock %}
 
 {% block main %}
+<main class="container py-5 text-center">
     <table class="table">
         <thead>
             <tr>
@@ -15,14 +16,15 @@
             </tr>
         </thead>
         <tbody>
-            {% for t in transactions %}
+
                 <tr>
-                    <td class="text-start">{{ t.symbol }}</td>
-                    <td class="text-end">{{ t.shares }}</td>
-                    <td class="text-end">{{ t.price | usd }}</td>
-                    <td class="text-end">{{ t.transacted }}</td>
+                    <td class="text-start">AMZN</td>
+                    <td class="text-end">5</td>
+                    <td class="text-end">$146.13</td>
+                    <td class="text-end">2023-11-20 22:13:11</td>
                 </tr>
-            {% endfor %}
+
         </tbody>
     </table>
+</main>
 {% endblock %}
