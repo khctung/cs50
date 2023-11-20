@@ -181,6 +181,7 @@ def quote():
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
+        # error checking for all situations
         if not request.form.get("username"):
             return apology("INVALID USERNAME.")
         elif not request.form.get("password"):
@@ -190,18 +191,20 @@ def register():
         elif request.form.get("password") != request.form.get("confirmation"):
             return apology("PASSWORDS DO NOT MATCH.")
 
+        # query database for username
         rows = db.execute("SELECT * FROM users WHERE username = ?;", request.form.get("username"))
 
         if len(rows) != 0:
             return apology("username already exists", 400)
 
-        db.execute("INSERT INTO users (username, hash) VALUES(?, ?)",
+        # insert username to database
+        user_id = db.execute("INSERT INTO users (username, hash) VALUES(?, ?)",
                 request.form.get("username"), generate_password_hash(request.form.get("password")))
 
-        rows = db.execute("SELECT * FROM users WHERE username = ?". request.form.get("username"))
+        # remember logged in user
+        session["users_id"] = user_id
 
-        session["users_id"] = rows[0]["id"]
-
+        flash("Registered!")
         return redirect("/")
 
     else:
