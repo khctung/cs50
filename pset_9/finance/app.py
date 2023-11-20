@@ -148,6 +148,7 @@ def login():
         return render_template("login.html")
 
 
+
 @app.route("/logout")
 def logout():
     """Log user out"""
@@ -159,13 +160,15 @@ def logout():
     return redirect("/")
 
 
+
 @app.route("/quote", methods=["GET", "POST"])
 @login_required
 def quote():
     """Get stock quote."""
+
     if request.method == "POST":
         symbol = request.form.get("symbol")
-        quote = lookup(symbol)
+        summary = lookup(symbol)
         if not quote:
             return apology("invalid symobl", 400)
         return render_template("quote.html", quote=quote)
