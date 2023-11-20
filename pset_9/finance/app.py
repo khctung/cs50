@@ -44,12 +44,8 @@ def index():
                         user_id = session["user_id"])
 
     # retrieve the cash balance from our database (with the current user's user_id)
-    cash = db.execute("SELECT cash FROM users WHERE id = :user_id", user_id = session["user_id"])[0]["cash"]
+    cash = db.execute("SELECT cash FROM users WHERE id = ?", user_id)[0]["cash"]
 
-
-    # Get the cash balance from the database
-    rows = db.execute("SELECT cash FROM users WHERE id = ?", user_id)
-    cash = rows[0]["cash"]
 
     # Get the user's holdings (stocks they currently own) but select only holdings with more than 0 shares
     holdings = db.execute(
