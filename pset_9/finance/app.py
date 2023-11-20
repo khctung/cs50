@@ -108,8 +108,8 @@ def buy():
         db.execute("UPDATE users
                    SET cash = ?
                    WHERE id = ?",
-                   total_cost=total_cost,
-                   user_id=session["user_id"])
+                   cash-total_cost,
+                   session["user_id"])
 
         flash("Bought!")
         return redirect("/")
