@@ -251,8 +251,10 @@ def sell():
 
                     flash("Sold!")
                     return redirect("/")
+                
+            return apology("INVALID SYMBOL.")
 
-            else:
-                return render_templates("sell.html", shares_to_sell=shares_to_sell)
+    else:
+        return render_templates("sell.html", symbols=shares_to_sell)
 
-return apology("INVALID SYMBOL.")
+
