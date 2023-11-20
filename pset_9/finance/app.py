@@ -74,28 +74,41 @@ def buy():
         symbol = request.form.get("symbol").upper()
         shares = request.form.get("shares")
         summary = lookup(symbol)
+
+        # check if the symbol is invalid
         if not symbol or summary is None:
             return apology("INVALID SYMBOL.")
 
+        # check if the number of shares is invalid
         if not shares or not shares.isdigit() or int(shares) <= 0:
             return apology("INVALID SHARES.")
 
+        # calculating total cost of the shares to be bought
         total_cost = int(shares) * summary["price"]
+
+        # getting user's cash balance
         cash = db.execute("SELECT cash
                           FROM users
                           WHERE id = ?",
                           user_id=session["user_id"])[0]["cash"]
 
+        # if user cannot afford the transaction
         if cash < total_cost:
-            return apology("not enough cash")
+            return apology("NOT ENOUGH CASH.")
 
-        db.execute("UPDATE users SET cash = cash - :total_cost WHERE id = :user_id",
-                   total_cost=total_cost, uder_id=session["user_id"])
+        # execute a transaction
+        db.execute("INSERT INTO transactions (user_id, symbol, shares, price)
+                   VALUES (?, ?, ?, ?)",
+                   user_id=session["usesr_id"], symbol=symbol, shares=shares, price=price)
 
-        db.execute("INSERT INTO transactions (user_id, ymbol, shares, price) VALUES (:user_id, :symbol, :shares, :price)",
-                   user_id=session["usesr_id"], symbol=symbol, shares = shares, price = price)
+        # update the amount of cash the user has
+        db.execute("UPDATE users
+                   SET cash = cash - ?
+                   WHERE id = ?",
+                   total_cost=total_cost,
+                   user_id=session["user_id"])
 
-        flash(f"Bought {shares} shares of {symbol} for {usd(total_cost)}!")
+        flash("Bought!")
         return redirect("/")
 
     else:
