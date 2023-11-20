@@ -217,7 +217,7 @@ def register():
 def sell():
     """Sell shares of stock"""
 
-    sell_shares = db.execute("SELECT symbol, SUM(shares) as total_shares FROM transactions WHERE user_id = ? GROUP BY symbol HAVING total_shares > 0",
+    shares_to_sell = db.execute("SELECT symbol, SUM(shares) as total_shares FROM transactions WHERE user_id = ? GROUP BY symbol HAVING total_shares > 0",
                         session["user_id"])
 
     if request.method == "POST":
@@ -232,7 +232,7 @@ def sell():
 
         shares = int(shares)
 
-        for sell_share in sell_shares:
+        for sell_share in shares_to_sell:
             if sell_share["symbol"] == symbol:
                 if sell_share["total_shares"] < shares:
                     return apology("NOT ENOUGH SHARES.")
@@ -253,27 +253,6 @@ def sell():
                     return redirect("/")
 
             else:
-                return render_templates("sell.html", sell_shares=sell_shares)
+                return render_templates("sell.html", shares_to_sell=shares_to_sell)
 
-                                return apology("INVALID SYMBOL.")
-
-             if not (symbol := request.form.get("symbol")):
-            return apology("MISSING SYMBOL")
-
-        if not (shares := request.form.get("shares")):
-            return apology("MISSING SHARES")
-
-        # Check share is numeric data type
-        try:
-            shares = int(shares)
-        except ValueError:
-            return apology("INVALID SHARES")
-
-        # Check shares is positive number
-        if not (shares > 0):
-            return apology("INVALID SHARES")
-
-        symbols_dict = {d['symbol']: d['sum_of_shares'] for d in owned_symbols}
-
-        if symbols_dict[symbol] < shares:
-            return apology("TOO MANY SHARES")
+return apology("INVALID SYMBOL.")
