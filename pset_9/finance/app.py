@@ -73,18 +73,16 @@ def buy():
     if request.method == "POST":
         symbol = request.form.get("symbol").upper()
         shares = request.form.get("shares")
-        if not symbol:
+        summary = lookup(symbol)
+        if not symbol or summary is None:
             return apology("INVALID SYMBOL.")
-        elif not shares or not shares.isdigit() or int(shares) <= 0:
+
+        if not shares or not shares.isdigit() or int(shares) <= 0:
             return apology("INVALID SHARES.")
 
-        summary = lookup(symbol)
-        if summary is None:
-            return apology("INVALID SYMBOL.")
-
-        price = quote["price"]
+        price = summary["price"]
         total_cost = int(shares) * price
-        cash = db.execute("SELECT cash FROM users WHERE id = :user_id", user_id=session["user_id"])[0]["cash"]
+        cash = db.execute("SELECT cash FROM users WHERE id = ?", user_id=session["user_id"])[0]["cash"]
 
         if cash < total_cost:
             return apology("not enough cash")
