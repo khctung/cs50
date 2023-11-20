@@ -49,8 +49,9 @@ def index():
 
     # retrieve the cash balance from our database (with the current user's user_id)
     cash = db.execute("SELECT cash
-                      FROM users 
-                      WHERE id = ?;", user_id)[0]["cash"]
+                      FROM users
+                      WHERE id = ?;",
+                      user_id)[0]["cash"]
 
     # calculating total value of cash balance + shares (added in later in loop)
     total_value = cash
@@ -101,11 +102,11 @@ def buy():
         # execute a transaction
         db.execute("INSERT INTO transactions (user_id, symbol, shares, price)
                    VALUES (?, ?, ?, ?);",
-                   user_id=session["usesr_id"], symbol=symbol, shares=shares, price=price)
+                   session["user_id"], symbol, shares, summary["price"])
 
         # update the amount of cash the user has
         db.execute("UPDATE users
-                   SET cash = cash - ?
+                   SET cash = ?
                    WHERE id = ?",
                    total_cost=total_cost,
                    user_id=session["user_id"])
