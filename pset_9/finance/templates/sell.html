@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    Home
+    Sell
 {% endblock %}
 
 {% block main %}
@@ -15,37 +15,10 @@
                 {% endfor %}
             </select>
         </div>
+        <div class="mb-3">
+            <input autocomplete="off" class="form-control mx-auto w-auto" min="0" name="shares" placeholder="Shares" type="number">
+        </div>
+        <button class="btn btn-primary" type="submit">Sell</button>
     </form>
-        <thead>
-            <tr>
-                <th class="text-start">Symbol</th>
-                <th class="text-start">Name</th>
-                <th class="text-end">Shares</th>
-                <th class="text-end">Price</th>
-                <th class="text-end">TOTAL</th>
-            </tr>
-        </thead>
-        </tbody>
-            {% for share in shares %}
-                <tr>
-                    <td class="text-start">{{ share.name }}</td>
-                    <td class="text-start">{{ share.symbol }}</td>
-                    <td class="text-end">{{ share.num_shares }}</td>
-                    <td class="text-end">{{ share.price | usd }}</td>
-                    <td class="text-end">{{ share.value | usd }}</td>
-                </tr>
-            {% endfor %}
-        </tbody>
-        <tfoot>
-            <tr>
-                <td class="border-0 fw-bold text-end" colspan="4">Cash</td>
-                <td class="border-0 text-end">{{ cash | usd }}</td>
-            </tr>
-            <tr>
-                <td class="border-0 fw-bold text-end" colspan="4">TOTAL</td>
-                <td class="border-0 w-bold text-end">{{ total_value | usd }}</td>
-            </tr>
-        </tfoot>
-    </table>
 </main>
 {% endblock %}
