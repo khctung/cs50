@@ -18,7 +18,7 @@
         <tfoot>
             <tr>
                 <td colspan="4"></td>
-                <td>{{ sum_totals | usd }}</td>
+                <td>{{ total_value | usd }}</td>
             </tr>
         </tfoot>
         <tbody>
@@ -26,14 +26,14 @@
                 <tr>
                     <td>{{ summary.symbol }}</td>
                     <td>{{ summary.symbol }}</td>
-                    <td>{{ summary.sum_of_shares }}</td>
+                    <td>{{ summary.shares }}</td>
                     <td>{{ summary.price | usd }}</td>
-                    <td>{{ summary.total | usd }}</td>
+                    <td>{{ summary.total_value }}</td>
                 </tr>
             {% endfor %}
             <tr>
                 <td colspan="4">CASH</td>
-                <td>{{ owned_cash | usd }}</td>
+                <td>{{ cash | usd }}</td>
             </tr>
         </tbody>
     </table>
