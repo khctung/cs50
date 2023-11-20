@@ -170,7 +170,7 @@ def quote():
         # check for existence of symbol
         symbol = request.form.get("symbol")
         quote = lookup(symbol)
-        if not quote:
+        if not symbol or not quote:
             return apology("INVALID SYMBOL.")
         return render_template("quoted.html", quote=quote)
     else:
