@@ -185,7 +185,7 @@ def register():
     if request.method == "POST":
         if not request.form.get("username"):
             return apology("INVALID USERNAME.")
-        elif not requqest.form.get("password"):
+        elif not request.form.get("password"):
             return apology("INVALID PASSWORD.")
         elif not request.form.get("confrmation"):
             return apology("INVALID CONFIRMATION.")
