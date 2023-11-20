@@ -174,7 +174,7 @@ def quote():
             return apology("INVALID SYMBOL.")
         return render_template("quote.html", quote=quote)
     elif request.method == "GET":
-        return render_template("quote.html", quote=quote)
+        return render_template("quoted.html", quote=quote)
     else:
         return render_template("quote.html")
 
