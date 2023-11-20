@@ -102,6 +102,82 @@ def buy():
         return render_template("buy.html")
 
 
+
+
+    if request.method == "POST":
+        # Get the symbol and try to get the shares from the form data
+        symbol = request.form.get("symbol")
+        try:
+            # Convert shares to integer
+            shares = int(request.form.get("shares"))
+        except ValueError:
+            return apology("shares must be a positive integer")
+        # Check if number of shares is positive
+        if shares <= 0:
+            return apology("shares must be a positive integer")
+
+        # Lookup price of stock via its symbol and ensure its valid
+        stock = lookup(symbol)
+        if stock is None:
+            return apology("invalid symbol")
+
+        # Calculate total cost of purchase
+        total_cost = shares * stock["price"]
+
+        # Get the user's id
+        user_id = session["user_id"]
+        # Get the user's cash balance from the database and check if the user has enough funds to make the purchase
+        rows = db.execute("SELECT cash FROM users WHERE id = ?", user_id)
+        cash = rows[0]["cash"]
+
+        if cash < total_cost:
+            return apology("not enough funds")
+
+        # Update the user's cash balance
+        db.execute("UPDATE users SET cash = cash - ? WHERE id = ?", total_cost, user_id)
+
+        # Record the transaction, check if the user already owns this stock
+        db.execute(
+            "INSERT INTO transactions (user_id, symbol, shares, price, type, transacted) VALUES (?, ?, ?, ?, 'buy', CURRENT_TIMESTAMP)",
+            user_id,
+            symbol,
+            shares,
+            stock["price"],
+        )
+
+        existing_holding = db.execute(
+            "SELECT shares FROM holdings WHERE user_id = ? AND symbol = ?",
+            user_id,
+            symbol,
+        )
+
+        # If the user already has this stock, update the holding. If not, insert a new holding
+        if len(existing_holding) == 0:
+            # Insert new holding record
+            db.execute(
+                "INSERT INTO holdings (user_id, symbol, shares) VALUES (?, ?, ?)",
+                user_id,
+                symbol,
+                shares,
+            )
+        else:  # Update existing holding
+            db.execute(
+                "UPDATE holdings SET shares = shares + ? WHERE user_id = ? AND symbol = ?",
+                shares,
+                user_id,
+                symbol,
+            )
+
+        # Redirect to the home page
+        flash("Bought!")
+        return redirect("/")
+
+    # If the method is GET, render buy.html
+
+    else:
+        return render_template("buy.html")
+
+
 @app.route("/history")
 @login_required
 def history():
