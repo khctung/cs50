@@ -59,7 +59,7 @@ def index():
         share["value"] = share["price"] * share["num_shares"]
         total_value += share["value"]
 
-    return render_template("index.html", stocks=stocks, cash=cash, total_value=total_value, grand_total=grand_total, )
+    return render_template("index.html", shares=shares, cash=cash, total_value=total_value, grand_total=grand_total, )
 
 
     """Show portfolio of stocks"""
