@@ -50,9 +50,9 @@ def index():
 
     # loop for each share
     for share in shares:
-        summary = lookup(share["symbol"])
-        share["name"] = summary["name"]
-        share["price"] = summary["price"]
+        quote = lookup(share["symbol"])
+        share["name"] = quote["name"]
+        share["price"] = quote["price"]
         share["value"] = share["price"] * share["num_shares"]
         total_value += share["value"]
 
@@ -68,10 +68,10 @@ def buy():
     if request.method == "POST":
         symbol = request.form.get("symbol").upper()
         shares = request.form.get("shares")
-        summary = lookup(symbol)
+        quote = lookup(symbol)
 
         # check if the symbol is invalid
-        if not symbol or summary is None:
+        if not symbol or quote is None:
             return apology("INVALID SYMBOL.")
 
         # check if the number of shares is invalid
@@ -79,7 +79,7 @@ def buy():
             return apology("INVALID SHARES.")
 
         # calculating total cost of the shares to be bought
-        total_cost = int(shares) * summary["price"]
+        total_cost = int(shares) * quote["price"]
 
         # getting user's cash balance
         cash = db.execute("SELECT cash FROM users WHERE id = ?;", session["user_id"])[0]["cash"]
@@ -89,7 +89,7 @@ def buy():
             return apology("NOT ENOUGH CASH.")
 
         # execute a transaction
-        db.execute("INSERT INTO transactions (user_id, symbol, shares, price) VALUES (?, ?, ?, ?);", session["user_id"], symbol, shares, summary["price"])
+        db.execute("INSERT INTO transactions (user_id, symbol, shares, price) VALUES (?, ?, ?, ?);", session["user_id"], symbol, shares, quote["price"])
 
         # update the amount of cash the user has
         db.execute("UPDATE users SET cash = ? WHERE id = ?", cash-total_cost, session["user_id"])
@@ -169,12 +169,13 @@ def quote():
     if request.method == "POST":
         # check for existence of symbol
         symbol = request.form.get("symbol")
-        summary = lookup(symbol)
+        quote = lookup(symbol)
         if not quote:
             return apology("INVALID SYMBOL.")
         return render_template("quote.html", quote=quote)
     else:
         return render_template("quote.html")
+
 
 
 @app.route("/register", methods=["GET", "POST"])
