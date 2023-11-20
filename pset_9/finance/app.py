@@ -223,10 +223,13 @@ def sell():
     if request.method == "POST":
         symbol = request.form.get("symbol").upper()
         shares = request.form.get("shares")
+
         if not symbol:
             return apology("INVALID SYMBOL.")
+
         elif not shares or not shares.isdigit() or int(shares) <= 0:
             return apology("INVALID SHARES.")
+
         shares = int(shares)
 
         for sell_share in sell_shares:
@@ -248,7 +251,7 @@ def sell():
 
                     flash("Sold!")
                     return redirect("/")
-            return apology("symbol not found")
+            return apology("INVALID SYMBOL.")
 
         else:
             return render_templates("sell.html", stocks=stocks)
