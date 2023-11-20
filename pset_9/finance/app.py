@@ -312,6 +312,7 @@ def deposit():
 
         add_cash = int(add_cash)
 
+        # update with added cash
         db.execute(
             "UPDATE users SET cash = cash + ? WHERE id = ?",
             add_cash,
