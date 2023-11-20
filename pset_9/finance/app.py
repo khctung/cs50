@@ -269,7 +269,7 @@ def deposit():
 
     if request.method == "POST":
         # check if amount requested to deposit is valid
-        add_cash = request.form.get("Deposit Amount")
+        add_cash = request.form.get("deposit_amount")
         if not add_cash or not add_cash.isdigit() or int(add_cash) <= 0:
             return apology("INVALID DEPOSIT AMOUNT.")
 
