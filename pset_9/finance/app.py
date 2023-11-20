@@ -264,41 +264,21 @@ def sell():
 
 @app.route("/")
 @login_required
-def index():
+def deposit():
     """Deposit additional cash"""
 
-     return render_template("sell.html", symbols=shares_to_sell)
-    shares_to_sell = db.execute("SELECT symbol, SUM(shares) as total_shares FROM transactions WHERE user_id = ? GROUP BY symbol HAVING total_shares > 0",
-                        session["user_id"])
-
     if request.method == "POST":
-        symbol = request.form.get("symbol").upper()
-        shares = request.form.get("shares")
+        # check if amount requested to deposit is valid
+        add_cash = request.form.get("Deposit Amount")
+        if not add_cash or not add_cash.isdigit() or int(add_cash) <= 0:
+            return apology("INVALID DEPOSIT AMOUNT.")
 
-        if not symbol:
-            return apology("INVALID SYMBOL.")
+        add_cash = int(add_cash)
 
-        elif not shares or not shares.isdigit() or int(shares) <= 0:
-            return apology("INVALID SHARES.")
+        db.execute("UPDATE users SET cash = cash + ? WHERE id = ?",
+                   add_cash, session["user_id"])
 
-        shares = int(shares)
-
-        for sell_share in shares_to_sell:
-            if sell_share["symbol"] == symbol:
-                if sell_share["total_shares"] < shares:
-                    return apology("NOT ENOUGH SHARES.")
-                else:
-                    quote = lookup(symbol)
-                    if quote is None:
-                        return apology("INVALID SYMBOL.")
-
-                    db.execute("UPDATE users SET cash = cash + ? WHERE id = ?",
-                               shares * quote["price"], session["user_id"])
-
-                    db.execute("INSERT INTO transactions (user_id, symbol, shares, price) VALUES (?, ?, ?, ?)",
-                               session["user_id"], symbol, -shares,  quote["price"])
-
-                    flash("Sold!")
-                    return redirect("/")
-
-            return apology("INVALID SYMBOL.")
+        flash("Despoited!")
+        return redirect("/")
+    else:
+        return render_template("deposit.html")
