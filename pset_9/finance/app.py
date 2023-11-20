@@ -75,7 +75,7 @@ def buy():
             return apology("INVALID SYMBOL.")
 
         # check if the number of shares is invalid
-        if not shares or not shares.isdigit() or int(shares) <= 0:
+        elif not shares or not shares.isdigit() or int(shares) <= 0:
             return apology("INVALID SHARES.")
 
         # calculating total cost of the shares to be bought
