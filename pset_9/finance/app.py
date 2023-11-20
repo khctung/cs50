@@ -36,13 +36,16 @@ def after_request(response):
 def index():
     """Show portfolio of stocks"""
 
+    # get the current user's user_id
+    user_id = session["user_id"]
+
+    # get the current user's stocks that they own right now (stocks w more than 0 shares)
     stocks = db.execute("SELECT symbol, SUM(shares) as total_shares FROM transactions WHERE user_id = :user_id GROUP BY symbol HAVING total_shares > 0",
                         user_id = session["user_id"])
 
+    # retrieve the cash balance from our database (with the current user's user_id)
     cash = db.execute("SELECT cash FROM users WHERE id = :user_id", user_id = session["user_id"])[0]["cash"]
 
-    # Get the current user ID
-    user_id = session["user_id"]
 
     # Get the cash balance from the database
     rows = db.execute("SELECT cash FROM users WHERE id = ?", user_id)
