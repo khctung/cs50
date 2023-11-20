@@ -247,7 +247,7 @@ def sell():
                         return apology("INVALID SYMBOL.")
 
                     db.execute("UPDATE users SET cash = cash + ? WHERE id = ?",
-                               shares * price, session["user_id"])
+                               shares * quote["price"], session["user_id"])
 
                     db.execute("INSERT INTO transactions (user_id, symbol, shares, price) VALUES (?, ?, ?, ?)",
                                session["user_id"], symbol, -shares,  quote["price"])
