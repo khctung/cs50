@@ -1,41 +1,14 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    Home
+    Quote
 {% endblock %}
 
 {% block main %}
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th class="text-start">Symbol</th>
-                <th class="text-start">Name</th>
-                <th class="text-end">Shares</th>
-                <th class="text-end">Price</th>
-                <th class="text-end">TOTAL</th>
-            </tr>
-        </thead>
-        <tbody> </tbody>
-        <tfoot>
-            <tr>
-                <td class="border-0 fw-bold text-end" colspan="4">TOTAL</td>
-                <td class="border-0">{{ total_value | usd }}</td>
-            </tr>
-        </tfoot>
-        <tbody>
-            {% for summary in summaries %}
-                <tr>
-                    <td>{{ summary.symbol }}</td>
-                    <td>{{ summary.symbol }}</td>
-                    <td>{{ summary.shares }}</td>
-                    <td>{{ summary.price }}</td>
-                    <td>{{ summary.value }}</td>
-                </tr>
-            {% endfor %}
-        </tbody>
-        <tr>
-            <td class="border-0 fw-bold text-end" colspan="4">Cash</td>
-            <td class="border-0">{{ cash | usd }}</td>
-        </tr>
-    </table>
+    <form action="/quote" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="symbol" name="symbol" placeholder="Symbol" type="text">
+        </div>
+        <button class="btn btn-primary" type="submit">Quote</button>
+    </form>
 {% endblock %}
