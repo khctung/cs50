@@ -80,9 +80,11 @@ def buy():
         if not shares or not shares.isdigit() or int(shares) <= 0:
             return apology("INVALID SHARES.")
 
-        price = summary["price"]
-        total_cost = int(shares) * price
-        cash = db.execute("SELECT cash FROM users WHERE id = ?", user_id=session["user_id"])[0]["cash"]
+        total_cost = int(shares) * summary["price"]
+        cash = db.execute("SELECT cash
+                          FROM users
+                          WHERE id = ?",
+                          user_id=session["user_id"])[0]["cash"]
 
         if cash < total_cost:
             return apology("not enough cash")
