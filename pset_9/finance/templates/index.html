@@ -23,6 +23,16 @@
             </tr>
         </tfoot>
         <tbody>
+        <tbody>
+            {% for t in transactions %}
+                <tr>
+                    <td class="text-start">{{ t.symbol }}</td>
+                    <td class="text-end">{{ t.shares }}</td>
+                    <td class="text-end">{{ t.price | usd }}</td>
+                    <td class="text-end">{{ t.transacted }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
             {% for summary in summaries %}
                 <tr>
                     <td>{{ summary.symbol }}</td>
