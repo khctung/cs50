@@ -240,18 +240,16 @@ def sell():
                     quote = lookup(symbol)
                     if quote is None:
                         return apology("INVALID SYMBOL.")
-                    price = quote["price"]
-                    total_sale = shares * price
 
                     db.execute("UPDATE users SET cash = cash + ? WHERE id = ?",
-                               total_sale, session["user_id"])
+                               shares * price, session["user_id"])
 
                     db.execute("INSERT INTO transactions (user_id, symbol, shares, price) VALUES (?, ?, ?, ?)",
-                               session["user_id"], symbol, -shares, price)
+                               session["user_id"], symbol, -shares,  quote["price"])
 
                     flash("Sold!")
                     return redirect("/")
-                
+
             return apology("INVALID SYMBOL.")
 
     else:
