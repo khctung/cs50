@@ -207,7 +207,7 @@ def register():
                 request.form.get("username"), generate_password_hash(request.form.get("password")))
 
         # remember logged in user
-        session["users_id"] = user_id
+        session["user_id"] = user_id
 
         flash("Registered!")
         return redirect("/")
