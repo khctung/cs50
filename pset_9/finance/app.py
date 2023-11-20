@@ -262,7 +262,7 @@ def sell():
 
 
 
-@app.route("/")
+@app.route("/deposit", methods=["GET", "POST"])
 @login_required
 def deposit():
     """Deposit additional cash"""
@@ -278,7 +278,7 @@ def deposit():
         db.execute("UPDATE users SET cash = cash + ? WHERE id = ?",
                    add_cash, session["user_id"])
 
-        flash("Despoited!")
+        flash("Deposited!")
         return redirect("/")
     else:
         return render_template("deposit.html")
