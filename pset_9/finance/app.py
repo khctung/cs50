@@ -21,11 +21,10 @@ Session(app)
 # Configure CS50 Library to use SQLite database
 db = SQL("sqlite:///finance.db")
 
-
-# Create new table, and index (for efficient search later on) to keep track of stock orders, by each user
-db.execute("CREATE TABLE IF NOT EXISTS users (id INTEGER, username TEXT NOT NULL, hash TEXT NOT NULL, cash NUMERIC NOT NULL DEFAULT 10000.00, PRIMARY KEY(id)")
+# Create a new table and index to keep track of stock orders by each user
+db.execute("CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, username TEXT NOT NULL, hash TEXT NOT NULL, cash NUMERIC NOT NULL DEFAULT 10000.00)")
 db.execute("CREATE UNIQUE INDEX IF NOT EXISTS username ON users (username)")
-db.execute("CREATE TABLE IF NOT EXISTS transactions (id INTEGER, user_id INTEGER, transacted DEFAULT CURRENT_TIMESTAMP NOT NULL, company TEXT NOT NULL, symbol TEXT NOT NULL, shares NUMERIC NOT NULL, price NUMERIC NOT NULL, PRIMARY KEY(id),FOREIGN KEY(user_id) REFERENCES users(id)")
+db.execute("CREATE TABLE IF NOT EXISTS transactions (id INTEGER PRIMARY KEY, user_id INTEGER, transacted DEFAULT CURRENT_TIMESTAMP NOT NULL, company TEXT NOT NULL, symbol TEXT NOT NULL, shares NUMERIC NOT NULL, price NUMERIC NOT NULL, FOREIGN KEY(user_id) REFERENCES users(id))")
 
 
 @app.after_request
