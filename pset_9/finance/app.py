@@ -261,3 +261,10 @@ def sell():
         return render_template("sell.html", symbols=shares_to_sell)
 
 
+
+@app.route("/")
+@login_required
+def index():
+    """Deposit additional cash"""
+
+     return render_template("sell.html", symbols=shares_to_sell)
