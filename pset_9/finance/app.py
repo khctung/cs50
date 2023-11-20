@@ -180,8 +180,6 @@ def quote():
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
-    session.clear()
-
     if request.method == "POST":
         if not request.form.get("username"):
             return apology("INVALID USERNAME.")
