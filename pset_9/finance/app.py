@@ -53,7 +53,7 @@ def index():
     total_value = cash
 
     for share in shares:
-        quote = lookup(stock["symbol"])
+        quote = lookup(share["symbol"])
         share["name"] = quote["name"]
         share["price"] = quote["price"]
         share["value"] = quote["price"] * share["total_shares"]
