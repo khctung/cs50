@@ -5,6 +5,7 @@
 {% endblock %}
 
 {% block main %}
+<main class="container py-5 text-center">
     <table class="table table-striped">
         <thead>
             <tr>
@@ -37,7 +38,7 @@
                 <tr>
                     <td>{{ share.name }}</td>
                     <td>{{ share.symbol }}</td>
-                    <td>{{ share.shares }}</td>
+                    <td>{{ share.num_shares }}</td>
                     <td>{{ share.price }}</td>
                     <td>{{ share.value }}</td>
                 </tr>
@@ -48,4 +49,5 @@
             <td class="border-0">{{ cash | usd }}</td>
         </tr>
     </table>
+</main>
 {% endblock %}
