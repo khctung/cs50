@@ -50,9 +50,7 @@ def index():
     # retrieve the cash balance from our database (with the current user's user_id)
     cash = db.execute("SELECT cash FROM users WHERE id = ?", user_id)[0]["cash"]
 
-
     total_value = cash
-    grand_total = cash
 
     for share in shares:
         quote = lookup(stock["symbol"])
