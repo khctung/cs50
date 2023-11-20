@@ -40,10 +40,10 @@ def index():
     user_id = session["user_id"]
 
     # get the current user's stocks that they own right now (stocks w more than 0 shares)
-    shares = db.execute("SELECT symbol, SUM(shares) as num_shares FROM transactions WHERE user_id = ? GROUP BY symbol HAVING num_shares > 0;", user_id)
+    shares = db.execute("SELECT symbol, SUM(shares) as num_shares FROM transactions WHERE user_id = ? GROUP BY symbol HAVING num_shares > 0", user_id)
 
     # retrieve the cash balance from our database (with the current user's user_id)
-    cash = db.execute("SELECT cash FROM users WHERE id = ?;", user_id)[0]["cash"]
+    cash = db.execute("SELECT cash FROM users WHERE id = ?", user_id)[0]["cash"]
 
     # calculating total value of cash balance + shares (added in later in loop)
     total_value = cash
@@ -82,14 +82,14 @@ def buy():
         total_cost = int(shares) * quote["price"]
 
         # getting user's cash balance
-        cash = db.execute("SELECT cash FROM users WHERE id = ?;", session["user_id"])[0]["cash"]
+        cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])[0]["cash"]
 
         # if user cannot afford the transaction
         if cash < total_cost:
             return apology("NOT ENOUGH CASH.")
 
         # execute a transaction
-        db.execute("INSERT INTO transactions (user_id, symbol, shares, price) VALUES (?, ?, ?, ?);", session["user_id"], symbol, shares, quote["price"])
+        db.execute("INSERT INTO transactions (user_id, symbol, shares, price) VALUES (?, ?, ?, ?)", session["user_id"], symbol, shares, quote["price"])
 
         # update the amount of cash the user has
         db.execute("UPDATE users SET cash = ? WHERE id = ?", cash-total_cost, session["user_id"])
@@ -187,12 +187,12 @@ def register():
             return apology("INVALID USERNAME.")
         elif not request.form.get("password"):
             return apology("INVALID PASSWORD.")
-        elif not request.form.get("confrmation"):
+        elif not request.form.get("confirmation"):
             return apology("INVALID CONFIRMATION.")
         elif request.form.get("password") != request.form.get("confirmation"):
             return apology("PASSWORDS DO NOT MATCH.")
 
-        rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
+        rows = db.execute("SELECT * FROM users WHERE username = ?;", request.form.get("username"))
 
         if len(rows) != 0:
             return apology("username already exists", 400)
