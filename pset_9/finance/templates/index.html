@@ -16,23 +16,6 @@
                 <th class="text-end">TOTAL</th>
             </tr>
         </thead>
-        <tbody> </tbody>
-        <tfoot>
-            <tr>
-                <td class="border-0 fw-bold text-end" colspan="4">TOTAL</td>
-                <td class="border-0">{{ total_value | usd }}</td>
-            </tr>
-        </tfoot>
-        <tbody>
-        <tbody>
-            {% for t in transactions %}
-                <tr>
-                    <td class="text-start">{{ t.symbol }}</td>
-                    <td class="text-end">{{ t.shares }}</td>
-                    <td class="text-end">{{ t.price | usd }}</td>
-                    <td class="text-end">{{ t.transacted }}</td>
-                </tr>
-            {% endfor %}
         </tbody>
             {% for share in shares %}
                 <tr>
@@ -44,10 +27,16 @@
                 </tr>
             {% endfor %}
         </tbody>
-        <tr>
-            <td class="border-0 fw-bold text-end" colspan="4">Cash</td>
-            <td class="border-0">{{ cash | usd }}</td>
-        </tr>
+        <tfoot>
+            <tr>
+                <td class="border-0 fw-bold text-end" colspan="4">Cash</td>
+                <td class="border-0 text-end">{{ cash | usd }}</td>
+            </tr>
+            <tr>
+                <td class="border-0 fw-bold text-end" colspan="4">TOTAL</td>
+                <td class="border-0 w-bold text-end">{{ total_value | usd }}</td>
+            </tr>
+        </tfoot>
     </table>
 </main>
 {% endblock %}
